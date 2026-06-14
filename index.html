@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Men's Cut by Taskin – Professioneller Herrenfriseur in Berlin. Präzise Haarschnitte, Bartpflege und modernes Styling in der Anzengruberstraße 4, 12043 Berlin." />
+  <title>Men's Cut by Taskin | Premium Barbershop Berlin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --charcoal: #1a1a1a;
+      --charcoal-2: #232323;
+      --gold: #c9a84c;
+      --gold-light: #e0c06a;
+      --gold-dim: rgba(201,168,76,0.15);
+      --white: #f5f5f5;
+      --muted: #888;
+      --border: rgba(255,255,255,0.07);
+      --font: 'Inter', sans-serif;
+      --radius: 4px;
+      --transition: 0.3s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--black); color: var(--white); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 68px;
+      background: rgba(10,10,10,0.92); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border); transition: background var(--transition);
+    }
+    .nav-logo { display: flex; flex-direction: column; gap: 1px; text-decoration: none; }
+    .nav-logo-top { font-size: 0.65rem; letter-spacing: 0.25em; color: var(--gold); font-weight: 500; text-transform: uppercase; }
+    .nav-logo-main { font-size: 1.05rem; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.83rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500; transition: color var(--transition); }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .nav-cta { background: var(--gold); color: var(--black); border: none; cursor: pointer; padding: 0.55rem 1.3rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: var(--radius); transition: background var(--transition); text-decoration: none; }
+    .nav-cta:hover { background: var(--gold-light); }
+    /* Language switcher */
+    .lang-switcher { display: flex; gap: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .lang-btn { background: transparent; color: var(--muted); border: none; cursor: pointer; padding: 0.4rem 0.65rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; font-family: var(--font); transition: all var(--transition); }
+    .lang-btn.active { background: var(--gold); color: var(--black); }
+    .lang-btn:hover:not(.active) { color: var(--gold); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); display: block; transition: var(--transition); }
+    .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0; z-index: 999; background: var(--black); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { text-decoration: none; color: var(--white); font-size: 1.2rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; transition: color var(--transition); }
+    .mobile-menu a:hover { color: var(--gold); }
+    .mobile-lang { display: flex; gap: 0.5rem; margin-top: 1rem; }
+    .mobile-lang .lang-btn { border: 1px solid var(--border); border-radius: var(--radius); padding: 0.5rem 1rem; font-size: 0.85rem; }
+
+    /* HERO */
+    #hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: linear-gradient(135deg,#080808 0%,#141414 50%,#0d0d0d 100%); }
+    .hero-bg-pattern { position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 50%,rgba(201,168,76,0.06) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(201,168,76,0.04) 0%,transparent 40%),repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(255,255,255,0.01) 60px,rgba(255,255,255,0.01) 61px); }
+    .hero-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .hero-line { position: absolute; height: 1px; background: linear-gradient(90deg,transparent,var(--gold),transparent); opacity: 0.2; animation: lineSlide 6s ease-in-out infinite; }
+    .hero-line:nth-child(1) { width: 60%; top: 30%; left: -60%; animation-delay: 0s; }
+    .hero-line:nth-child(2) { width: 40%; top: 60%; left: -40%; animation-delay: 2s; }
+    .hero-line:nth-child(3) { width: 50%; top: 80%; left: -50%; animation-delay: 4s; }
+    @keyframes lineSlide { 0%{transform:translateX(0);opacity:0} 20%{opacity:0.2} 80%{opacity:0.2} 100%{transform:translateX(300%);opacity:0} }
+    .hero-scissors { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); font-size: clamp(8rem,20vw,18rem); opacity: 0.04; user-select: none; line-height: 1; }
+    .hero-inner { position: relative; z-index: 1; max-width: 780px; padding: 0 5%; padding-top: 100px; padding-bottom: 60px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.3); padding: 0.35rem 0.9rem; border-radius: 2px; margin-bottom: 2rem; }
+    .hero-badge-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+    .hero-badge span { font-size: 0.75rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; font-weight: 500; }
+    .hero-title { font-size: clamp(2.4rem,6vw,4.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 0.6rem; color: var(--white); }
+    .hero-title-accent { color: var(--gold); }
+    .hero-subtitle { font-size: clamp(1rem,2.5vw,1.3rem); color: var(--muted); margin-bottom: 1.5rem; font-weight: 300; letter-spacing: 0.02em; }
+    .hero-desc { font-size: 0.95rem; color: #666; max-width: 520px; margin-bottom: 2.5rem; line-height: 1.7; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-primary { background: var(--gold); color: var(--black); border: none; cursor: pointer; padding: 0.85rem 2rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-radius: var(--radius); transition: all var(--transition); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.25); cursor: pointer; padding: 0.85rem 2rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; border-radius: var(--radius); transition: all var(--transition); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .stat { display: flex; flex-direction: column; }
+    .stat-num { font-size: 1.6rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; }
+    .stat-divider { width: 1px; background: var(--border); align-self: stretch; }
+
+    /* SHARED */
+    section { padding: 90px 5%; }
+    .section-label { font-size: 0.7rem; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; font-weight: 500; margin-bottom: 0.8rem; }
+    .section-title { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.2rem; letter-spacing: -0.01em; }
+    .section-desc { font-size: 0.95rem; color: var(--muted); max-width: 560px; line-height: 1.7; }
+    .gold-line { width: 40px; height: 2px; background: var(--gold); margin: 1.2rem 0; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* ABOUT */
+    #about { background: var(--charcoal); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-visual { position: relative; aspect-ratio: 4/5; background: var(--charcoal-2); border: 1px solid var(--border); overflow: hidden; }
+    .about-visual-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1rem; }
+    .about-icon { font-size: 5rem; opacity: 0.15; }
+    .about-visual-label { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; opacity: 0.6; }
+    .about-visual-accent { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+    .about-visual-tag { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--gold); color: var(--black); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; }
+    .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .about-feature { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1.1rem; background: var(--charcoal-2); border: 1px solid var(--border); }
+    .about-feature-icon { width: 36px; height: 36px; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .about-feature h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 2px; }
+    .about-feature p { font-size: 0.75rem; color: var(--muted); line-height: 1.4; }
+
+    /* SERVICES */
+    #services { background: var(--black); }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; margin-top: 3rem; background: var(--border); }
+    .service-card { background: var(--charcoal); padding: 2.5rem 2rem; transition: background var(--transition); cursor: default; position: relative; overflow: hidden; }
+    .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform var(--transition); transform-origin: left; }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover { background: var(--charcoal-2); }
+    .service-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+    .service-number { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--gold); opacity: 0.5; font-weight: 600; }
+    .service-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+    .service-items { list-style: none; margin-bottom: 1.5rem; }
+    .service-items li { font-size: 0.83rem; color: var(--muted); padding: 0.35rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.5rem; }
+    .service-items li:last-child { border-bottom: none; }
+    .service-items li::before { content: '—'; color: var(--gold); font-size: 0.7rem; }
+    .service-price { font-size: 0.8rem; font-weight: 600; color: var(--gold); letter-spacing: 0.05em; text-transform: uppercase; }
+
+    /* GALLERY */
+    #gallery { background: var(--charcoal); }
+    .gallery-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(2,220px); gap: 4px; }
+    .gallery-item { background: var(--charcoal-2); overflow: hidden; position: relative; border: 1px solid var(--border); cursor: pointer; }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery-item:nth-child(4) { grid-column: span 2; }
+    .gallery-item-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.75rem; transition: transform 0.4s ease; }
+    .gallery-item:hover .gallery-item-inner { transform: scale(1.03); }
+    .gallery-emoji { font-size: 3rem; opacity: 0.2; }
+    .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(transparent,rgba(0,0,0,0.8)); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); opacity: 0; transition: opacity var(--transition); font-weight: 500; }
+    .gallery-item:hover .gallery-caption { opacity: 1; }
+    .gallery-overlay { position: absolute; inset: 0; background: var(--gold-dim); opacity: 0; transition: opacity var(--transition); }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* REVIEWS */
+    #reviews { background: var(--black); }
+    .reviews-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+    .rating-badge { display: flex; align-items: center; gap: 1rem; background: var(--charcoal); border: 1px solid var(--border); padding: 1rem 1.5rem; }
+    .rating-num { font-size: 2.5rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .rating-stars { display: flex; gap: 2px; margin-bottom: 4px; }
+    .star { color: var(--gold); font-size: 0.9rem; }
+    .rating-count { font-size: 0.75rem; color: var(--muted); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: var(--border); }
+    .review-card { background: var(--charcoal); padding: 2rem; transition: background var(--transition); }
+    .review-card:hover { background: var(--charcoal-2); }
+    .review-stars { display: flex; gap: 3px; margin-bottom: 1rem; }
+    .review-text { font-size: 0.9rem; color: #aaa; line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 0.75rem; }
+    .review-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+    .review-name { font-size: 0.85rem; font-weight: 600; }
+    .review-date { font-size: 0.72rem; color: var(--muted); margin-top: 1px; }
+    .review-verified { font-size: 0.7rem; color: var(--gold); margin-top: 1px; }
+
+    /* BOOKING */
+    #booking { background: var(--charcoal); }
+    .booking-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start; }
+    .booking-info-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+    .booking-info-item:last-child { border-bottom: none; }
+    .booking-info-icon { width: 40px; height: 40px; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .booking-info-label { font-size: 0.7rem; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-bottom: 3px; font-weight: 500; }
+    .booking-info-value { font-size: 0.88rem; color: var(--white); font-weight: 500; }
+    .booking-form { background: var(--black); border: 1px solid var(--border); padding: 2.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; font-weight: 500; margin-bottom: 0.5rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: var(--charcoal); border: 1px solid var(--border); color: var(--white); font-family: var(--font); font-size: 0.88rem; padding: 0.75rem 1rem; border-radius: var(--radius); transition: border-color var(--transition); outline: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+    .form-group select option { background: var(--charcoal); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; background: var(--gold); color: var(--black); border: none; cursor: pointer; padding: 1rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border-radius: var(--radius); transition: all var(--transition); font-family: var(--font); margin-top: 0.5rem; }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .form-note { font-size: 0.72rem; color: var(--muted); text-align: center; margin-top: 0.75rem; }
+
+    /* CONTACT */
+    #contact { background: var(--black); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: var(--charcoal); border: 1px solid var(--border); margin-bottom: 1rem; transition: border-color var(--transition); }
+    .contact-item:hover { border-color: rgba(201,168,76,0.3); }
+    .contact-icon { width: 44px; height: 44px; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-label { font-size: 0.7rem; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; font-weight: 500; }
+    .contact-value { font-size: 0.9rem; color: var(--white); font-weight: 500; line-height: 1.5; }
+    .contact-value a { color: var(--white); text-decoration: none; transition: color var(--transition); }
+    .contact-value a:hover { color: var(--gold); }
+    .hours-grid { display: grid; grid-template-columns: auto auto; gap: 0.3rem 2rem; margin-top: 0.5rem; }
+    .hours-day { font-size: 0.82rem; color: var(--muted); }
+    .hours-time { font-size: 0.82rem; color: var(--white); font-weight: 500; }
+    .map-placeholder { background: var(--charcoal); border: 1px solid var(--border); overflow: hidden; aspect-ratio: 16/10; position: relative; }
+    .map-placeholder iframe { width: 100%; height: 100%; border: none; filter: grayscale(80%) invert(85%) contrast(90%); }
+
+    /* SOCIAL ICONS */
+    .social-links { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+    .social-link {
+      width: 44px; height: 44px; background: var(--charcoal); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; transition: all var(--transition); border-radius: 6px;
+    }
+    .social-link svg { width: 20px; height: 20px; transition: fill var(--transition); }
+    .social-link:hover { transform: translateY(-2px); }
+    .social-link.instagram:hover { background: radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%); border-color: transparent; }
+    .social-link.facebook:hover { background: #1877F2; border-color: transparent; }
+    .social-link.whatsapp:hover { background: #25D366; border-color: transparent; }
+    .social-link.phone-link:hover { background: var(--gold); border-color: transparent; }
+    .social-link svg { fill: var(--muted); }
+    .social-link:hover svg { fill: #fff; }
+
+    /* FOOTER */
+    footer { background: var(--charcoal); border-top: 1px solid var(--border); padding: 3rem 5% 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; margin-top: 1rem; max-width: 280px; }
+    .footer-col h4 { font-size: 0.72rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; font-weight: 600; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a { font-size: 0.85rem; color: var(--muted); text-decoration: none; transition: color var(--transition); }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-copy { font-size: 0.78rem; color: var(--muted); }
+    .footer-copy span { color: var(--gold); }
+    .footer-social { display: flex; gap: 0.5rem; }
+    .footer-social .social-link { width: 36px; height: 36px; }
+    .footer-social .social-link svg { width: 16px; height: 16px; }
+
+    /* SCROLL ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+
+    /* TOAST */
+    .toast { position: fixed; bottom: 2rem; right: 2rem; z-index: 9999; background: var(--charcoal); border: 1px solid var(--gold); border-left: 4px solid var(--gold); padding: 1rem 1.5rem; font-size: 0.88rem; color: var(--white); opacity: 0; transform: translateY(10px); transition: all 0.3s ease; max-width: 300px; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast-title { font-weight: 600; margin-bottom: 2px; }
+    .toast-msg { font-size: 0.8rem; color: var(--muted); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-visual { aspect-ratio: 16/9; max-height: 300px; }
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+      .gallery-grid { grid-template-columns: repeat(2,1fr); grid-template-rows: repeat(3,200px); }
+      .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 2; }
+      .gallery-item:nth-child(4) { grid-column: span 1; }
+      .booking-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 70px 5%; }
+      .nav-links, .nav-cta, .nav-right .lang-switcher { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; gap: 0; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4,160px); }
+      .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+      .gallery-item:nth-child(4) { grid-column: span 1; }
+      .form-row { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero-stats { gap: 1.5rem; }
+      .stat-divider { display: none; }
+      .about-features { grid-template-columns: 1fr; }
+      .reviews-header { flex-direction: column; align-items: flex-start; }
+      .booking-form { padding: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2rem; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(6,140px); }
+      .gallery-item:nth-child(1) { grid-column: span 1; }
+      .gallery-item:nth-child(4) { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SVG ICON DEFS (hidden) -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="icon-instagram" viewBox="0 0 24 24">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+  </symbol>
+  <symbol id="icon-facebook" viewBox="0 0 24 24">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+  </symbol>
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24">
+    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-top">Barbershop Berlin</span>
+    <span class="nav-logo-main">Men's Cut by Taskin</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
+    <li><a href="#services" data-i18n="nav_services">Leistungen</a></li>
+    <li><a href="#gallery" data-i18n="nav_gallery">Galerie</a></li>
+    <li><a href="#reviews" data-i18n="nav_reviews">Bewertungen</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#booking" class="nav-cta" data-i18n="nav_book">Jetzt Buchen</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()" data-i18n="nav_about">Über uns</a>
+  <a href="#services" onclick="toggleMenu()" data-i18n="nav_services">Leistungen</a>
+  <a href="#gallery" onclick="toggleMenu()" data-i18n="nav_gallery">Galerie</a>
+  <a href="#reviews" onclick="toggleMenu()" data-i18n="nav_reviews">Bewertungen</a>
+  <a href="#booking" onclick="toggleMenu()" data-i18n="nav_book">Termin Buchen</a>
+  <a href="#contact" onclick="toggleMenu()" data-i18n="nav_contact">Kontakt</a>
+  <div class="mobile-lang">
+    <button class="lang-btn active" onclick="setLang('de');toggleMenu()">DE</button>
+    <button class="lang-btn" onclick="setLang('en');toggleMenu()">EN</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-lines">
+    <div class="hero-line"></div>
+    <div class="hero-line"></div>
+    <div class="hero-line"></div>
+  </div>
+  <div class="hero-scissors">✂</div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span data-i18n="hero_badge">⭐ 4,9 Bewertet · Berlins Bester Barbershop</span>
+    </div>
+    <h1 class="hero-title">Men's Cut<br><span class="hero-title-accent">by Taskin</span></h1>
+    <p class="hero-subtitle" data-i18n="hero_subtitle">Professionelle Herrenhaarschnitte in Berlin</p>
+    <p class="hero-desc" data-i18n="hero_desc">Erleben Sie präzise Haarschnitte, moderne Styles und professionelle Pflege von erfahrenen Barbieren.</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary" data-i18n="hero_btn_book">✂ Termin Buchen</a>
+      <a href="tel:+491637811453" class="btn-secondary" data-i18n="hero_btn_call">📞 Jetzt Anrufen</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">4,9</span>
+        <span class="stat-label" data-i18n="stat_rating">Bewertung</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">168+</span>
+        <span class="stat-label" data-i18n="stat_clients">Zufriedene Kunden</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">5+</span>
+        <span class="stat-label" data-i18n="stat_years">Jahre Erfahrung</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-visual-inner">
+          <div class="about-icon">✂</div>
+          <div class="about-visual-label">Premium Barbershop · Berlin</div>
+        </div>
+        <div class="about-visual-accent"></div>
+        <div class="about-visual-tag">Berlin</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="section-label" data-i18n="about_label">Wer wir sind</div>
+        <h2 class="section-title" data-i18n="about_title">Handwerk in jedem Schnitt</h2>
+        <div class="gold-line"></div>
+        <p class="section-desc" data-i18n="about_desc">Men's Cut by Taskin ist ein professioneller Herrenfriseur in Berlin, der hochwertige Haarschnitte, Bartpflege und moderne Stylings anbietet. Unser Fokus liegt auf exzellentem Service, Liebe zum Detail und einem angenehmen Erlebnis für jeden Kunden.</p>
+        <p style="font-size:0.88rem;color:var(--muted);margin-top:1rem;line-height:1.7;" data-i18n="about_sub">Im Herzen von Berlin-Neukölln glauben wir, dass ein guter Haarschnitt mehr ist als nur ein Trimmen – es ist ein Selbstbewusstseinsschub, ein persönliches Statement und ein Ritual, auf das man sich freut.</p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">✂</div>
+            <div><h4 data-i18n="feat1_title">Experten-Barbiere</h4><p data-i18n="feat1_desc">Ausgebildete Profis mit jahrelanger Erfahrung in modernen Techniken.</p></div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">💰</div>
+            <div><h4 data-i18n="feat2_title">Faire Preise</h4><p data-i18n="feat2_desc">Premium-Qualität ohne aufgeblasene Preise.</p></div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">😊</div>
+            <div><h4 data-i18n="feat3_title">Freundliche Atmosphäre</h4><p data-i18n="feat3_desc">Ein herzlicher Ort, an dem sich jeder Kunde wohlfühlt.</p></div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">💈</div>
+            <div><h4 data-i18n="feat4_title">Moderne Techniken</h4><p data-i18n="feat4_desc">Stets auf dem neuesten Stand der aktuellen Trends und Methoden.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+      <div class="section-label" data-i18n="svc_label">Was wir anbieten</div>
+      <h2 class="section-title" data-i18n="svc_title">Unsere Leistungen</h2>
+      <div class="gold-line" style="margin:1rem auto;"></div>
+      <p class="section-desc" style="margin:0 auto;" data-i18n="svc_desc">Von klassischen Schnitten bis zu modernen Styles – jede Leistung mit Präzision und Sorgfalt.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <div class="service-icon">✂</div>
+        <h3 data-i18n="s1_title">Herrenhaarschnitt</h3>
+        <ul class="service-items">
+          <li data-i18n="s1_i1">Klassische Schnitte</li>
+          <li data-i18n="s1_i2">Moderne Frisuren</li>
+          <li data-i18n="s1_i3">Fade-Schnitte</li>
+          <li data-i18n="s1_i4">Styling & Finish</li>
+        </ul>
+        <div class="service-price" data-i18n="s1_price">Ab €15</div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-icon">🪒</div>
+        <h3 data-i18n="s2_title">Bartpflege</h3>
+        <ul class="service-items">
+          <li data-i18n="s2_i1">Barttrimmen</li>
+          <li data-i18n="s2_i2">Shape-up & Konturierung</li>
+          <li data-i18n="s2_i3">Professionelles Bartstyling</li>
+          <li data-i18n="s2_i4">Heißtuch-Finish</li>
+        </ul>
+        <div class="service-price" data-i18n="s2_price">Ab €10</div>
+      </div>
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <div class="service-icon">💈</div>
+        <h3 data-i18n="s3_title">Haar-Styling</h3>
+        <ul class="service-items">
+          <li data-i18n="s3_i1">Modernes Styling</li>
+          <li data-i18n="s3_i2">Besondere Anlässe</li>
+          <li data-i18n="s3_i3">Persönliche Beratung</li>
+          <li data-i18n="s3_i4">Produktempfehlungen</li>
+        </ul>
+        <div class="service-price" data-i18n="s3_price">Ab €12</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <div>
+        <div class="section-label" data-i18n="gal_label">Unsere Arbeit</div>
+        <h2 class="section-title" data-i18n="gal_title">Galerie</h2>
+      </div>
+      <a href="#booking" class="btn-secondary" style="font-size:0.78rem;padding:0.65rem 1.4rem;" data-i18n="gal_btn">Deinen Style Buchen →</a>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <div class="gallery-item-inner" style="background:linear-gradient(135deg,#1a1a1a,#0f0f0f);">
+          <div class="gallery-emoji">✂</div>
+        </div>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption" data-i18n="gc1">Moderne Frisuren</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-item-inner" style="background:linear-gradient(135deg,#1e1c18,#141200);">
+          <div class="gallery-emoji">💈</div>
+        </div>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption" data-i18n="gc2">Barbier bei der Arbeit</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-item-inner" style="background:linear-gradient(135deg,#181818,#222);">
+          <div class="gallery-emoji">🪒</div>
+        </div>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption" data-i18n="gc3">Präzisions-Rasur</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-item-inner" style="background:linear-gradient(135deg,#161614,#1e1c16);">
+          <div class="gallery-emoji">🏠</div>
+        </div>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption" data-i18n="gc4">Salon-Interieur</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-item-inner" style="background:linear-gradient(135deg,#1a1a14,#121200);">
+          <div class="gallery-emoji">✨</div>
+        </div>
+        <div class="gallery-overlay"></div>
+        <div class="gallery-caption" data-i18n="gc5">Pflege-Erlebnis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <div>
+        <div class="section-label" data-i18n="rev_label">Kundenfeedback</div>
+        <h2 class="section-title" data-i18n="rev_title">Was Kunden sagen</h2>
+      </div>
+      <div class="rating-badge">
+        <div class="rating-num">4,9</div>
+        <div>
+          <div class="rating-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <div class="rating-count" data-i18n="rev_count">Basierend auf 168+ Bewertungen</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid reveal">
+      <div class="review-card">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text" data-i18n="r1_text">"Toller Service, kurze Wartezeit und faire Preise. Ich komme seit über einem Jahr und bin immer zufrieden. Die Barbiere wissen wirklich, was sie tun."</p>
+        <div class="review-author">
+          <div class="review-avatar">👤</div>
+          <div>
+            <div class="review-name">Marcus B.</div>
+            <div class="review-date" data-i18n="r1_date">Vor 2 Wochen</div>
+            <div class="review-verified" data-i18n="verified">✓ Verifizierte Bewertung</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text" data-i18n="r2_text">"Sehr freundliche und professionelle Barbiere. Mit dem Haarschnitt sehr zufrieden – genau das, was ich wollte. Die Atmosphäre ist entspannt und einladend."</p>
+        <div class="review-author">
+          <div class="review-avatar">👤</div>
+          <div>
+            <div class="review-name">Jonas K.</div>
+            <div class="review-date" data-i18n="r2_date">Vor 1 Monat</div>
+            <div class="review-verified" data-i18n="verified">✓ Verifizierte Bewertung</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text" data-i18n="r3_text">"Exzellentes Haarschnitt-Erlebnis. Sie verstehen die Wünsche des Kunden und liefern konstant tolle Ergebnisse. Sauberer Laden, geschickte Hände, faire Preise."</p>
+        <div class="review-author">
+          <div class="review-avatar">👤</div>
+          <div>
+            <div class="review-name">David A.</div>
+            <div class="review-date" data-i18n="r3_date">Vor 3 Wochen</div>
+            <div class="review-verified" data-i18n="verified">✓ Verifizierte Bewertung</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="container">
+    <div class="booking-grid">
+      <div class="reveal">
+        <div class="section-label" data-i18n="book_label">Termin vereinbaren</div>
+        <h2 class="section-title" data-i18n="book_title">Termin Buchen</h2>
+        <div class="gold-line"></div>
+        <p class="section-desc" data-i18n="book_desc">Reserviere deinen Platz im Voraus für das beste Erlebnis. Walk-ins willkommen, aber eine Buchung garantiert deinen Termin.</p>
+        <div style="margin-top:2rem;">
+          <div class="booking-info-item">
+            <div class="booking-info-icon">📍</div>
+            <div>
+              <div class="booking-info-label" data-i18n="lbl_address">Adresse</div>
+              <div class="booking-info-value">Anzengruberstraße 4, 12043 Berlin</div>
+            </div>
+          </div>
+          <div class="booking-info-item">
+            <div class="booking-info-icon">📞</div>
+            <div>
+              <div class="booking-info-label" data-i18n="lbl_phone">Telefon</div>
+              <div class="booking-info-value"><a href="tel:+491637811453" style="color:var(--white);text-decoration:none;">+49 163 7811453</a></div>
+            </div>
+          </div>
+          <div class="booking-info-item">
+            <div class="booking-info-icon">🕐</div>
+            <div>
+              <div class="booking-info-label" data-i18n="lbl_hours">Öffnungszeiten</div>
+              <div class="booking-info-value" data-i18n="hours_val">Mo – Sa: 9:00 – 19:00 Uhr</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="booking-form reveal reveal-delay-1">
+        <div style="margin-bottom:1.5rem;">
+          <div class="section-label" data-i18n="form_label">Terminanfrage</div>
+          <h3 style="font-size:1.2rem;font-weight:700;" data-i18n="form_title">Wunschtermin anfragen</h3>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="f_name">Vollständiger Name</label>
+            <input type="text" data-i18n-ph="ph_name" placeholder="Dein Name" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="f_phone">Telefonnummer</label>
+            <input type="tel" placeholder="+49 …" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i18n="f_email">E-Mail-Adresse</label>
+          <input type="email" data-i18n-ph="ph_email" placeholder="deine@email.de" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="f_service">Leistung wählen</label>
+          <select>
+            <option value="" data-i18n="f_svc_ph">Leistung auswählen…</option>
+            <option data-i18n="f_svc1">Herrenhaarschnitt – ab €15</option>
+            <option data-i18n="f_svc2">Bartpflege – ab €10</option>
+            <option data-i18n="f_svc3">Haar-Styling – ab €12</option>
+            <option data-i18n="f_svc4">Haarschnitt + Bart – ab €22</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="f_date">Wunschdatum</label>
+            <input type="date" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="f_time">Wunschzeit</label>
+            <select>
+              <option value="" data-i18n="f_time_ph">Uhrzeit wählen…</option>
+              <option>09:00 Uhr</option><option>10:00 Uhr</option><option>11:00 Uhr</option>
+              <option>12:00 Uhr</option><option>13:00 Uhr</option><option>14:00 Uhr</option>
+              <option>15:00 Uhr</option><option>16:00 Uhr</option><option>17:00 Uhr</option>
+              <option>18:00 Uhr</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i18n="f_msg">Nachricht (optional)</label>
+          <textarea data-i18n-ph="ph_msg" placeholder="Besondere Wünsche oder Hinweise…"></textarea>
+        </div>
+        <button class="form-submit" onclick="submitBooking()" data-i18n="f_submit">✂ Termin Buchen</button>
+        <p class="form-note" data-i18n="f_note">Wir bestätigen deinen Termin innerhalb von 24 Stunden per Telefon oder E-Mail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div style="margin-bottom:3rem;" class="reveal">
+      <div class="section-label" data-i18n="con_label">Uns finden</div>
+      <h2 class="section-title" data-i18n="con_title">Kontakt & Lage</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label" data-i18n="lbl_address">Adresse</div>
+            <div class="contact-value">Anzengruberstraße 4<br>12043 Berlin, Deutschland</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gold)"><use href="#icon-phone"/></svg>
+          </div>
+          <div>
+            <div class="contact-label" data-i18n="lbl_phone">Telefon</div>
+            <div class="contact-value"><a href="tel:+491637811453">+49 163 7811453</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gold)"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label" data-i18n="lbl_hours">Öffnungszeiten</div>
+            <div class="contact-value">
+              <div class="hours-grid">
+                <span class="hours-day" data-i18n="h_mof">Mo – Fr</span><span class="hours-time">9:00 – 19:00</span>
+                <span class="hours-day" data-i18n="h_sat">Samstag</span><span class="hours-time">9:00 – 19:00</span>
+                <span class="hours-day" data-i18n="h_sun">Sonntag</span><span class="hours-time" style="color:var(--muted);" data-i18n="h_closed">Geschlossen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:0.5rem;">
+          <div class="contact-label" style="font-size:0.7rem;letter-spacing:0.12em;color:var(--gold);text-transform:uppercase;font-weight:500;margin-bottom:0.75rem;" data-i18n="follow_us">Folge uns</div>
+          <div class="social-links">
+            <a href="https://www.instagram.com" target="_blank" class="social-link instagram" title="Instagram">
+              <svg viewBox="0 0 24 24"><use href="#icon-instagram"/></svg>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" class="social-link facebook" title="Facebook">
+              <svg viewBox="0 0 24 24"><use href="#icon-facebook"/></svg>
+            </a>
+            <a href="https://wa.me/491637811453" target="_blank" class="social-link whatsapp" title="WhatsApp">
+              <svg viewBox="0 0 24 24"><use href="#icon-whatsapp"/></svg>
+            </a>
+            <a href="tel:+491637811453" class="social-link phone-link" title="Anrufen">
+              <svg viewBox="0 0 24 24"><use href="#icon-phone"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="map-placeholder">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.0!2d13.4234!3d52.4796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84fb1d9c0c7a5%3A0x1!2sAnzengr.%204%2C%2012043%20Berlin!5e0!3m2!1sde!2sde!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Men's Cut by Taskin Standort"></iframe>
+        </div>
+        <div style="margin-top:1rem;padding:1rem;background:var(--charcoal);border:1px solid var(--border);display:flex;align-items:center;gap:0.75rem;">
+          <div style="font-size:1.2rem;">📍</div>
+          <div>
+            <div style="font-size:0.8rem;font-weight:600;">Men's Cut by Taskin</div>
+            <div style="font-size:0.75rem;color:var(--muted);">Anzengruberstraße 4, 12043 Berlin · <a href="https://maps.google.com/?q=Anzengruberstraße+4,+12043+Berlin" target="_blank" style="color:var(--gold);text-decoration:none;" data-i18n="open_maps">In Maps öffnen ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" style="display:inline-flex;">
+          <span class="nav-logo-top">Barbershop Berlin</span>
+          <span class="nav-logo-main">Men's Cut by Taskin</span>
+        </a>
+        <p data-i18n="footer_desc">Ein Premium-Herrenfriseur in Berlin – für Präzision, Style und ein tolles Erlebnis bei jedem Besuch.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com" target="_blank" class="social-link instagram" title="Instagram">
+            <svg viewBox="0 0 24 24"><use href="#icon-instagram"/></svg>
+          </a>
+          <a href="https://www.facebook.com" target="_blank" class="social-link facebook" title="Facebook">
+            <svg viewBox="0 0 24 24"><use href="#icon-facebook"/></svg>
+          </a>
+          <a href="https://wa.me/491637811453" target="_blank" class="social-link whatsapp" title="WhatsApp">
+            <svg viewBox="0 0 24 24"><use href="#icon-whatsapp"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fc_links">Schnelllinks</h4>
+        <ul>
+          <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
+          <li><a href="#services" data-i18n="nav_services">Leistungen</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">Galerie</a></li>
+          <li><a href="#reviews" data-i18n="nav_reviews">Bewertungen</a></li>
+          <li><a href="#booking" data-i18n="nav_book">Jetzt Buchen</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fc_services">Leistungen</h4>
+        <ul>
+          <li><a href="#services" data-i18n="s1_title">Herrenhaarschnitt</a></li>
+          <li><a href="#services" data-i18n="s2_title">Bartpflege</a></li>
+          <li><a href="#services" data-i18n="s3_title">Haar-Styling</a></li>
+          <li><a href="#services" data-i18n="f_fc_fade">Fade-Schnitte</a></li>
+          <li><a href="#services" data-i18n="f_fc_shape">Shape-Up</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="nav_contact">Kontakt</h4>
+        <ul>
+          <li><a href="#">Anzengruberstraße 4</a></li>
+          <li><a href="#">12043 Berlin</a></li>
+          <li><a href="tel:+491637811453">+49 163 7811453</a></li>
+          <li><a href="#" data-i18n="fc_hours">Mo–Sa: 9–19 Uhr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 <span>Men's Cut by Taskin</span>. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></p>
+      <p class="footer-copy">Anzengruberstraße 4, 12043 Berlin, Deutschland</p>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <div class="toast-title" data-i18n="toast_title">Terminanfrage gesendet ✓</div>
+  <div class="toast-msg" data-i18n="toast_msg">Wir bestätigen deinen Termin innerhalb von 24 Stunden.</div>
+</div>
+
+<script>
+// ── TRANSLATIONS ──
+const translations = {
+  de: {
+    nav_about: "Über uns", nav_services: "Leistungen", nav_gallery: "Galerie",
+    nav_reviews: "Bewertungen", nav_contact: "Kontakt", nav_book: "Jetzt Buchen",
+    hero_badge: "⭐ 4,9 Bewertet · Berlins Bester Barbershop",
+    hero_subtitle: "Professionelle Herrenhaarschnitte in Berlin",
+    hero_desc: "Erleben Sie präzise Haarschnitte, moderne Styles und professionelle Pflege von erfahrenen Barbieren.",
+    hero_btn_book: "✂ Termin Buchen", hero_btn_call: "📞 Jetzt Anrufen",
+    stat_rating: "Bewertung", stat_clients: "Zufriedene Kunden", stat_years: "Jahre Erfahrung",
+    about_label: "Wer wir sind", about_title: "Handwerk in jedem Schnitt",
+    about_desc: "Men's Cut by Taskin ist ein professioneller Herrenfriseur in Berlin, der hochwertige Haarschnitte, Bartpflege und moderne Stylings anbietet. Unser Fokus liegt auf exzellentem Service, Liebe zum Detail und einem angenehmen Erlebnis für jeden Kunden.",
+    about_sub: "Im Herzen von Berlin-Neukölln glauben wir, dass ein guter Haarschnitt mehr ist als nur ein Trimmen – es ist ein Selbstbewusstseinsschub, ein persönliches Statement und ein Ritual, auf das man sich freut.",
+    feat1_title: "Experten-Barbiere", feat1_desc: "Ausgebildete Profis mit jahrelanger Erfahrung in modernen Techniken.",
+    feat2_title: "Faire Preise", feat2_desc: "Premium-Qualität ohne aufgeblasene Preise.",
+    feat3_title: "Freundliche Atmosphäre", feat3_desc: "Ein herzlicher Ort, an dem sich jeder Kunde wohlfühlt.",
+    feat4_title: "Moderne Techniken", feat4_desc: "Stets auf dem neuesten Stand der aktuellen Trends und Methoden.",
+    svc_label: "Was wir anbieten", svc_title: "Unsere Leistungen",
+    svc_desc: "Von klassischen Schnitten bis zu modernen Styles – jede Leistung mit Präzision und Sorgfalt.",
+    s1_title: "Herrenhaarschnitt", s1_i1: "Klassische Schnitte", s1_i2: "Moderne Frisuren", s1_i3: "Fade-Schnitte", s1_i4: "Styling & Finish", s1_price: "Ab €15",
+    s2_title: "Bartpflege", s2_i1: "Barttrimmen", s2_i2: "Shape-up & Konturierung", s2_i3: "Professionelles Bartstyling", s2_i4: "Heißtuch-Finish", s2_price: "Ab €10",
+    s3_title: "Haar-Styling", s3_i1: "Modernes Styling", s3_i2: "Besondere Anlässe", s3_i3: "Persönliche Beratung", s3_i4: "Produktempfehlungen", s3_price: "Ab €12",
+    gal_label: "Unsere Arbeit", gal_title: "Galerie", gal_btn: "Deinen Style Buchen →",
+    gc1: "Moderne Frisuren", gc2: "Barbier bei der Arbeit", gc3: "Präzisions-Rasur", gc4: "Salon-Interieur", gc5: "Pflege-Erlebnis",
+    rev_label: "Kundenfeedback", rev_title: "Was Kunden sagen", rev_count: "Basierend auf 168+ Bewertungen",
+    r1_text: '"Toller Service, kurze Wartezeit und faire Preise. Ich komme seit über einem Jahr und bin immer zufrieden. Die Barbiere wissen wirklich, was sie tun."',
+    r1_date: "Vor 2 Wochen",
+    r2_text: '"Sehr freundliche und professionelle Barbiere. Mit dem Haarschnitt sehr zufrieden – genau das, was ich wollte. Die Atmosphäre ist entspannt und einladend."',
+    r2_date: "Vor 1 Monat",
+    r3_text: '"Exzellentes Haarschnitt-Erlebnis. Sie verstehen die Wünsche des Kunden und liefern konstant tolle Ergebnisse. Sauberer Laden, geschickte Hände, faire Preise."',
+    r3_date: "Vor 3 Wochen", verified: "✓ Verifizierte Bewertung",
+    book_label: "Termin vereinbaren", book_title: "Termin Buchen",
+    book_desc: "Reserviere deinen Platz im Voraus für das beste Erlebnis. Walk-ins willkommen, aber eine Buchung garantiert deinen Termin.",
+    lbl_address: "Adresse", lbl_phone: "Telefon", lbl_hours: "Öffnungszeiten", hours_val: "Mo – Sa: 9:00 – 19:00 Uhr",
+    form_label: "Terminanfrage", form_title: "Wunschtermin anfragen",
+    f_name: "Vollständiger Name", ph_name: "Dein Name", f_phone: "Telefonnummer",
+    f_email: "E-Mail-Adresse", ph_email: "deine@email.de",
+    f_service: "Leistung wählen", f_svc_ph: "Leistung auswählen…",
+    f_svc1: "Herrenhaarschnitt – ab €15", f_svc2: "Bartpflege – ab €10", f_svc3: "Haar-Styling – ab €12", f_svc4: "Haarschnitt + Bart – ab €22",
+    f_date: "Wunschdatum", f_time: "Wunschzeit", f_time_ph: "Uhrzeit wählen…",
+    f_msg: "Nachricht (optional)", ph_msg: "Besondere Wünsche oder Hinweise…",
+    f_submit: "✂ Termin Buchen", f_note: "Wir bestätigen deinen Termin innerhalb von 24 Stunden per Telefon oder E-Mail.",
+    con_label: "Uns finden", con_title: "Kontakt & Lage",
+    h_mof: "Mo – Fr", h_sat: "Samstag", h_sun: "Sonntag", h_closed: "Geschlossen",
+    follow_us: "Folge uns", open_maps: "In Maps öffnen ↗",
+    footer_desc: "Ein Premium-Herrenfriseur in Berlin – für Präzision, Style und ein tolles Erlebnis bei jedem Besuch.",
+    fc_links: "Schnelllinks", fc_services: "Leistungen", fc_hours: "Mo–Sa: 9–19 Uhr",
+    f_fc_fade: "Fade-Schnitte", f_fc_shape: "Shape-Up",
+    footer_rights: "Alle Rechte vorbehalten.",
+    toast_title: "Terminanfrage gesendet ✓", toast_msg: "Wir bestätigen deinen Termin innerhalb von 24 Stunden."
+  },
+  en: {
+    nav_about: "About", nav_services: "Services", nav_gallery: "Gallery",
+    nav_reviews: "Reviews", nav_contact: "Contact", nav_book: "Book Now",
+    hero_badge: "⭐ 4.9 Rated · Berlin's Finest Barbershop",
+    hero_subtitle: "Professional Men's Haircuts in Berlin",
+    hero_desc: "Experience precision haircuts, modern styles, and professional grooming services from experienced barbers.",
+    hero_btn_book: "✂ Book Appointment", hero_btn_call: "📞 Call Now",
+    stat_rating: "Star Rating", stat_clients: "Happy Clients", stat_years: "Years Experience",
+    about_label: "Who We Are", about_title: "Craftsmanship in Every Cut",
+    about_desc: "Men's Cut by Taskin is a professional men's barbershop in Berlin offering high-quality haircuts, beard grooming, and modern styling services. Our focus is delivering excellent service, attention to detail, and a comfortable experience for every customer.",
+    about_sub: "Located in the heart of Berlin-Neukölln, we believe that a great haircut is more than just a trim — it's a confidence boost, a personal statement, and a ritual worth looking forward to.",
+    feat1_title: "Expert Barbers", feat1_desc: "Trained professionals with years of experience in modern techniques.",
+    feat2_title: "Fair Pricing", feat2_desc: "Premium quality service without the premium price tag.",
+    feat3_title: "Friendly Atmosphere", feat3_desc: "A welcoming space where every client feels at home.",
+    feat4_title: "Modern Techniques", feat4_desc: "Up-to-date with current styles, trends, and grooming methods.",
+    svc_label: "What We Offer", svc_title: "Our Services",
+    svc_desc: "From classic cuts to modern styles, every service is performed with precision and care.",
+    s1_title: "Men's Haircut", s1_i1: "Classic cuts", s1_i2: "Modern hairstyles", s1_i3: "Fade cuts", s1_i4: "Styling & finish", s1_price: "From €15",
+    s2_title: "Beard Grooming", s2_i1: "Beard trimming", s2_i2: "Shape-up & line-up", s2_i3: "Professional beard styling", s2_i4: "Hot towel finish", s2_price: "From €10",
+    s3_title: "Hair Styling", s3_i1: "Modern styling", s3_i2: "Special occasions", s3_i3: "Personalized advice", s3_i4: "Product recommendations", s3_price: "From €12",
+    gal_label: "Our Work", gal_title: "Gallery", gal_btn: "Book Your Style →",
+    gc1: "Modern Hairstyles", gc2: "Barber at Work", gc3: "Precision Shave", gc4: "Salon Interior", gc5: "Grooming Experience",
+    rev_label: "Client Feedback", rev_title: "What Customers Say", rev_count: "Based on 168+ reviews",
+    r1_text: '"Great service, short wait, and reasonable price. I\'ve been coming here for over a year and always leave happy. The barbers really know what they\'re doing."',
+    r1_date: "2 weeks ago",
+    r2_text: '"Super friendly and professional barbers. Very satisfied with the haircut — exactly what I asked for. The atmosphere is relaxed and welcoming."',
+    r2_date: "1 month ago",
+    r3_text: '"Excellent haircut experience. They understand customer preferences and deliver consistently. Clean shop, skilled hands, fair prices. My go-to barber in Berlin."',
+    r3_date: "3 weeks ago", verified: "✓ Verified Review",
+    book_label: "Schedule a Visit", book_title: "Book an Appointment",
+    book_desc: "Reserve your spot in advance for the best experience. Walk-ins welcome, but booking guarantees your time.",
+    lbl_address: "Address", lbl_phone: "Phone", lbl_hours: "Opening Hours", hours_val: "Mon – Sat: 9:00 AM – 7:00 PM",
+    form_label: "Appointment Form", form_title: "Request Your Slot",
+    f_name: "Full Name", ph_name: "Your name", f_phone: "Phone Number",
+    f_email: "Email Address", ph_email: "your@email.com",
+    f_service: "Select Service", f_svc_ph: "Choose a service…",
+    f_svc1: "Men's Haircut – from €15", f_svc2: "Beard Grooming – from €10", f_svc3: "Hair Styling – from €12", f_svc4: "Haircut + Beard – from €22",
+    f_date: "Preferred Date", f_time: "Preferred Time", f_time_ph: "Select time…",
+    f_msg: "Message (optional)", ph_msg: "Any special requests or notes…",
+    f_submit: "✂ Book Appointment", f_note: "We'll confirm your appointment within 24 hours via phone or email.",
+    con_label: "Find Us", con_title: "Contact & Location",
+    h_mof: "Mon – Fri", h_sat: "Saturday", h_sun: "Sunday", h_closed: "Closed",
+    follow_us: "Follow Us", open_maps: "Open in Maps ↗",
+    footer_desc: "A premium men's barbershop in Berlin dedicated to precision, style, and a great experience every visit.",
+    fc_links: "Quick Links", fc_services: "Services", fc_hours: "Mon–Sat: 9AM–7PM",
+    f_fc_fade: "Fade Cuts", f_fc_shape: "Shape-Up",
+    footer_rights: "All rights reserved.",
+    toast_title: "Appointment Request Sent ✓", toast_msg: "We'll confirm your booking within 24 hours."
+  }
+};
+
+let currentLang = 'de';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  document.documentElement.lang = lang;
+
+  // Update text content
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // Update placeholders
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+
+  // Update lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+  });
+
+  // Update toast
+  const toast = document.getElementById('toast');
+  toast.querySelector('.toast-title').textContent = t.toast_title;
+  toast.querySelector('.toast-msg').textContent = t.toast_msg;
+}
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Navbar scroll opacity
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').style.background = window.scrollY > 80 ? 'rgba(10,10,10,0.98)' : 'rgba(10,10,10,0.92)';
+});
+
+// Booking toast
+function submitBooking() {
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+}
+
+// Min date
+const dateInput = document.querySelector('input[type="date"]');
+if (dateInput) dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+
+// Init German on load
+setLang('de');
+</script>
+</body>
+</html>
