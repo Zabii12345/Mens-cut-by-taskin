@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,6 +45,7 @@
             height: 97px;
             border-bottom: 1px solid rgba(201, 162, 77, .2);
             transition: border-color .3s;
+            z-index: 100;
         }
         .nav-logo {
             display: flex;
@@ -129,6 +130,74 @@
             height: 2px;
             background: var(--white);
             transition: .3s;
+        }
+
+        /* ── LANGUAGE SWITCHER ── */
+        .lang-wrap {
+            position: relative;
+            display: inline-block;
+            margin-left: 8px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(201, 162, 77, .35);
+            border-radius: 4px;
+            color: var(--white);
+            padding: 6px 14px;
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color .3s, color .3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .lang-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .lang-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: rgba(15, 15, 15, .98);
+            border: 1px solid rgba(201, 162, 77, .2);
+            border-radius: 6px;
+            min-width: 120px;
+            padding: 6px 0;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .6);
+            z-index: 200;
+        }
+        .lang-dropdown.open {
+            display: block;
+        }
+        .lang-dropdown a {
+            display: block;
+            padding: 8px 18px;
+            color: #ccc;
+            text-decoration: none;
+            font-size: .78rem;
+            transition: background .2s, color .2s;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .lang-dropdown a:hover,
+        .lang-dropdown a.active-lang {
+            background: rgba(201, 162, 77, .15);
+            color: var(--gold);
         }
 
         /* ── PAGE SWITCH ── */
@@ -865,11 +934,15 @@
             .nav-links.open {
                 display: flex;
             }
-            .hamburger {
-                display: flex;
-            }
             .nav-book-btn {
                 display: none;
+            }
+            .lang-wrap {
+                margin-left: 0;
+            }
+            .lang-btn {
+                padding: 4px 10px;
+                font-size: .65rem;
             }
             .hero-content {
                 padding: 0 30px;
@@ -925,12 +998,27 @@
             <div class="nav-logo-text">Men's Cut by Taskin <span>Berlin · Barbershop</span></div>
         </a>
         <ul class="nav-links" id="navLinks">
-            <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
-            <li><a onclick="showPage('about')" id="nav-about">About</a></li>
-            <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
-            <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+            <li><a onclick="showPage('home')" class="active" id="nav-home" data-i18n="nav.home">Home</a></li>
+            <li><a onclick="showPage('about')" id="nav-about" data-i18n="nav.about">About</a></li>
+            <li><a onclick="showPage('services')" id="nav-services" data-i18n="nav.services">Services</a></li>
+            <li><a onclick="showPage('contact')" id="nav-contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
-        <a class="nav-book-btn" href="tel:+4930680530010">Call to Book</a>
+        <div style="display:flex;align-items:center;gap:12px;">
+            <a class="nav-book-btn" href="tel:+4930680530010" data-i18n="nav.book">Call to Book</a>
+            <div class="lang-wrap">
+                <button class="lang-btn" onclick="toggleLangDropdown()" id="langBtn">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span id="currentLangLabel">DE</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a data-lang="de" class="active-lang" onclick="setLanguage('de')">Deutsch</a>
+                    <a data-lang="en" onclick="setLanguage('en')">English</a>
+                    <a data-lang="ur" onclick="setLanguage('ur')">اردو</a>
+                    <a data-lang="fr" onclick="setLanguage('fr')">Français</a>
+                    <a data-lang="es" onclick="setLanguage('es')">Español</a>
+                </div>
+            </div>
+        </div>
         <div class="hamburger" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
@@ -945,10 +1033,10 @@
         <section class="hero" style="margin-top:0;padding:0">
             <div class="hero-bg"></div>
             <div class="hero-content">
-                <div class="hero-eyebrow">Crafting Timeless Style</div>
-                <h1 class="hero-h1">Best Haircut &amp; Hot Shave<br />in <em>Berlin</em></h1>
-                <p class="hero-sub">Our barbers offer the finest haircuts and traditional shaves, individually tailored to your style. Classic barbering traditions meet modern techniques.</p>
-                <a href="tel:+4930680530010" class="hero-btn">Call to Book Now</a>
+                <div class="hero-eyebrow" data-i18n="hero.eyebrow">Crafting Timeless Style</div>
+                <h1 class="hero-h1" data-i18n="hero.title">Best Haircut &amp; Hot Shave<br />in <em>Berlin</em></h1>
+                <p class="hero-sub" data-i18n="hero.sub">Our barbers offer the finest haircuts and traditional shaves, individually tailored to your style. Classic barbering traditions meet modern techniques.</p>
+                <a href="tel:+4930680530010" class="hero-btn" data-i18n="hero.btn">Call to Book Now</a>
             </div>
         </section>
 
@@ -960,15 +1048,15 @@
                         <img src="https://static.wixstatic.com/media/c5b65c187a4843239d6828351e384372.jpg/v1/fill/w_3000,h_2000,al_c,q_90,enc_auto/c5b65c187a4843239d6828351e384372.jpg" alt="Barber at work" loading="lazy" />
                     </div>
                     <div class="about-text reveal from-right">
-                        <div class="section-eyebrow">About Us</div>
-                        <h2 class="section-title">Men's Cut by Taskin</h2>
+                        <div class="section-eyebrow" data-i18n="about.eyebrow">About Us</div>
+                        <h2 class="section-title" data-i18n="about.title">Men's Cut by Taskin</h2>
                         <div class="divider"></div>
-                        <p>We are passionate barbers with deep expertise in all aspects of our craft. Our success comes from years of experience working with a diverse clientele in the heart of Berlin.</p>
-                        <p>We are committed and determined to make all our clients happy through listening carefully and suggesting the best style that fits you most — combining timeless barbering tradition with contemporary technique.</p>
+                        <p data-i18n="about.p1">We are passionate barbers with deep expertise in all aspects of our craft. Our success comes from years of experience working with a diverse clientele in the heart of Berlin.</p>
+                        <p data-i18n="about.p2">We are committed and determined to make all our clients happy through listening carefully and suggesting the best style that fits you most — combining timeless barbering tradition with contemporary technique.</p>
                         <div class="stats-row">
-                            <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Rating</div></div>
-                            <div class="stat"><div class="stat-num">150+</div><div class="stat-label">Reviews</div></div>
-                            <div class="stat"><div class="stat-num">2k+</div><div class="stat-label">Happy Clients</div></div>
+                            <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label" data-i18n="about.stat1">Rating</div></div>
+                            <div class="stat"><div class="stat-num">150+</div><div class="stat-label" data-i18n="about.stat2">Reviews</div></div>
+                            <div class="stat"><div class="stat-num">2k+</div><div class="stat-label" data-i18n="about.stat3">Happy Clients</div></div>
                         </div>
                     </div>
                 </div>
@@ -979,10 +1067,10 @@
         <section class="services-section">
             <div class="container">
                 <div style="text-align:center" class="reveal">
-                    <div class="section-eyebrow">What We're Offering</div>
-                    <h2 class="section-title">Barber Services</h2>
+                    <div class="section-eyebrow" data-i18n="services.eyebrow">What We're Offering</div>
+                    <h2 class="section-title" data-i18n="services.title">Barber Services</h2>
                     <div class="divider center"></div>
-                    <p style="max-width:550px;margin:0 auto;color:var(--text-light);line-height:1.8">A full range of men's barber services — from modern haircuts to traditional shaves and beard care, to emphasise your style and confidence.</p>
+                    <p style="max-width:550px;margin:0 auto;color:var(--text-light);line-height:1.8" data-i18n="services.desc">A full range of men's barber services — from modern haircuts to traditional shaves and beard care, to emphasise your style and confidence.</p>
                 </div>
                 <div class="services-grid">
                     <!-- Service 1 -->
@@ -990,8 +1078,8 @@
                         <img src="https://media.istockphoto.com/id/965168640/photo/handsome-young-man-getting-a-haircut.jpg?s=170667a&w=0&k=20&c=s1_r5ZPgLfu60mGZXLYErav_00UrtOE89yXC0L7fVUE=" alt="Haircut" loading="lazy" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
-                            <h3>Hair Cutting</h3>
-                            <p>Professional and personalised solutions using modern and classic cutting techniques, tailored to your preferences and style.</p>
+                            <h3 data-i18n="services.haircut.title">Hair Cutting</h3>
+                            <p data-i18n="services.haircut.desc">Professional and personalised solutions using modern and classic cutting techniques, tailored to your preferences and style.</p>
                         </div>
                     </div>
                     <!-- Service 2 -->
@@ -999,8 +1087,8 @@
                         <img src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Shave" loading="lazy" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
-                            <h3>Traditional Shave</h3>
-                            <p>A unique traditional shaving experience with hot towels, aromatic oils and expert technique for a smooth, close shave.</p>
+                            <h3 data-i18n="services.shave.title">Traditional Shave</h3>
+                            <p data-i18n="services.shave.desc">A unique traditional shaving experience with hot towels, aromatic oils and expert technique for a smooth, close shave.</p>
                         </div>
                     </div>
                     <!-- Service 3 -->
@@ -1008,8 +1096,8 @@
                         <img src="https://img.freepik.com/free-photo/handsome-man-cutting-beard-barber-shop-salon_1303-20931.jpg" alt="Beard" loading="lazy" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
-                            <h3>Beard Grooming</h3>
-                            <p>Expert beard trimming, shaping and styling using premium products to keep your beard impeccable at all times.</p>
+                            <h3 data-i18n="services.beard.title">Beard Grooming</h3>
+                            <p data-i18n="services.beard.desc">Expert beard trimming, shaping and styling using premium products to keep your beard impeccable at all times.</p>
                         </div>
                     </div>
                 </div>
@@ -1021,13 +1109,13 @@
             <div class="container">
                 <div class="reviews-header reveal">
                     <div>
-                        <div class="section-eyebrow">100% Good Reviews</div>
-                        <h2 class="section-title">Customers Say&hellip;</h2>
+                        <div class="section-eyebrow" data-i18n="reviews.eyebrow">100% Good Reviews</div>
+                        <h2 class="section-title" data-i18n="reviews.title">Customers Say&hellip;</h2>
                     </div>
                     <div style="text-align:right">
                         <div class="rating-big">4.9</div>
                         <div class="stars" style="font-size:1.2rem;margin:6px 0;color:#fbbc04;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="rating-sub">168 Google Reviews</div>
+                        <div class="rating-sub" data-i18n="reviews.sub">168 Google Reviews</div>
                     </div>
                 </div>
                 <div class="reviews-grid">
@@ -1044,7 +1132,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text">Absolute cleanliness throughout the entire store.</div>
+                        <div class="review-text" data-i18n="reviews.r1.text">Absolute cleanliness throughout the entire store.</div>
                     </div>
                     <!-- NEW REVIEW 2 -->
                     <div class="review-card reveal">
@@ -1059,7 +1147,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text">This is my regular hairdresser in Neukölln. I've always been very satisfied so far.</div>
+                        <div class="review-text" data-i18n="reviews.r2.text">This is my regular hairdresser in Neukölln. I've always been very satisfied so far.</div>
                     </div>
                     <!-- NEW REVIEW 3 -->
                     <div class="review-card reveal">
@@ -1074,7 +1162,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text">Very happy. Great service, short wait, and reasonable price.</div>
+                        <div class="review-text" data-i18n="reviews.r3.text">Very happy. Great service, short wait, and reasonable price.</div>
                     </div>
                     <div class="review-card reveal">
                         <div class="reviewer">
@@ -1088,7 +1176,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text">Yahya is the best in this business. Young, but professional in his job. The prices are good compared to the market.</div>
+                        <div class="review-text" data-i18n="reviews.r4.text">Yahya is the best in this business. Young, but professional in his job. The prices are good compared to the market.</div>
                     </div>
                     <div class="review-card reveal">
                         <div class="reviewer">
@@ -1102,7 +1190,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text">A good barbershop that takes its time and offers a fair price. I'll come back when I'm in Berlin.</div>
+                        <div class="review-text" data-i18n="reviews.r5.text">A good barbershop that takes its time and offers a fair price. I'll come back when I'm in Berlin.</div>
                     </div>
                     <div class="review-card reveal">
                         <div class="reviewer">
@@ -1116,7 +1204,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text">I got a haircut there last week. And, I can really say that I'm satisfied with the result. The workers are really friendly and professional. And, the price for a haircut was 15€ which is a very affordable price in Berlin.</div>
+                        <div class="review-text" data-i18n="reviews.r6.text">I got a haircut there last week. And, I can really say that I'm satisfied with the result. The workers are really friendly and professional. And, the price for a haircut was 15€ which is a very affordable price in Berlin.</div>
                     </div>
                 </div>
             </div>
@@ -1127,8 +1215,8 @@
             <div class="container">
                 <div class="contact-grid">
                     <div class="reveal from-left">
-                        <div class="section-eyebrow">Find Us</div>
-                        <h2 class="section-title">Visit the Shop</h2>
+                        <div class="section-eyebrow" data-i18n="contact.eyebrow">Find Us</div>
+                        <h2 class="section-title" data-i18n="contact.title">Visit the Shop</h2>
                         <div class="divider"></div>
                         <div class="contact-detail">
                             <div class="contact-icon">
@@ -1137,7 +1225,7 @@
                                     <circle cx="12" cy="10" r="3" />
                                 </svg>
                             </div>
-                            <div><div class="contact-label">Address</div><div class="contact-value">Anzengruberstra&szlig;e 4<br />12043 Berlin, Germany</div></div>
+                            <div><div class="contact-label" data-i18n="contact.address.label">Address</div><div class="contact-value" data-i18n="contact.address.value">Anzengruberstra&szlig;e 4<br />12043 Berlin, Germany</div></div>
                         </div>
                         <div class="contact-detail">
                             <div class="contact-icon">
@@ -1145,7 +1233,7 @@
                                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                 </svg>
                             </div>
-                            <div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
+                            <div><div class="contact-label" data-i18n="contact.phone.label">Phone</div><div class="contact-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
                         </div>
                         <div class="contact-detail">
                             <div class="contact-icon">
@@ -1154,9 +1242,9 @@
                                     <polyline points="12 6 12 12 16 14" />
                                 </svg>
                             </div>
-                            <div><div class="contact-label">Opening Hours</div><div class="contact-value">Mon&ndash;Fri: 9:00 AM &ndash; 7:00 PM<br />Saturday: 9:00 AM &ndash; 7:00 PM<br />Sunday: Closed</div></div>
+                            <div><div class="contact-label" data-i18n="contact.hours.label">Opening Hours</div><div class="contact-value" data-i18n="contact.hours.value">Mon&ndash;Fri: 9:00 AM &ndash; 7:00 PM<br />Saturday: 9:00 AM &ndash; 7:00 PM<br />Sunday: Closed</div></div>
                         </div>
-                        <div class="contact-label" style="margin-bottom:12px">Follow Us</div>
+                        <div class="contact-label" style="margin-bottom:12px" data-i18n="contact.follow">Follow Us</div>
                         <div class="social-row">
                             <a class="social-btn" href="https://www.instagram.com/menscutbytaskin" target="_blank" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
                             <a class="social-btn" href="https://www.facebook.com/share/18b5GmeCER/" target="_blank" title="Facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -1182,9 +1270,9 @@
             <div class="inner-hero">
                 <div class="inner-hero-bg"></div>
                 <div class="inner-hero-content">
-                    <div class="breadcrumb">Home &middot; <span>About</span></div>
-                    <h1>About Us</h1>
-                    <p>Craft, passion &amp; Berlin heart</p>
+                    <div class="breadcrumb">Home &middot; <span data-i18n="about-page.breadcrumb">About</span></div>
+                    <h1 data-i18n="about-page.hero.title">About Us</h1>
+                    <p data-i18n="about-page.hero.sub">Craft, passion &amp; Berlin heart</p>
                 </div>
             </div>
             <section style="background:var(--white)">
@@ -1194,12 +1282,12 @@
                             <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=85" alt="Barber shop" loading="lazy" />
                         </div>
                         <div class="about-text reveal from-right">
-                            <div class="section-eyebrow">Our Story</div>
-                            <h2 class="section-title">Men's Cut by Taskin</h2>
+                            <div class="section-eyebrow" data-i18n="about-page.story.eyebrow">Our Story</div>
+                            <h2 class="section-title" data-i18n="about-page.story.title">Men's Cut by Taskin</h2>
                             <div class="divider"></div>
-                            <p>We are passionate barbers with a high level of experience and expertise in all aspects of our craft. The reason for our success is the overall experience we have working and learning from a diverse culture in different neighborhoods of Berlin.</p>
-                            <p>We are committed and determined to make all our clients happy through listening and suggesting the best style that fits you the most — because your look is our art.</p>
-                            <p>Located in the vibrant Neuk&ouml;lln district of Berlin, Men's Cut by Taskin has become a destination for those who demand the best in men's grooming, earning a 4.9-star rating from 168 satisfied customers.</p>
+                            <p data-i18n="about-page.story.p1">We are passionate barbers with a high level of experience and expertise in all aspects of our craft. The reason for our success is the overall experience we have working and learning from a diverse culture in different neighborhoods of Berlin.</p>
+                            <p data-i18n="about-page.story.p2">We are committed and determined to make all our clients happy through listening and suggesting the best style that fits you the most — because your look is our art.</p>
+                            <p data-i18n="about-page.story.p3">Located in the vibrant Neuk&ouml;lln district of Berlin, Men's Cut by Taskin has become a destination for those who demand the best in men's grooming, earning a 4.9-star rating from 168 satisfied customers.</p>
                         </div>
                     </div>
                 </div>
@@ -1207,26 +1295,26 @@
             <section style="background:var(--cream)">
                 <div class="container">
                     <div style="text-align:center" class="reveal">
-                        <div class="section-eyebrow">Why Choose Us</div>
-                        <h2 class="section-title">Our Values</h2>
+                        <div class="section-eyebrow" data-i18n="about-page.values.eyebrow">Why Choose Us</div>
+                        <h2 class="section-title" data-i18n="about-page.values.title">Our Values</h2>
                         <div class="divider center"></div>
                     </div>
                     <div class="value-grid">
-                        <div class="value-card reveal"><div class="value-icon">&#9986;&#65039;</div><h4>Master Craftsmanship</h4><p>Every cut is approached with precision and artistry. We use only premium tools and techniques refined over years of dedicated practice.</p></div>
-                        <div class="value-card reveal"><div class="value-icon">&#129309;</div><h4>Personal Attention</h4><p>We listen to each client individually, understanding their unique style and suggesting the best approach for their face shape and lifestyle.</p></div>
-                        <div class="value-card reveal"><div class="value-icon">&#11088;</div><h4>Consistent Quality</h4><p>Our 4.9-star rating with 168 reviews speaks for itself. Every visit delivers the same exceptional standard of service, every time.</p></div>
+                        <div class="value-card reveal"><div class="value-icon">&#9986;&#65039;</div><h4 data-i18n="about-page.values.v1.title">Master Craftsmanship</h4><p data-i18n="about-page.values.v1.desc">Every cut is approached with precision and artistry. We use only premium tools and techniques refined over years of dedicated practice.</p></div>
+                        <div class="value-card reveal"><div class="value-icon">&#129309;</div><h4 data-i18n="about-page.values.v2.title">Personal Attention</h4><p data-i18n="about-page.values.v2.desc">We listen to each client individually, understanding their unique style and suggesting the best approach for their face shape and lifestyle.</p></div>
+                        <div class="value-card reveal"><div class="value-icon">&#11088;</div><h4 data-i18n="about-page.values.v3.title">Consistent Quality</h4><p data-i18n="about-page.values.v3.desc">Our 4.9-star rating with 168 reviews speaks for itself. Every visit delivers the same exceptional standard of service, every time.</p></div>
                     </div>
                 </div>
             </section>
             <section style="background:var(--dark);padding:80px 0">
                 <div class="container" style="text-align:center">
-                    <div class="section-eyebrow reveal">Berlin's Best</div>
-                    <h2 class="section-title light reveal">4.9 ★ on Google</h2>
+                    <div class="section-eyebrow reveal" data-i18n="about-page.stats.eyebrow">Berlin's Best</div>
+                    <h2 class="section-title light reveal" data-i18n="about-page.stats.title">4.9 ★ on Google</h2>
                     <div class="divider center reveal"></div>
                     <div class="stats-row reveal" style="justify-content:center;margin-top:0">
-                        <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label" style="color:rgba(255,255,255,.5)">Average Rating</div></div>
-                        <div class="stat"><div class="stat-num">150+</div><div class="stat-label" style="color:rgba(255,255,255,.5)">Google Reviews</div></div>
-                        <div class="stat"><div class="stat-num">2k+</div><div class="stat-label" style="color:rgba(255,255,255,.5)">Happy Clients</div></div>
+                        <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label" style="color:rgba(255,255,255,.5)" data-i18n="about-page.stats.stat1">Average Rating</div></div>
+                        <div class="stat"><div class="stat-num">150+</div><div class="stat-label" style="color:rgba(255,255,255,.5)" data-i18n="about-page.stats.stat2">Google Reviews</div></div>
+                        <div class="stat"><div class="stat-num">2k+</div><div class="stat-label" style="color:rgba(255,255,255,.5)" data-i18n="about-page.stats.stat3">Happy Clients</div></div>
                     </div>
                 </div>
             </section>
@@ -1242,48 +1330,48 @@
             <div class="inner-hero">
                 <div class="inner-hero-bg"></div>
                 <div class="inner-hero-content">
-                    <div class="breadcrumb">Home &middot; <span>Services</span></div>
-                    <h1>Our Services</h1>
-                    <p>Haircuts &amp; Shaves for the modern gentleman</p>
+                    <div class="breadcrumb">Home &middot; <span data-i18n="services-page.breadcrumb">Services</span></div>
+                    <h1 data-i18n="services-page.hero.title">Our Services</h1>
+                    <p data-i18n="services-page.hero.sub">Haircuts &amp; Shaves for the modern gentleman</p>
                 </div>
             </div>
             <section style="background:var(--cream)">
                 <div class="container">
                     <div style="text-align:center;margin-bottom:70px" class="reveal">
-                        <div class="section-eyebrow">What We Offer</div>
-                        <h2 class="section-title">Barber Services</h2>
+                        <div class="section-eyebrow" data-i18n="services-page.eyebrow">What We Offer</div>
+                        <h2 class="section-title" data-i18n="services-page.title">Barber Services</h2>
                         <div class="divider center"></div>
-                        <p style="max-width:580px;margin:0 auto;color:var(--text-light);line-height:1.9">We offer a full range of men's barber services — from modern and classic haircuts to traditional shaves and beard care, to emphasise your style and confidence.</p>
+                        <p style="max-width:580px;margin:0 auto;color:var(--text-light);line-height:1.9" data-i18n="services-page.desc">We offer a full range of men's barber services — from modern and classic haircuts to traditional shaves and beard care, to emphasise your style and confidence.</p>
                     </div>
                     <div class="services-list">
                         <div class="service-item reveal">
                             <div class="service-item-img"><img src="https://media.istockphoto.com/id/965168640/photo/handsome-young-man-getting-a-haircut.jpg?s=170667a&w=0&k=20&c=s1_r5ZPgLfu60mGZXLYErav_00UrtOE89yXC0L7fVUE=" alt="Haircut" loading="lazy" /></div>
                             <div class="service-item-text">
-                                <div class="section-eyebrow">Service 01</div>
-                                <h3>Hair Cutting</h3>
+                                <div class="section-eyebrow" data-i18n="services-page.s1.eyebrow">Service 01</div>
+                                <h3 data-i18n="services-page.s1.title">Hair Cutting</h3>
                                 <div class="divider"></div>
-                                <p>We offer professional and personalised solutions to create your perfect look. Our experienced barbers use modern and classic cutting techniques, considering your preferences and style nuances.</p>
-                                <p>Whether you prefer a classic taper, fade, pompadour, or undercut — we strive to highlight your individuality and provide styling recommendations so you always look impeccable.</p>
+                                <p data-i18n="services-page.s1.p1">We offer professional and personalised solutions to create your perfect look. Our experienced barbers use modern and classic cutting techniques, considering your preferences and style nuances.</p>
+                                <p data-i18n="services-page.s1.p2">Whether you prefer a classic taper, fade, pompadour, or undercut — we strive to highlight your individuality and provide styling recommendations so you always look impeccable.</p>
                             </div>
                         </div>
                         <div class="service-item reverse reveal">
                             <div class="service-item-img"><img src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Shave" loading="lazy" /></div>
                             <div class="service-item-text">
-                                <div class="section-eyebrow">Service 02</div>
-                                <h3>Traditional Shave</h3>
+                                <div class="section-eyebrow" data-i18n="services-page.s2.eyebrow">Service 02</div>
+                                <h3 data-i18n="services-page.s2.title">Traditional Shave</h3>
                                 <div class="divider"></div>
-                                <p>We offer a unique traditional shaving experience, turning an ordinary procedure into a relaxing ritual. Experienced barbers use the finest shaving tools and techniques, ensuring a smooth and comfortable shave.</p>
-                                <p>The combination of hot towels, aromatic oils, and attentive care guarantees a feeling of freshness and renewal, allowing you to look and feel your best.</p>
+                                <p data-i18n="services-page.s2.p1">We offer a unique traditional shaving experience, turning an ordinary procedure into a relaxing ritual. Experienced barbers use the finest shaving tools and techniques, ensuring a smooth and comfortable shave.</p>
+                                <p data-i18n="services-page.s2.p2">The combination of hot towels, aromatic oils, and attentive care guarantees a feeling of freshness and renewal, allowing you to look and feel your best.</p>
                             </div>
                         </div>
                         <div class="service-item reveal">
                             <div class="service-item-img"><img src="https://img.magnific.com/free-photo/handsome-man-cutting-beard-barber-shop-salon_1303-20931.jpg" alt="Beard" loading="lazy" /></div>
                             <div class="service-item-text">
-                                <div class="section-eyebrow">Service 03</div>
-                                <h3>Beard Grooming</h3>
+                                <div class="section-eyebrow" data-i18n="services-page.s3.eyebrow">Service 03</div>
+                                <h3 data-i18n="services-page.s3.title">Beard Grooming</h3>
                                 <div class="divider"></div>
-                                <p>We offer professional beard care including trimming, styling, and the use of high-quality grooming products. Our experienced barbers will help you select the perfect beard shape and style considering your preferences and facial features.</p>
-                                <p>We strive to highlight your individuality and provide care recommendations so that your beard always looks impeccable.</p>
+                                <p data-i18n="services-page.s3.p1">We offer professional beard care including trimming, styling, and the use of high-quality grooming products. Our experienced barbers will help you select the perfect beard shape and style considering your preferences and facial features.</p>
+                                <p data-i18n="services-page.s3.p2">We strive to highlight your individuality and provide care recommendations so that your beard always looks impeccable.</p>
                             </div>
                         </div>
                     </div>
@@ -1301,17 +1389,17 @@
             <div class="inner-hero">
                 <div class="inner-hero-bg"></div>
                 <div class="inner-hero-content">
-                    <div class="breadcrumb">Home &middot; <span>Contact</span></div>
-                    <h1>Contact Us</h1>
-                    <p>We are in touch</p>
+                    <div class="breadcrumb">Home &middot; <span data-i18n="contact-page.breadcrumb">Contact</span></div>
+                    <h1 data-i18n="contact-page.hero.title">Contact Us</h1>
+                    <p data-i18n="contact-page.hero.sub">We are in touch</p>
                 </div>
             </div>
             <section style="background:var(--cream)">
                 <div class="container">
                     <div class="contact-page-grid">
                         <div class="reveal from-left">
-                            <div class="section-eyebrow">Get In Touch</div>
-                            <h2 class="section-title">Visit the Shop</h2>
+                            <div class="section-eyebrow" data-i18n="contact-page.eyebrow">Get In Touch</div>
+                            <h2 class="section-title" data-i18n="contact-page.title">Visit the Shop</h2>
                             <div class="divider"></div>
                             <div class="contact-detail">
                                 <div class="contact-icon">
@@ -1320,7 +1408,7 @@
                                         <circle cx="12" cy="10" r="3" />
                                     </svg>
                                 </div>
-                                <div><div class="contact-label">Address</div><div class="contact-value">Anzengruberstra&szlig;e 4<br />12043 Berlin, Germany</div></div>
+                                <div><div class="contact-label" data-i18n="contact-page.address.label">Address</div><div class="contact-value" data-i18n="contact-page.address.value">Anzengruberstra&szlig;e 4<br />12043 Berlin, Germany</div></div>
                             </div>
                             <div class="contact-detail">
                                 <div class="contact-icon">
@@ -1328,7 +1416,7 @@
                                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                     </svg>
                                 </div>
-                                <div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
+                                <div><div class="contact-label" data-i18n="contact-page.phone.label">Phone</div><div class="contact-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
                             </div>
                             <div class="contact-detail">
                                 <div class="contact-icon">
@@ -1336,22 +1424,22 @@
                                         <polygon points="3 11 22 2 13 21 11 13 3 11" />
                                     </svg>
                                 </div>
-                                <div><div class="contact-label">Map Code</div><div class="contact-value">FCJQ+38 Berlin, Germany</div></div>
+                                <div><div class="contact-label" data-i18n="contact-page.map.label">Map Code</div><div class="contact-value" data-i18n="contact-page.map.value">FCJQ+38 Berlin, Germany</div></div>
                             </div>
                             <div style="margin-top:40px">
-                                <div class="contact-label" style="margin-bottom:16px">Opening Hours</div>
+                                <div class="contact-label" style="margin-bottom:16px" data-i18n="contact-page.hours.title">Opening Hours</div>
                                 <table class="hours-table">
-                                    <tr><td>Monday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                                    <tr><td>Tuesday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                                    <tr><td>Wednesday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                                    <tr><td>Thursday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                                    <tr><td>Friday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                                    <tr><td>Saturday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                                    <tr class="closed"><td>Sunday</td><td>Closed</td></tr>
+                                    <tr><td data-i18n="contact-page.hours.mon">Monday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr><td data-i18n="contact-page.hours.tue">Tuesday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr><td data-i18n="contact-page.hours.wed">Wednesday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr><td data-i18n="contact-page.hours.thu">Thursday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr><td data-i18n="contact-page.hours.fri">Friday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr><td data-i18n="contact-page.hours.sat">Saturday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr class="closed"><td data-i18n="contact-page.hours.sun">Sunday</td><td data-i18n="contact-page.hours.closed">Closed</td></tr>
                                 </table>
                             </div>
                             <div style="margin-top:40px">
-                                <div class="contact-label" style="margin-bottom:14px">Follow Us</div>
+                                <div class="contact-label" style="margin-bottom:14px" data-i18n="contact-page.follow">Follow Us</div>
                                 <div class="social-row">
                                     <a class="social-btn" href="https://www.instagram.com/menscutbytaskin" target="_blank" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
                                     <a class="social-btn" href="https://www.facebook.com/share/18b5GmeCER/" target="_blank" title="Facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -1376,7 +1464,583 @@
         // ── LOGO PATH ──
         var LOGO_PATH = 'images/logo.png';
 
-        // ── FOOTER HTML (used for all pages) ──
+        // ── TRANSLATIONS ──
+        var TRANSLATIONS = {
+            de: {
+                'nav.home': 'Startseite',
+                'nav.about': 'Über uns',
+                'nav.services': 'Leistungen',
+                'nav.contact': 'Kontakt',
+                'nav.book': 'Termin anrufen',
+                'hero.eyebrow': 'Zeitlosen Stil kreieren',
+                'hero.title': 'Bester Haarschnitt &amp; Rasur<br />in <em>Berlin</em>',
+                'hero.sub': 'Unsere Barbiere bieten die besten Haarschnitte und traditionellen Rasuren, ganz individuell auf Ihren Stil zugeschnitten. Klassische Barber-Tradition trifft auf moderne Techniken.',
+                'hero.btn': 'Jetzt anrufen',
+                'about.eyebrow': 'Über uns',
+                'about.title': 'Men\'s Cut by Taskin',
+                'about.p1': 'Wir sind leidenschaftliche Barbiere mit tiefem Fachwissen in allen Bereichen unseres Handwerks. Unser Erfolg kommt von jahrelanger Erfahrung mit einem vielfältigen Kundenkreis im Herzen Berlins.',
+                'about.p2': 'Wir sind bestrebt, alle unsere Kunden zufrieden zu stellen, indem wir aufmerksam zuhören und den besten Stil vorschlagen, der am besten zu Ihnen passt – zeitlose Barber-Tradition verbunden mit moderner Technik.',
+                'about.stat1': 'Bewertung',
+                'about.stat2': 'Bewertungen',
+                'about.stat3': 'Zufriedene Kunden',
+                'services.eyebrow': 'Unser Angebot',
+                'services.title': 'Barber-Leistungen',
+                'services.desc': 'Ein umfassendes Angebot an Barber-Dienstleistungen für Männer – von modernen Haarschnitten über traditionelle Rasuren bis hin zur Bartpflege, um Ihren Stil und Ihr Selbstbewusstsein zu unterstreichen.',
+                'services.haircut.title': 'Haarschnitt',
+                'services.haircut.desc': 'Professionelle und personalisierte Lösungen mit modernen und klassischen Schneidetechniken, ganz nach Ihren Wünschen und Ihrem Stil.',
+                'services.shave.title': 'Traditionelle Rasur',
+                'services.shave.desc': 'Ein einzigartiges traditionelles Rasurerlebnis mit heißen Tüchern, aromatischen Ölen und fachmännischer Technik für eine sanfte, gründliche Rasur.',
+                'services.beard.title': 'Bartpflege',
+                'services.beard.desc': 'Professionelles Barttrimmen, Formen und Styling mit hochwertigen Produkten, um Ihren Bart jederzeit makellos zu halten.',
+                'reviews.eyebrow': '100 % gute Bewertungen',
+                'reviews.title': 'Kunden sagen&hellip;',
+                'reviews.sub': '168 Google-Bewertungen',
+                'reviews.r1.text': 'Absolute Sauberkeit im gesamten Laden.',
+                'reviews.r2.text': 'Das ist mein Stammfriseur in Neukölln. Ich war bisher immer sehr zufrieden.',
+                'reviews.r3.text': 'Sehr zufrieden. Tolle Bedienung, kurze Wartezeit und angemessener Preis.',
+                'reviews.r4.text': 'Yahya ist der Beste in diesem Geschäft. Jung, aber professionell in seinem Job. Die Preise sind gut im Vergleich zum Markt.',
+                'reviews.r5.text': 'Ein guter Barbershop, der sich Zeit nimmt und einen fairen Preis bietet. Ich komme wieder, wenn ich in Berlin bin.',
+                'reviews.r6.text': 'Ich war letzte Woche dort zum Haareschneiden. Ich kann wirklich sagen, dass ich mit dem Ergebnis zufrieden bin. Die Mitarbeiter sind wirklich freundlich und professionell. Der Preis für einen Haarschnitt betrug 15 €, was in Berlin ein sehr erschwinglicher Preis ist.',
+                'contact.eyebrow': 'Finden Sie uns',
+                'contact.title': 'Besuchen Sie uns',
+                'contact.address.label': 'Adresse',
+                'contact.address.value': 'Anzengruberstraße 4<br />12043 Berlin, Deutschland',
+                'contact.phone.label': 'Telefon',
+                'contact.hours.label': 'Öffnungszeiten',
+                'contact.hours.value': 'Mo–Fr: 9:00 – 19:00 Uhr<br />Samstag: 9:00 – 19:00 Uhr<br />Sonntag: Geschlossen',
+                'contact.follow': 'Folgen Sie uns',
+                'about-page.breadcrumb': 'Über uns',
+                'about-page.hero.title': 'Über uns',
+                'about-page.hero.sub': 'Handwerk, Leidenschaft &amp; Berliner Herz',
+                'about-page.story.eyebrow': 'Unsere Geschichte',
+                'about-page.story.title': 'Men\'s Cut by Taskin',
+                'about-page.story.p1': 'Wir sind leidenschaftliche Barbiere mit einem hohen Maß an Erfahrung und Fachwissen in allen Bereichen unseres Handwerks. Der Grund für unseren Erfolg ist die umfassende Erfahrung, die wir durch die Arbeit mit einer vielfältigen Kultur in verschiedenen Berliner Stadtteilen gesammelt haben.',
+                'about-page.story.p2': 'Wir sind bestrebt, alle unsere Kunden zufrieden zu stellen, indem wir zuhören und den besten Stil vorschlagen, der am besten zu Ihnen passt – denn Ihr Look ist unsere Kunst.',
+                'about-page.story.p3': 'Im lebendigen Bezirk Neukölln gelegen, ist Men\'s Cut by Taskin ein Ziel für alle, die das Beste in der Herrenpflege suchen, und hat eine 4,9-Sterne-Bewertung von 168 zufriedenen Kunden erhalten.',
+                'about-page.values.eyebrow': 'Warum uns wählen',
+                'about-page.values.title': 'Unsere Werte',
+                'about-page.values.v1.title': 'Meisterhaftes Handwerk',
+                'about-page.values.v1.desc': 'Jeder Schnitt wird mit Präzision und Kunstfertigkeit ausgeführt. Wir verwenden nur hochwertige Werkzeuge und Techniken, die über Jahre intensiver Praxis verfeinert wurden.',
+                'about-page.values.v2.title': 'Persönliche Aufmerksamkeit',
+                'about-page.values.v2.desc': 'Wir hören jedem Kunden individuell zu, verstehen seinen einzigartigen Stil und schlagen den besten Ansatz für seine Gesichtsform und seinen Lebensstil vor.',
+                'about-page.values.v3.title': 'Konstante Qualität',
+                'about-page.values.v3.desc': 'Unsere 4,9-Sterne-Bewertung mit 168 Rezensionen spricht für sich. Jeder Besuch bietet den gleichen außergewöhnlichen Service, jedes Mal.',
+                'about-page.stats.eyebrow': 'Berlins Beste',
+                'about-page.stats.title': '4,9 ★ auf Google',
+                'about-page.stats.stat1': 'Durchschnittliche Bewertung',
+                'about-page.stats.stat2': 'Google-Bewertungen',
+                'about-page.stats.stat3': 'Zufriedene Kunden',
+                'services-page.breadcrumb': 'Leistungen',
+                'services-page.hero.title': 'Unsere Leistungen',
+                'services-page.hero.sub': 'Haarschnitte &amp; Rasuren für den modernen Gentleman',
+                'services-page.eyebrow': 'Unser Angebot',
+                'services-page.title': 'Barber-Leistungen',
+                'services-page.desc': 'Wir bieten ein umfassendes Angebot an Barber-Dienstleistungen für Männer – von modernen und klassischen Haarschnitten über traditionelle Rasuren bis hin zur Bartpflege, um Ihren Stil und Ihr Selbstbewusstsein zu unterstreichen.',
+                'services-page.s1.eyebrow': 'Leistung 01',
+                'services-page.s1.title': 'Haarschnitt',
+                'services-page.s1.p1': 'Wir bieten professionelle und personalisierte Lösungen für Ihren perfekten Look. Unsere erfahrenen Barbiere verwenden moderne und klassische Schneidetechniken, die Ihre Vorlieben und Stilnuancen berücksichtigen.',
+                'services-page.s1.p2': 'Ob Sie einen klassischen Taper, Fade, Pompadour oder Undercut bevorzugen – wir streben danach, Ihre Individualität hervorzuheben und Styling-Empfehlungen zu geben, damit Sie immer makellos aussehen.',
+                'services-page.s2.eyebrow': 'Leistung 02',
+                'services-page.s2.title': 'Traditionelle Rasur',
+                'services-page.s2.p1': 'Wir bieten ein einzigartiges traditionelles Rasurerlebnis, das einen gewöhnlichen Vorgang in ein entspannendes Ritual verwandelt. Erfahrene Barbiere verwenden die besten Rasierwerkzeuge und -techniken für eine sanfte und angenehme Rasur.',
+                'services-page.s2.p2': 'Die Kombination aus heißen Tüchern, aromatischen Ölen und aufmerksamer Pflege garantiert ein Gefühl von Frische und Erneuerung, sodass Sie sich rundum wohlfühlen.',
+                'services-page.s3.eyebrow': 'Leistung 03',
+                'services-page.s3.title': 'Bartpflege',
+                'services-page.s3.p1': 'Wir bieten professionelle Bartpflege, einschließlich Trimmen, Stylen und der Verwendung hochwertiger Pflegeprodukte. Unsere erfahrenen Barbiere helfen Ihnen, die perfekte Bartform und den perfekten Stil zu finden, der zu Ihren Vorlieben und Ihrem Gesicht passt.',
+                'services-page.s3.p2': 'Wir streben danach, Ihre Individualität hervorzuheben und Pflegeempfehlungen zu geben, damit Ihr Bart immer makellos aussieht.',
+                'contact-page.breadcrumb': 'Kontakt',
+                'contact-page.hero.title': 'Kontakt',
+                'contact-page.hero.sub': 'Wir sind in Verbindung',
+                'contact-page.eyebrow': 'Nehmen Sie Kontakt auf',
+                'contact-page.title': 'Besuchen Sie den Shop',
+                'contact-page.address.label': 'Adresse',
+                'contact-page.address.value': 'Anzengruberstraße 4<br />12043 Berlin, Deutschland',
+                'contact-page.phone.label': 'Telefon',
+                'contact-page.map.label': 'Karten-Code',
+                'contact-page.map.value': 'FCJQ+38 Berlin, Deutschland',
+                'contact-page.hours.title': 'Öffnungszeiten',
+                'contact-page.hours.mon': 'Montag',
+                'contact-page.hours.tue': 'Dienstag',
+                'contact-page.hours.wed': 'Mittwoch',
+                'contact-page.hours.thu': 'Donnerstag',
+                'contact-page.hours.fri': 'Freitag',
+                'contact-page.hours.sat': 'Samstag',
+                'contact-page.hours.sun': 'Sonntag',
+                'contact-page.hours.closed': 'Geschlossen',
+                'contact-page.follow': 'Folgen Sie uns',
+                'footer.brand': 'Men\'s Cut by Taskin',
+                'footer.brand_sub': 'Berlin · Deutschland',
+                'footer.desc': 'Vollservice-Barbershop &amp; Herrenpflege in Berlin, Deutschland.',
+                'footer.explore': 'Entdecken',
+                'footer.explore.home': 'Startseite',
+                'footer.explore.about': 'Über uns',
+                'footer.explore.services': 'Leistungen',
+                'footer.explore.contact': 'Kontakt',
+                'footer.contact': 'Kontakt',
+                'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
+                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010'
+            },
+            en: {
+                'nav.home': 'Home',
+                'nav.about': 'About',
+                'nav.services': 'Services',
+                'nav.contact': 'Contact',
+                'nav.book': 'Call to Book',
+                'hero.eyebrow': 'Crafting Timeless Style',
+                'hero.title': 'Best Haircut &amp; Hot Shave<br />in <em>Berlin</em>',
+                'hero.sub': 'Our barbers offer the finest haircuts and traditional shaves, individually tailored to your style. Classic barbering traditions meet modern techniques.',
+                'hero.btn': 'Call to Book Now',
+                'about.eyebrow': 'About Us',
+                'about.title': 'Men\'s Cut by Taskin',
+                'about.p1': 'We are passionate barbers with deep expertise in all aspects of our craft. Our success comes from years of experience working with a diverse clientele in the heart of Berlin.',
+                'about.p2': 'We are committed and determined to make all our clients happy through listening carefully and suggesting the best style that fits you most — combining timeless barbering tradition with contemporary technique.',
+                'about.stat1': 'Rating',
+                'about.stat2': 'Reviews',
+                'about.stat3': 'Happy Clients',
+                'services.eyebrow': 'What We\'re Offering',
+                'services.title': 'Barber Services',
+                'services.desc': 'A full range of men\'s barber services — from modern haircuts to traditional shaves and beard care, to emphasise your style and confidence.',
+                'services.haircut.title': 'Hair Cutting',
+                'services.haircut.desc': 'Professional and personalised solutions using modern and classic cutting techniques, tailored to your preferences and style.',
+                'services.shave.title': 'Traditional Shave',
+                'services.shave.desc': 'A unique traditional shaving experience with hot towels, aromatic oils and expert technique for a smooth, close shave.',
+                'services.beard.title': 'Beard Grooming',
+                'services.beard.desc': 'Expert beard trimming, shaping and styling using premium products to keep your beard impeccable at all times.',
+                'reviews.eyebrow': '100% Good Reviews',
+                'reviews.title': 'Customers Say&hellip;',
+                'reviews.sub': '168 Google Reviews',
+                'reviews.r1.text': 'Absolute cleanliness throughout the entire store.',
+                'reviews.r2.text': 'This is my regular hairdresser in Neukölln. I\'ve always been very satisfied so far.',
+                'reviews.r3.text': 'Very happy. Great service, short wait, and reasonable price.',
+                'reviews.r4.text': 'Yahya is the best in this business. Young, but professional in his job. The prices are good compared to the market.',
+                'reviews.r5.text': 'A good barbershop that takes its time and offers a fair price. I\'ll come back when I\'m in Berlin.',
+                'reviews.r6.text': 'I got a haircut there last week. And, I can really say that I\'m satisfied with the result. The workers are really friendly and professional. And, the price for a haircut was 15€ which is a very affordable price in Berlin.',
+                'contact.eyebrow': 'Find Us',
+                'contact.title': 'Visit the Shop',
+                'contact.address.label': 'Address',
+                'contact.address.value': 'Anzengruberstraße 4<br />12043 Berlin, Germany',
+                'contact.phone.label': 'Phone',
+                'contact.hours.label': 'Opening Hours',
+                'contact.hours.value': 'Mon–Fri: 9:00 AM – 7:00 PM<br />Saturday: 9:00 AM – 7:00 PM<br />Sunday: Closed',
+                'contact.follow': 'Follow Us',
+                'about-page.breadcrumb': 'About',
+                'about-page.hero.title': 'About Us',
+                'about-page.hero.sub': 'Craft, passion &amp; Berlin heart',
+                'about-page.story.eyebrow': 'Our Story',
+                'about-page.story.title': 'Men\'s Cut by Taskin',
+                'about-page.story.p1': 'We are passionate barbers with a high level of experience and expertise in all aspects of our craft. The reason for our success is the overall experience we have working and learning from a diverse culture in different neighborhoods of Berlin.',
+                'about-page.story.p2': 'We are committed and determined to make all our clients happy through listening and suggesting the best style that fits you the most — because your look is our art.',
+                'about-page.story.p3': 'Located in the vibrant Neukölln district of Berlin, Men\'s Cut by Taskin has become a destination for those who demand the best in men\'s grooming, earning a 4.9-star rating from 168 satisfied customers.',
+                'about-page.values.eyebrow': 'Why Choose Us',
+                'about-page.values.title': 'Our Values',
+                'about-page.values.v1.title': 'Master Craftsmanship',
+                'about-page.values.v1.desc': 'Every cut is approached with precision and artistry. We use only premium tools and techniques refined over years of dedicated practice.',
+                'about-page.values.v2.title': 'Personal Attention',
+                'about-page.values.v2.desc': 'We listen to each client individually, understanding their unique style and suggesting the best approach for their face shape and lifestyle.',
+                'about-page.values.v3.title': 'Consistent Quality',
+                'about-page.values.v3.desc': 'Our 4.9-star rating with 168 reviews speaks for itself. Every visit delivers the same exceptional standard of service, every time.',
+                'about-page.stats.eyebrow': 'Berlin\'s Best',
+                'about-page.stats.title': '4.9 ★ on Google',
+                'about-page.stats.stat1': 'Average Rating',
+                'about-page.stats.stat2': 'Google Reviews',
+                'about-page.stats.stat3': 'Happy Clients',
+                'services-page.breadcrumb': 'Services',
+                'services-page.hero.title': 'Our Services',
+                'services-page.hero.sub': 'Haircuts &amp; Shaves for the modern gentleman',
+                'services-page.eyebrow': 'What We Offer',
+                'services-page.title': 'Barber Services',
+                'services-page.desc': 'We offer a full range of men\'s barber services — from modern and classic haircuts to traditional shaves and beard care, to emphasise your style and confidence.',
+                'services-page.s1.eyebrow': 'Service 01',
+                'services-page.s1.title': 'Hair Cutting',
+                'services-page.s1.p1': 'We offer professional and personalised solutions to create your perfect look. Our experienced barbers use modern and classic cutting techniques, considering your preferences and style nuances.',
+                'services-page.s1.p2': 'Whether you prefer a classic taper, fade, pompadour, or undercut — we strive to highlight your individuality and provide styling recommendations so you always look impeccable.',
+                'services-page.s2.eyebrow': 'Service 02',
+                'services-page.s2.title': 'Traditional Shave',
+                'services-page.s2.p1': 'We offer a unique traditional shaving experience, turning an ordinary procedure into a relaxing ritual. Experienced barbers use the finest shaving tools and techniques, ensuring a smooth and comfortable shave.',
+                'services-page.s2.p2': 'The combination of hot towels, aromatic oils, and attentive care guarantees a feeling of freshness and renewal, allowing you to look and feel your best.',
+                'services-page.s3.eyebrow': 'Service 03',
+                'services-page.s3.title': 'Beard Grooming',
+                'services-page.s3.p1': 'We offer professional beard care including trimming, styling, and the use of high-quality grooming products. Our experienced barbers will help you select the perfect beard shape and style considering your preferences and facial features.',
+                'services-page.s3.p2': 'We strive to highlight your individuality and provide care recommendations so that your beard always looks impeccable.',
+                'contact-page.breadcrumb': 'Contact',
+                'contact-page.hero.title': 'Contact Us',
+                'contact-page.hero.sub': 'We are in touch',
+                'contact-page.eyebrow': 'Get In Touch',
+                'contact-page.title': 'Visit the Shop',
+                'contact-page.address.label': 'Address',
+                'contact-page.address.value': 'Anzengruberstraße 4<br />12043 Berlin, Germany',
+                'contact-page.phone.label': 'Phone',
+                'contact-page.map.label': 'Map Code',
+                'contact-page.map.value': 'FCJQ+38 Berlin, Germany',
+                'contact-page.hours.title': 'Opening Hours',
+                'contact-page.hours.mon': 'Monday',
+                'contact-page.hours.tue': 'Tuesday',
+                'contact-page.hours.wed': 'Wednesday',
+                'contact-page.hours.thu': 'Thursday',
+                'contact-page.hours.fri': 'Friday',
+                'contact-page.hours.sat': 'Saturday',
+                'contact-page.hours.sun': 'Sunday',
+                'contact-page.hours.closed': 'Closed',
+                'contact-page.follow': 'Follow Us',
+                'footer.brand': 'Men\'s Cut by Taskin',
+                'footer.brand_sub': 'Berlin · Germany',
+                'footer.desc': 'Full service barbershop &amp; men\'s grooming in Berlin, Germany.',
+                'footer.explore': 'Explore',
+                'footer.explore.home': 'Home',
+                'footer.explore.about': 'About Us',
+                'footer.explore.services': 'Services',
+                'footer.explore.contact': 'Contact',
+                'footer.contact': 'Contact',
+                'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
+                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010'
+            },
+            ur: {
+                'nav.home': 'ہوم',
+                'nav.about': 'ہمارے بارے میں',
+                'nav.services': 'خدمات',
+                'nav.contact': 'رابطہ',
+                'nav.book': 'کال کریں',
+                'hero.eyebrow': 'زمانہ بے مثال اسٹائل',
+                'hero.title': 'بہترین ہیئر کٹ اور گرم شیو<br /> <em>برلن</em> میں',
+                'hero.sub': 'ہمارے باربرز آپ کے اسٹائل کے مطابق بہترین ہیئر کٹ اور روایتی شیو پیش کرتے ہیں۔ کلاسک باربرنگ روایت جدید تکنیکوں سے ملتی ہے۔',
+                'hero.btn': 'ابھی کال کریں',
+                'about.eyebrow': 'ہمارے بارے میں',
+                'about.title': 'مینز کٹ بائی تسکین',
+                'about.p1': 'ہم پرجوش باربرز ہیں جنہیں اپنے پیشے کے ہر پہلو میں گہری مہارت حاصل ہے۔ ہماری کامیابی برلن کے مرکز میں متنوع گاہکوں کے ساتھ برسوں کے تجربے سے حاصل ہوئی ہے۔',
+                'about.p2': 'ہم اپنے تمام گاہکوں کو خوش کرنے کے لیے پرعزم ہیں، ان کی بات غور سے سنتے ہیں اور بہترین اسٹائل تجویز کرتے ہیں جو آپ پر سب سے زیادہ فٹ بیٹھتا ہے — روایتی باربرنگ کو جدید تکنیک کے ساتھ ملاتے ہوئے۔',
+                'about.stat1': 'درجہ بندی',
+                'about.stat2': 'جائزے',
+                'about.stat3': 'خوش گاہک',
+                'services.eyebrow': 'ہماری پیشکش',
+                'services.title': 'باربر خدمات',
+                'services.desc': 'مردوں کے لیے باربر خدمات کی مکمل رینج — جدید ہیئر کٹس سے لے کر روایتی شیو اور داڑھی کی دیکھ بھال تک، تاکہ آپ کے اسٹائل اور اعتماد کو اجاگر کیا جا سکے۔',
+                'services.haircut.title': 'ہیئر کٹنگ',
+                'services.haircut.desc': 'پیشہ ورانہ اور ذاتی نوعیت کے حل جدید اور کلاسک کٹنگ تکنیک کے ساتھ، آپ کی ترجیحات اور اسٹائل کے مطابق۔',
+                'services.shave.title': 'روایتی شیو',
+                'services.shave.desc': 'گرم تولیوں، خوشبودار تیلوں اور ماہرانہ تکنیک کے ساتھ ایک منفرد روایتی شیونگ کا تجربہ۔',
+                'services.beard.title': 'داڑھی کی دیکھ بھال',
+                'services.beard.desc': 'ماہرانہ داڑھی تراشنے، شکل دینے اور اسٹائل کرنے کے لیے پریمیم پروڈکٹس کا استعمال۔',
+                'reviews.eyebrow': '100٪ اچھے جائزے',
+                'reviews.title': 'گاہک کہتے ہیں…',
+                'reviews.sub': '168 گوگل جائزے',
+                'reviews.r1.text': 'پوری دکان میں مکمل صفائی۔',
+                'reviews.r2.text': 'یہ نیوکولن میں میرا باقاعدہ حجام ہے۔ میں اب تک ہمیشہ بہت مطمئن رہا ہوں۔',
+                'reviews.r3.text': 'بہت خوش۔ زبردست سروس، کم انتظار، اور مناسب قیمت۔',
+                'reviews.r4.text': 'یحییٰ اس کاروبار میں بہترین ہیں۔ نوجوان، لیکن اپنے کام میں پیشہ ور۔ قیمتیں مارکیٹ کے مقابلے میں اچھی ہیں۔',
+                'reviews.r5.text': 'ایک اچھا باربرشاپ جو اپنا وقت لیتا ہے اور مناسب قیمت پیش کرتا ہے۔ جب برلن میں ہوں گے تو واپس آؤں گا۔',
+                'reviews.r6.text': 'میں گزشتہ ہفتے وہاں بال کٹوانے گیا تھا۔ اور، میں واقعی کہہ سکتا ہوں کہ میں نتیجے سے مطمئن ہوں۔ ملازمین واقعی دوستانہ اور پیشہ ور ہیں۔ بال کٹوانے کی قیمت 15 یورو تھی جو برلن میں بہت سستی قیمت ہے۔',
+                'contact.eyebrow': 'ہمیں تلاش کریں',
+                'contact.title': 'دکان ملاحظہ کریں',
+                'contact.address.label': 'پتہ',
+                'contact.address.value': 'Anzengruberstraße 4<br />12043 Berlin, Germany',
+                'contact.phone.label': 'فون',
+                'contact.hours.label': 'کھلنے کے اوقات',
+                'contact.hours.value': 'پیر–جمعہ: 9:00 AM – 7:00 PM<br />ہفتہ: 9:00 AM – 7:00 PM<br />اتوار: بند',
+                'contact.follow': 'ہمیں فالو کریں',
+                'about-page.breadcrumb': 'ہمارے بارے میں',
+                'about-page.hero.title': 'ہمارے بارے میں',
+                'about-page.hero.sub': 'ہنر، جذبہ اور برلن کا دل',
+                'about-page.story.eyebrow': 'ہماری کہانی',
+                'about-page.story.title': 'مینز کٹ بائی تسکین',
+                'about-page.story.p1': 'ہم پرجوش باربرز ہیں جنہیں اپنے پیشے کے ہر پہلو میں اعلیٰ تجربہ اور مہارت حاصل ہے۔ ہماری کامیابی کی وجہ برلن کے مختلف محلوں میں متنوع ثقافت کے ساتھ کام کرنے اور سیکھنے کا مجموعی تجربہ ہے۔',
+                'about-page.story.p2': 'ہم اپنے تمام گاہکوں کو خوش کرنے کے لیے پرعزم ہیں، ان کی بات سنتے ہیں اور بہترین اسٹائل تجویز کرتے ہیں جو آپ پر سب سے زیادہ فٹ بیٹھتا ہے — کیونکہ آپ کی شکل ہمارا فن ہے۔',
+                'about-page.story.p3': 'برلن کے متحرک نیوکولن ضلع میں واقع، مینز کٹ بائی تسکین ان لوگوں کے لیے ایک منزل بن گیا ہے جو مردوں کی گرومنگ میں بہترین چاہتے ہیں، جس نے 168 مطمئن گاہکوں سے 4.9 اسٹار ریٹنگ حاصل کی ہے۔',
+                'about-page.values.eyebrow': 'ہمیں کیوں منتخب کریں',
+                'about-page.values.title': 'ہماری اقدار',
+                'about-page.values.v1.title': 'ماہرانہ ہنر',
+                'about-page.values.v1.desc': 'ہر کٹ کو درستگی اور فنکاری کے ساتھ کیا جاتا ہے۔ ہم صرف پریمیم ٹولز اور تکنیک استعمال کرتے ہیں جو برسوں کی مشق کے ذریعے بہتر کیے گئے ہیں۔',
+                'about-page.values.v2.title': 'ذاتی توجہ',
+                'about-page.values.v2.desc': 'ہم ہر گاہک کو انفرادی طور پر سنتے ہیں، ان کے منفرد اسٹائل کو سمجھتے ہیں اور ان کے چہرے کی ساخت اور طرز زندگی کے لیے بہترین نقطہ نظر تجویز کرتے ہیں۔',
+                'about-page.values.v3.title': 'مسلسل معیار',
+                'about-page.values.v3.desc': '168 جائزوں کے ساتھ ہماری 4.9 اسٹار ریٹنگ خود بولتی ہے۔ ہر دورہ ہر بار معیار کی وہی غیر معمولی سطح فراہم کرتا ہے۔',
+                'about-page.stats.eyebrow': 'برلن کا بہترین',
+                'about-page.stats.title': 'گوگل پر 4.9 ★',
+                'about-page.stats.stat1': 'اوسط درجہ بندی',
+                'about-page.stats.stat2': 'گوگل جائزے',
+                'about-page.stats.stat3': 'خوش گاہک',
+                'services-page.breadcrumb': 'خدمات',
+                'services-page.hero.title': 'ہماری خدمات',
+                'services-page.hero.sub': 'جدید شریف آدمی کے لیے ہیئر کٹس اور شیو',
+                'services-page.eyebrow': 'ہماری پیشکش',
+                'services-page.title': 'باربر خدمات',
+                'services-page.desc': 'ہم مردوں کے لیے باربر خدمات کی مکمل رینج پیش کرتے ہیں — جدید اور کلاسک ہیئر کٹس سے لے کر روایتی شیو اور داڑھی کی دیکھ بھال تک، تاکہ آپ کے اسٹائل اور اعتماد کو اجاگر کیا جا سکے۔',
+                'services-page.s1.eyebrow': 'سروس 01',
+                'services-page.s1.title': 'ہیئر کٹنگ',
+                'services-page.s1.p1': 'ہم آپ کے بہترین اسٹائل کے لیے پیشہ ورانہ اور ذاتی نوعیت کے حل پیش کرتے ہیں۔ ہمارے تجربہ کار باربرز جدید اور کلاسک کٹنگ تکنیک استعمال کرتے ہیں، جو آپ کی ترجیحات اور اسٹائل کی باریکیوں کو مدنظر رکھتے ہیں۔',
+                'services-page.s1.p2': 'چاہے آپ کلاسک ٹیپر، فیڈ، پومپیڈور، یا انڈرکٹ پسند کریں — ہم آپ کی انفرادیت کو اجاگر کرنے اور اسٹائلنگ کی سفارشات فراہم کرنے کی کوشش کرتے ہیں تاکہ آپ ہمیشہ بے عیب نظر آئیں۔',
+                'services-page.s2.eyebrow': 'سروس 02',
+                'services-page.s2.title': 'روایتی شیو',
+                'services-page.s2.p1': 'ہم ایک منفرد روایتی شیونگ کا تجربہ پیش کرتے ہیں، جو ایک معمولی عمل کو ایک آرام دہ رسم میں بدل دیتا ہے۔ تجربہ کار باربرز بہترین شیونگ ٹولز اور تکنیک استعمال کرتے ہیں، جو ایک ہموار اور آرام دہ شیو کو یقینی بناتے ہیں۔',
+                'services-page.s2.p2': 'گرم تولیوں، خوشبودار تیلوں اور توجہ دینے والی دیکھ بھال کا مجموعہ تازگی اور تجدید کا احساس دلاتا ہے، جس سے آپ بہترین نظر آتے ہیں اور محسوس کرتے ہیں۔',
+                'services-page.s3.eyebrow': 'سروس 03',
+                'services-page.s3.title': 'داڑھی کی دیکھ بھال',
+                'services-page.s3.p1': 'ہم پیشہ ورانہ داڑھی کی دیکھ بھال پیش کرتے ہیں جس میں تراشنا، اسٹائل کرنا، اور اعلیٰ معیار کی گرومنگ مصنوعات کا استعمال شامل ہے۔ ہمارے تجربہ کار باربرز آپ کی ترجیحات اور چہرے کی خصوصیات کے مطابق بہترین داڑھی کی شکل اور اسٹائل منتخب کرنے میں آپ کی مدد کریں گے۔',
+                'services-page.s3.p2': 'ہم آپ کی انفرادیت کو اجاگر کرنے اور دیکھ بھال کی سفارشات فراہم کرنے کی کوشش کرتے ہیں تاکہ آپ کی داڑھی ہمیشہ بے عیب نظر آئے۔',
+                'contact-page.breadcrumb': 'رابطہ',
+                'contact-page.hero.title': 'رابطہ کریں',
+                'contact-page.hero.sub': 'ہم رابطے میں ہیں',
+                'contact-page.eyebrow': 'رابطہ کریں',
+                'contact-page.title': 'دکان ملاحظہ کریں',
+                'contact-page.address.label': 'پتہ',
+                'contact-page.address.value': 'Anzengruberstraße 4<br />12043 Berlin, Germany',
+                'contact-page.phone.label': 'فون',
+                'contact-page.map.label': 'نقشہ کوڈ',
+                'contact-page.map.value': 'FCJQ+38 Berlin, Germany',
+                'contact-page.hours.title': 'کھلنے کے اوقات',
+                'contact-page.hours.mon': 'پیر',
+                'contact-page.hours.tue': 'منگل',
+                'contact-page.hours.wed': 'بدھ',
+                'contact-page.hours.thu': 'جمعرات',
+                'contact-page.hours.fri': 'جمعہ',
+                'contact-page.hours.sat': 'ہفتہ',
+                'contact-page.hours.sun': 'اتوار',
+                'contact-page.hours.closed': 'بند',
+                'contact-page.follow': 'ہمیں فالو کریں',
+                'footer.brand': 'مینز کٹ بائی تسکین',
+                'footer.brand_sub': 'برلن · جرمنی',
+                'footer.desc': 'برلن، جرمنی میں مکمل سروس باربرشاپ اور مردوں کی گرومنگ۔',
+                'footer.explore': 'دریافت کریں',
+                'footer.explore.home': 'ہوم',
+                'footer.explore.about': 'ہمارے بارے میں',
+                'footer.explore.services': 'خدمات',
+                'footer.explore.contact': 'رابطہ',
+                'footer.contact': 'رابطہ',
+                'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
+                'footer.copyright': '© 2024 مینز کٹ بائی تسکین · برلن · +49 30 68053010'
+            },
+            fr: {
+                'nav.home': 'Accueil',
+                'nav.about': 'À propos',
+                'nav.services': 'Services',
+                'nav.contact': 'Contact',
+                'nav.book': 'Appeler',
+                'hero.eyebrow': 'Créer un style intemporel',
+                'hero.title': 'Meilleure coupe et rasage<br />à <em>Berlin</em>',
+                'hero.sub': 'Nos barbiers offrent les meilleures coupes et rasages traditionnels, adaptés à votre style. La tradition du barbier classique rencontre les techniques modernes.',
+                'hero.btn': 'Appeler maintenant',
+                'about.eyebrow': 'À propos',
+                'about.title': 'Men\'s Cut by Taskin',
+                'about.p1': 'Nous sommes des barbiers passionnés avec une expertise approfondie dans tous les aspects de notre métier. Notre succès vient de années d\'expérience avec une clientèle diversifiée au cœur de Berlin.',
+                'about.p2': 'Nous nous engageons à rendre tous nos clients heureux en écoutant attentivement et en suggérant le meilleur style qui vous convient — alliant tradition du barbier intemporelle et technique contemporaine.',
+                'about.stat1': 'Évaluation',
+                'about.stat2': 'Avis',
+                'about.stat3': 'Clients satisfaits',
+                'services.eyebrow': 'Ce que nous offrons',
+                'services.title': 'Services de barbier',
+                'services.desc': 'Une gamme complète de services de barbier pour hommes — des coupes modernes aux rasages traditionnels et soins de la barbe, pour mettre en valeur votre style et votre confiance.',
+                'services.haircut.title': 'Coupe de cheveux',
+                'services.haircut.desc': 'Solutions professionnelles et personnalisées utilisant des techniques de coupe modernes et classiques, adaptées à vos préférences et à votre style.',
+                'services.shave.title': 'Rasage traditionnel',
+                'services.shave.desc': 'Une expérience de rasage traditionnelle unique avec des serviettes chaudes, des huiles aromatiques et une technique experte pour un rasage doux et précis.',
+                'services.beard.title': 'Soin de la barbe',
+                'services.beard.desc': 'Taille, mise en forme et stylisme de barbe experts utilisant des produits haut de gamme pour garder votre barbe impeccable en tout temps.',
+                'reviews.eyebrow': '100% de bons avis',
+                'reviews.title': 'Ce que disent les clients&hellip;',
+                'reviews.sub': '168 avis Google',
+                'reviews.r1.text': 'Propreté absolue dans tout le magasin.',
+                'reviews.r2.text': 'C\'est mon coiffeur régulier à Neukölln. J\'ai toujours été très satisfait jusqu\'à présent.',
+                'reviews.r3.text': 'Très satisfait. Excellent service, courte attente et prix raisonnable.',
+                'reviews.r4.text': 'Yahya est le meilleur dans ce métier. Jeune, mais professionnel dans son travail. Les prix sont bons par rapport au marché.',
+                'reviews.r5.text': 'Un bon salon de coiffure qui prend son temps et propose un prix juste. Je reviendrai quand je serai à Berlin.',
+                'reviews.r6.text': 'Je suis allé me faire couper les cheveux la semaine dernière. Je peux vraiment dire que je suis satisfait du résultat. Les employés sont vraiment sympathiques et professionnels. Le prix pour une coupe était de 15 €, ce qui est très abordable à Berlin.',
+                'contact.eyebrow': 'Nous trouver',
+                'contact.title': 'Visiter le salon',
+                'contact.address.label': 'Adresse',
+                'contact.address.value': 'Anzengruberstraße 4<br />12043 Berlin, Allemagne',
+                'contact.phone.label': 'Téléphone',
+                'contact.hours.label': 'Horaires d\'ouverture',
+                'contact.hours.value': 'Lun–Ven: 9:00 – 19:00<br />Samedi: 9:00 – 19:00<br />Dimanche: Fermé',
+                'contact.follow': 'Suivez-nous',
+                'about-page.breadcrumb': 'À propos',
+                'about-page.hero.title': 'À propos',
+                'about-page.hero.sub': 'Artisanat, passion &amp; cœur berlinois',
+                'about-page.story.eyebrow': 'Notre histoire',
+                'about-page.story.title': 'Men\'s Cut by Taskin',
+                'about-page.story.p1': 'Nous sommes des barbiers passionnés avec un haut niveau d\'expérience et d\'expertise dans tous les aspects de notre métier. La raison de notre succès est l\'expérience globale que nous avons acquise en travaillant et en apprenant d\'une culture diversifiée dans différents quartiers de Berlin.',
+                'about-page.story.p2': 'Nous sommes déterminés à rendre tous nos clients heureux en écoutant et en suggérant le meilleur style qui vous convient — parce que votre look est notre art.',
+                'about-page.story.p3': 'Situé dans le quartier dynamique de Neukölln à Berlin, Men\'s Cut by Taskin est devenu une destination pour ceux qui exigent le meilleur en matière de soins masculins, avec une note de 4,9 étoiles sur 168 clients satisfaits.',
+                'about-page.values.eyebrow': 'Pourquoi nous choisir',
+                'about-page.values.title': 'Nos valeurs',
+                'about-page.values.v1.title': 'Artisanat de maître',
+                'about-page.values.v1.desc': 'Chaque coupe est abordée avec précision et art. Nous utilisons uniquement des outils et des techniques de qualité supérieure affinés au fil des années de pratique.',
+                'about-page.values.v2.title': 'Attention personnelle',
+                'about-page.values.v2.desc': 'Nous écoutons chaque client individuellement, comprenant son style unique et suggérant la meilleure approche pour sa forme de visage et son mode de vie.',
+                'about-page.values.v3.title': 'Qualité constante',
+                'about-page.values.v3.desc': 'Notre note de 4,9 étoiles avec 168 avis parle d\'elle-même. Chaque visite offre le même niveau exceptionnel de service, à chaque fois.',
+                'about-page.stats.eyebrow': 'Le meilleur de Berlin',
+                'about-page.stats.title': '4,9 ★ sur Google',
+                'about-page.stats.stat1': 'Évaluation moyenne',
+                'about-page.stats.stat2': 'Avis Google',
+                'about-page.stats.stat3': 'Clients satisfaits',
+                'services-page.breadcrumb': 'Services',
+                'services-page.hero.title': 'Nos services',
+                'services-page.hero.sub': 'Coupes et rasages pour le gentleman moderne',
+                'services-page.eyebrow': 'Ce que nous offrons',
+                'services-page.title': 'Services de barbier',
+                'services-page.desc': 'Nous offrons une gamme complète de services de barbier pour hommes — des coupes modernes et classiques aux rasages traditionnels et soins de la barbe, pour mettre en valeur votre style et votre confiance.',
+                'services-page.s1.eyebrow': 'Service 01',
+                'services-page.s1.title': 'Coupe de cheveux',
+                'services-page.s1.p1': 'Nous proposons des solutions professionnelles et personnalisées pour créer votre look parfait. Nos barbiers expérimentés utilisent des techniques de coupe modernes et classiques, en tenant compte de vos préférences et nuances de style.',
+                'services-page.s1.p2': 'Que vous préfériez un dégradé classique, une coupe effilée, un pompadour ou un undercut — nous nous efforçons de mettre en valeur votre individualité et de fournir des recommandations de style pour que vous soyez toujours impeccable.',
+                'services-page.s2.eyebrow': 'Service 02',
+                'services-page.s2.title': 'Rasage traditionnel',
+                'services-page.s2.p1': 'Nous offrons une expérience de rasage traditionnelle unique, transformant une procédure ordinaire en un rituel relaxant. Des barbiers expérimentés utilisent les meilleurs outils et techniques de rasage pour un rasage doux et confortable.',
+                'services-page.s2.p2': 'La combinaison de serviettes chaudes, d\'huiles aromatiques et de soins attentifs garantit une sensation de fraîcheur et de renouveau, vous permettant d\'être et de vous sentir au mieux.',
+                'services-page.s3.eyebrow': 'Service 03',
+                'services-page.s3.title': 'Soin de la barbe',
+                'services-page.s3.p1': 'Nous offrons des soins professionnels pour la barbe, y compris la taille, le stylisme et l\'utilisation de produits de qualité supérieure. Nos barbiers expérimentés vous aideront à sélectionner la forme et le style de barbe parfaits en fonction de vos préférences et de vos caractéristiques faciales.',
+                'services-page.s3.p2': 'Nous nous efforçons de mettre en valeur votre individualité et de fournir des recommandations de soins pour que votre barbe soit toujours impeccable.',
+                'contact-page.breadcrumb': 'Contact',
+                'contact-page.hero.title': 'Contactez-nous',
+                'contact-page.hero.sub': 'Nous sommes en contact',
+                'contact-page.eyebrow': 'Entrez en contact',
+                'contact-page.title': 'Visiter le salon',
+                'contact-page.address.label': 'Adresse',
+                'contact-page.address.value': 'Anzengruberstraße 4<br />12043 Berlin, Allemagne',
+                'contact-page.phone.label': 'Téléphone',
+                'contact-page.map.label': 'Code carte',
+                'contact-page.map.value': 'FCJQ+38 Berlin, Allemagne',
+                'contact-page.hours.title': 'Horaires d\'ouverture',
+                'contact-page.hours.mon': 'Lundi',
+                'contact-page.hours.tue': 'Mardi',
+                'contact-page.hours.wed': 'Mercredi',
+                'contact-page.hours.thu': 'Jeudi',
+                'contact-page.hours.fri': 'Vendredi',
+                'contact-page.hours.sat': 'Samedi',
+                'contact-page.hours.sun': 'Dimanche',
+                'contact-page.hours.closed': 'Fermé',
+                'contact-page.follow': 'Suivez-nous',
+                'footer.brand': 'Men\'s Cut by Taskin',
+                'footer.brand_sub': 'Berlin · Allemagne',
+                'footer.desc': 'Salon de coiffure complet et soins masculins à Berlin, Allemagne.',
+                'footer.explore': 'Explorer',
+                'footer.explore.home': 'Accueil',
+                'footer.explore.about': 'À propos',
+                'footer.explore.services': 'Services',
+                'footer.explore.contact': 'Contact',
+                'footer.contact': 'Contact',
+                'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
+                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010'
+            },
+            es: {
+                'nav.home': 'Inicio',
+                'nav.about': 'Nosotros',
+                'nav.services': 'Servicios',
+                'nav.contact': 'Contacto',
+                'nav.book': 'Llamar',
+                'hero.eyebrow': 'Creando estilo atemporal',
+                'hero.title': 'Mejor corte y afeitado<br />en <em>Berlín</em>',
+                'hero.sub': 'Nuestros barberos ofrecen los mejores cortes y afeitados tradicionales, adaptados a tu estilo. La tradición clásica de la barbería se combina con técnicas modernas.',
+                'hero.btn': 'Llamar ahora',
+                'about.eyebrow': 'Sobre nosotros',
+                'about.title': 'Men\'s Cut by Taskin',
+                'about.p1': 'Somos barberos apasionados con una profunda experiencia en todos los aspectos de nuestro oficio. Nuestro éxito proviene de años de experiencia trabajando con una clientela diversa en el corazón de Berlín.',
+                'about.p2': 'Estamos comprometidos a hacer felices a todos nuestros clientes escuchando atentamente y sugiriendo el mejor estilo que más te favorezca — combinando la tradición atemporal de la barbería con la técnica contemporánea.',
+                'about.stat1': 'Calificación',
+                'about.stat2': 'Reseñas',
+                'about.stat3': 'Clientes felices',
+                'services.eyebrow': 'Lo que ofrecemos',
+                'services.title': 'Servicios de barbería',
+                'services.desc': 'Una gama completa de servicios de barbería para hombres — desde cortes modernos hasta afeitados tradicionales y cuidado de barba, para resaltar tu estilo y confianza.',
+                'services.haircut.title': 'Corte de pelo',
+                'services.haircut.desc': 'Soluciones profesionales y personalizadas utilizando técnicas de corte modernas y clásicas, adaptadas a tus preferencias y estilo.',
+                'services.shave.title': 'Afeitado tradicional',
+                'services.shave.desc': 'Una experiencia única de afeitado tradicional con toallas calientes, aceites aromáticos y técnica experta para un afeitado suave y preciso.',
+                'services.beard.title': 'Cuidado de barba',
+                'services.beard.desc': 'Recorte, modelado y estilizado de barba experto utilizando productos premium para mantener tu barba impecable en todo momento.',
+                'reviews.eyebrow': '100% buenas reseñas',
+                'reviews.title': 'Los clientes dicen&hellip;',
+                'reviews.sub': '168 reseñas en Google',
+                'reviews.r1.text': 'Limpieza absoluta en toda la tienda.',
+                'reviews.r2.text': 'Este es mi peluquero habitual en Neukölln. Siempre he estado muy satisfecho hasta ahora.',
+                'reviews.r3.text': 'Muy contento. Gran servicio, espera corta y precio razonable.',
+                'reviews.r4.text': 'Yahya es el mejor en este negocio. Joven, pero profesional en su trabajo. Los precios son buenos en comparación con el mercado.',
+                'reviews.r5.text': 'Una buena barbería que se toma su tiempo y ofrece un precio justo. Volveré cuando esté en Berlín.',
+                'reviews.r6.text': 'Fui a cortarme el pelo la semana pasada. Puedo decir que estoy satisfecho con el resultado. Los trabajadores son muy amables y profesionales. El precio del corte fue de 15 €, lo cual es muy asequible en Berlín.',
+                'contact.eyebrow': 'Encuéntranos',
+                'contact.title': 'Visita la tienda',
+                'contact.address.label': 'Dirección',
+                'contact.address.value': 'Anzengruberstraße 4<br />12043 Berlin, Alemania',
+                'contact.phone.label': 'Teléfono',
+                'contact.hours.label': 'Horario de apertura',
+                'contact.hours.value': 'Lun–Vie: 9:00 – 19:00<br />Sábado: 9:00 – 19:00<br />Domingo: Cerrado',
+                'contact.follow': 'Síguenos',
+                'about-page.breadcrumb': 'Nosotros',
+                'about-page.hero.title': 'Sobre nosotros',
+                'about-page.hero.sub': 'Artesanía, pasión y corazón berlinés',
+                'about-page.story.eyebrow': 'Nuestra historia',
+                'about-page.story.title': 'Men\'s Cut by Taskin',
+                'about-page.story.p1': 'Somos barberos apasionados con un alto nivel de experiencia y conocimiento en todos los aspectos de nuestro oficio. La razón de nuestro éxito es la experiencia global que hemos adquirido trabajando y aprendiendo de una cultura diversa en diferentes barrios de Berlín.',
+                'about-page.story.p2': 'Estamos comprometidos a hacer felices a todos nuestros clientes escuchando y sugiriendo el mejor estilo que más te favorezca — porque tu look es nuestro arte.',
+                'about-page.story.p3': 'Ubicado en el vibrante distrito de Neukölln en Berlín, Men\'s Cut by Taskin se ha convertido en un destino para aquellos que exigen lo mejor en el cuidado masculino, obteniendo una calificación de 4.9 estrellas de 168 clientes satisfechos.',
+                'about-page.values.eyebrow': 'Por qué elegirnos',
+                'about-page.values.title': 'Nuestros valores',
+                'about-page.values.v1.title': 'Artesanía magistral',
+                'about-page.values.v1.desc': 'Cada corte se aborda con precisión y arte. Utilizamos solo herramientas y técnicas premium perfeccionadas a lo largo de años de práctica dedicada.',
+                'about-page.values.v2.title': 'Atención personal',
+                'about-page.values.v2.desc': 'Escuchamos a cada cliente individualmente, entendiendo su estilo único y sugiriendo el mejor enfoque para la forma de su rostro y su estilo de vida.',
+                'about-page.values.v3.title': 'Calidad constante',
+                'about-page.values.v3.desc': 'Nuestra calificación de 4.9 estrellas con 168 reseñas habla por sí sola. Cada visita ofrece el mismo nivel excepcional de servicio, en todo momento.',
+                'about-page.stats.eyebrow': 'Lo mejor de Berlín',
+                'about-page.stats.title': '4.9 ★ en Google',
+                'about-page.stats.stat1': 'Calificación promedio',
+                'about-page.stats.stat2': 'Reseñas en Google',
+                'about-page.stats.stat3': 'Clientes felices',
+                'services-page.breadcrumb': 'Servicios',
+                'services-page.hero.title': 'Nuestros servicios',
+                'services-page.hero.sub': 'Cortes y afeitados para el caballero moderno',
+                'services-page.eyebrow': 'Lo que ofrecemos',
+                'services-page.title': 'Servicios de barbería',
+                'services-page.desc': 'Ofrecemos una gama completa de servicios de barbería para hombres — desde cortes modernos y clásicos hasta afeitados tradicionales y cuidado de barba, para resaltar tu estilo y confianza.',
+                'services-page.s1.eyebrow': 'Servicio 01',
+                'services-page.s1.title': 'Corte de pelo',
+                'services-page.s1.p1': 'Ofrecemos soluciones profesionales y personalizadas para crear tu look perfecto. Nuestros barberos experimentados utilizan técnicas de corte modernas y clásicas, teniendo en cuenta tus preferencias y matices de estilo.',
+                'services-page.s1.p2': 'Ya sea que prefieras un degradado clásico, un corte desvanecido, un pompadour o un undercut — nos esforzamos por resaltar tu individualidad y proporcionar recomendaciones de estilo para que siempre luzcas impecable.',
+                'services-page.s2.eyebrow': 'Servicio 02',
+                'services-page.s2.title': 'Afeitado tradicional',
+                'services-page.s2.p1': 'Ofrecemos una experiencia única de afeitado tradicional, convirtiendo un procedimiento ordinario en un ritual relajante. Barberos experimentados utilizan las mejores herramientas y técnicas de afeitado, garantizando un afeitado suave y confortable.',
+                'services-page.s2.p2': 'La combinación de toallas calientes, aceites aromáticos y cuidado atento garantiza una sensación de frescura y renovación, permitiéndote lucir y sentirte mejor.',
+                'services-page.s3.eyebrow': 'Servicio 03',
+                'services-page.s3.title': 'Cuidado de barba',
+                'services-page.s3.p1': 'Ofrecemos cuidado profesional de barba que incluye recorte, estilizado y el uso de productos de alta calidad. Nuestros barberos experimentados te ayudarán a seleccionar la forma y estilo de barba perfectos según tus preferencias y características faciales.',
+                'services-page.s3.p2': 'Nos esforzamos por resaltar tu individualidad y proporcionar recomendaciones de cuidado para que tu barba siempre luzca impecable.',
+                'contact-page.breadcrumb': 'Contacto',
+                'contact-page.hero.title': 'Contáctanos',
+                'contact-page.hero.sub': 'Estamos en contacto',
+                'contact-page.eyebrow': 'Ponte en contacto',
+                'contact-page.title': 'Visita la tienda',
+                'contact-page.address.label': 'Dirección',
+                'contact-page.address.value': 'Anzengruberstraße 4<br />12043 Berlin, Alemania',
+                'contact-page.phone.label': 'Teléfono',
+                'contact-page.map.label': 'Código de mapa',
+                'contact-page.map.value': 'FCJQ+38 Berlin, Alemania',
+                'contact-page.hours.title': 'Horario de apertura',
+                'contact-page.hours.mon': 'Lunes',
+                'contact-page.hours.tue': 'Martes',
+                'contact-page.hours.wed': 'Miércoles',
+                'contact-page.hours.thu': 'Jueves',
+                'contact-page.hours.fri': 'Viernes',
+                'contact-page.hours.sat': 'Sábado',
+                'contact-page.hours.sun': 'Domingo',
+                'contact-page.hours.closed': 'Cerrado',
+                'contact-page.follow': 'Síguenos',
+                'footer.brand': 'Men\'s Cut by Taskin',
+                'footer.brand_sub': 'Berlín · Alemania',
+                'footer.desc': 'Barbería de servicio completo y cuidado masculino en Berlín, Alemania.',
+                'footer.explore': 'Explorar',
+                'footer.explore.home': 'Inicio',
+                'footer.explore.about': 'Sobre nosotros',
+                'footer.explore.services': 'Servicios',
+                'footer.explore.contact': 'Contacto',
+                'footer.contact': 'Contacto',
+                'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
+                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlín · +49 30 68053010'
+            }
+        };
+
+        var CURRENT_LANG = 'de';
+
+        // ── FOOTER HTML ──
         function getFooterHTML() {
             return '<footer>' +
                 '<div class="container">' +
@@ -1384,9 +2048,9 @@
                 '    <div class="footer-brand">' +
                 '      <div class="footer-logo">' +
                 '        <img src="' + LOGO_PATH + '" alt="Logo" />' +
-                '        <div class="footer-logo-text">Men\'s Cut by Taskin <span>Berlin &middot; Germany</span></div>' +
+                '        <div class="footer-logo-text" data-i18n="footer.brand">Men\'s Cut by Taskin <span data-i18n="footer.brand_sub">Berlin &middot; Germany</span></div>' +
                 '      </div>' +
-                '      <p class="footer-desc">Full service barbershop &amp; men\'s grooming in Berlin, Germany.</p>' +
+                '      <p class="footer-desc" data-i18n="footer.desc">Full service barbershop &amp; men\'s grooming in Berlin, Germany.</p>' +
                 '      <div class="footer-social">' +
                 '        <a href="https://www.instagram.com/menscutbytaskin" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>' +
                 '        <a href="https://www.facebook.com/share/18b5GmeCER/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' +
@@ -1394,24 +2058,24 @@
                 '      </div>' +
                 '    </div>' +
                 '    <div class="footer-col">' +
-                '      <h4>Explore</h4>' +
+                '      <h4 data-i18n="footer.explore">Explore</h4>' +
                 '      <ul>' +
-                '        <li><a onclick="showPage(\'home\')">Home</a></li>' +
-                '        <li><a onclick="showPage(\'about\')">About Us</a></li>' +
-                '        <li><a onclick="showPage(\'services\')">Services</a></li>' +
-                '        <li><a onclick="showPage(\'contact\')">Contact</a></li>' +
+                '        <li><a onclick="showPage(\'home\')" data-i18n="footer.explore.home">Home</a></li>' +
+                '        <li><a onclick="showPage(\'about\')" data-i18n="footer.explore.about">About Us</a></li>' +
+                '        <li><a onclick="showPage(\'services\')" data-i18n="footer.explore.services">Services</a></li>' +
+                '        <li><a onclick="showPage(\'contact\')" data-i18n="footer.explore.contact">Contact</a></li>' +
                 '      </ul>' +
                 '    </div>' +
                 '    <div class="footer-col">' +
-                '      <h4>Contact</h4>' +
+                '      <h4 data-i18n="footer.contact">Contact</h4>' +
                 '      <ul>' +
-                '        <li><a>Anzengruberstr. 4, 12043 Berlin</a></li>' +
+                '        <li><a data-i18n="footer.contact.address">Anzengruberstr. 4, 12043 Berlin</a></li>' +
                 '        <li><a href="tel:+4930680530010">+49 30 68053010</a></li>' +
                 '        <li><a href="https://wa.me/491637811453" target="_blank">+49 163 7811453</a></li>' +
                 '      </ul>' +
                 '    </div>' +
                 '  </div>' +
-                '  <div class="footer-bottom"><p>&copy; 2024 Men\'s Cut by Taskin &middot; Berlin &middot; <a href="tel:+4930680530010" style="color:var(--gold);text-decoration:none">+49 30 68053010</a></p></div>' +
+                '  <div class="footer-bottom"><p data-i18n="footer.copyright">&copy; 2024 Men\'s Cut by Taskin &middot; Berlin &middot; +49 30 68053010</p></div>' +
                 '</div>' +
                 '</footer>';
         }
@@ -1428,17 +2092,64 @@
             });
         }
 
+        // ── TRANSLATION ENGINE ──
+        function applyTranslations(lang) {
+            var dict = TRANSLATIONS[lang];
+            if (!dict) return;
+
+            // All elements with data-i18n
+            var els = document.querySelectorAll('[data-i18n]');
+            els.forEach(function(el) {
+                var key = el.getAttribute('data-i18n');
+                if (dict[key] !== undefined) {
+                    // For elements that may contain HTML (like hero.title with <em>)
+                    // Use innerHTML if the translation contains HTML tags, else textContent
+                    var val = dict[key];
+                    if (val.indexOf('<') !== -1 && val.indexOf('>') !== -1) {
+                        el.innerHTML = val;
+                    } else {
+                        el.textContent = val;
+                    }
+                }
+            });
+
+            // Update current language label
+            var labelMap = { de: 'DE', en: 'EN', ur: 'UR', fr: 'FR', es: 'ES' };
+            var lbl = document.getElementById('currentLangLabel');
+            if (lbl) lbl.textContent = labelMap[lang] || 'DE';
+
+            // Update active state in dropdown
+            document.querySelectorAll('.lang-dropdown a').forEach(function(a) {
+                a.classList.toggle('active-lang', a.getAttribute('data-lang') === lang);
+            });
+
+            CURRENT_LANG = lang;
+            localStorage.setItem('men-cut-lang', lang);
+        }
+
+        // ── SET LANGUAGE ──
+        function setLanguage(lang) {
+            if (!TRANSLATIONS[lang]) return;
+            applyTranslations(lang);
+            document.getElementById('langDropdown').classList.remove('open');
+            // re-trigger reveal animations after translation
+            setTimeout(initReveal, 120);
+        }
+
+        // ── TOGGLE LANGUAGE DROPDOWN ──
+        function toggleLangDropdown() {
+            document.getElementById('langDropdown').classList.toggle('open');
+        }
+
         // ── PAGE SWITCH ──
         function showPage(name) {
             // hide all pages
             document.querySelectorAll('.page').forEach(function(p) {
                 p.classList.remove('active');
             });
-            // show target
             var target = document.getElementById('page-' + name);
             if (target) target.classList.add('active');
 
-            // update nav links
             ['home', 'about', 'services', 'contact'].forEach(function(n) {
                 var el = document.getElementById('nav-' + n);
                 if (el) {
@@ -1446,14 +2157,14 @@
                 }
             });
 
-            // close mobile menu
             document.getElementById('navLinks').classList.remove('open');
-
-            // scroll to top
             window.scrollTo(0, 0);
 
-            // re-trigger reveal animations
-            setTimeout(initReveal, 100);
+            // Re-apply translations for the newly visible page
+            setTimeout(function() {
+                applyTranslations(CURRENT_LANG);
+                initReveal();
+            }, 80);
         }
 
         // ── MOBILE MENU ──
@@ -1488,20 +2199,36 @@
             }
         });
 
+        // ── CLOSE DROPDOWN ON CLICK OUTSIDE ──
+        document.addEventListener('click', function(e) {
+            var wrap = document.querySelector('.lang-wrap');
+            if (wrap && !wrap.contains(e.target)) {
+                document.getElementById('langDropdown').classList.remove('open');
+            }
+        });
+
         // ── DOM READY ──
         document.addEventListener('DOMContentLoaded', function() {
             // inject footers
             injectFooters();
 
-            // ensure nav logo uses correct path (already set in HTML, but just in case)
+            // fix logo paths
             document.querySelectorAll('.nav-logo img, .footer-logo img').forEach(function(img) {
                 if (img.src.indexOf('LOGO_PLACEHOLDER') !== -1 || img.src.indexOf('data:image') === 0) {
                     img.src = LOGO_PATH;
                 }
             });
 
+            // load saved language or default to German
+            var saved = localStorage.getItem('men-cut-lang');
+            var initialLang = (saved && TRANSLATIONS[saved]) ? saved : 'de';
+            CURRENT_LANG = initialLang;
+
+            // apply translations
+            applyTranslations(initialLang);
+
             // init reveals
-            initReveal();
+            setTimeout(initReveal, 150);
         });
     </script>
 
