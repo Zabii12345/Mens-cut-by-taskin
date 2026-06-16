@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Men's Cut by Taskin – Berlin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <style>
         /* ── RESET & BASE ── */
         :root {
@@ -59,8 +59,9 @@
         }
         .nav-logo img {
             height: 48px;
-            width: auto;
-            /* no filter – we use a normal logo image */
+            width: 48px;
+            border-radius: 50%;
+            object-fit: cover;
         }
         .nav-logo-text {
             color: var(--white);
@@ -424,68 +425,70 @@
             margin-top: 4px;
         }
 
-        /* ── SERVICES GRID ── */
+        /* ── SERVICES GRID (UPDATED) ── */
         .services-section {
             background: var(--white);
         }
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
+            gap: 40px 30px;
             margin-top: 60px;
         }
         .service-card {
-            position: relative;
-            overflow: hidden;
-            aspect-ratio: 3/4;
-            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            transition: none;
+            cursor: default;
+            overflow: visible;
+            aspect-ratio: auto;
         }
         .service-card img {
             width: 100%;
-            height: 100%;
+            aspect-ratio: 4 / 3;
             object-fit: cover;
+            display: block;
             transition: transform .6s;
-            filter: brightness(.65);
+            filter: none;
         }
         .service-card:hover img {
-            transform: scale(1.06);
-            filter: brightness(.5);
+            transform: scale(1.03);
+            filter: none;
         }
         .service-card-content {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 40px 30px;
-            text-align: center;
+            position: static;
+            padding: 18px 0 0 0;
+            text-align: left;
+            background: transparent;
+            inset: auto;
+            display: block;
         }
-        .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--white);
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .service-card p {
-            font-size: .85rem;
-            color: rgba(255, 255, 255, .75);
-            line-height: 1.7;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height .5s, opacity .4s;
-            opacity: 0;
-        }
-        .service-card:hover p {
-            max-height: 200px;
-            opacity: 1;
-        }
-        .service-card-line {
+        .service-card-content .service-card-line {
             width: 40px;
             height: 2px;
             background: var(--gold);
-            margin: 0 auto 16px;
+            margin: 0 0 14px 0;
+        }
+        .service-card-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        .service-card-content p {
+            font-size: .88rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            max-height: none;
+            overflow: visible;
+            opacity: 1;
+            transition: none;
+        }
+        .service-card:hover .service-card-content p {
+            max-height: none;
+            opacity: 1;
         }
 
         /* ── REVIEWS ── */
@@ -660,7 +663,9 @@
         }
         .footer-logo img {
             height: 50px;
-            width: auto;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
         }
         .footer-logo-text {
             color: var(--white);
@@ -943,6 +948,7 @@
             }
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
             .reviews-grid {
                 grid-template-columns: 1fr;
@@ -979,7 +985,7 @@
     <!-- ====== NAVIGATION ====== -->
     <nav id="navbar">
         <a class="nav-logo" onclick="showPage('home')">
-            <img src="images/logo.png" alt="Men's Cut by Taskin Logo">
+            <img src="images/logo.png" alt="Men's Cut by Taskin Logo" />
             <div class="nav-logo-text">Men's Cut by Taskin <span>Berlin · Barbershop</span></div>
         </a>
         <ul class="nav-links" id="navLinks">
@@ -1004,7 +1010,7 @@
             <div class="hero-bg"></div>
             <div class="hero-content">
                 <div class="hero-eyebrow">Berlin's Premier Barbershop</div>
-                <h1 class="hero-h1">Best Haircut &amp; Hot Shave<br>in <em>Berlin</em></h1>
+                <h1 class="hero-h1">Best Haircut &amp; Hot Shave<br />in <em>Berlin</em></h1>
                 <p class="hero-sub">Our barbers offer the finest haircuts and traditional shaves, individually tailored to your style. Classic barbering traditions meet modern techniques.</p>
                 <div class="hero-rating">
                     <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -1019,10 +1025,10 @@
         <div class="info-strip">
             <div class="container">
                 <div class="info-grid">
-                    <div class="info-item"><div class="info-icon">&#128205;</div><div class="info-label">Address</div><div class="info-value">Anzengruberstr. 4<br>12043 Berlin</div></div>
-                    <div class="info-item"><div class="info-icon">&#128336;</div><div class="info-label">Hours</div><div class="info-value">Mon&ndash;Sat: 9AM&ndash;7PM<br>Sunday: Closed</div></div>
+                    <div class="info-item"><div class="info-icon">&#128205;</div><div class="info-label">Address</div><div class="info-value">Anzengruberstr. 4<br />12043 Berlin</div></div>
+                    <div class="info-item"><div class="info-icon">&#128336;</div><div class="info-label">Hours</div><div class="info-value">Mon&ndash;Sat: 9AM&ndash;7PM<br />Sunday: Closed</div></div>
                     <div class="info-item"><div class="info-icon">&#128222;</div><div class="info-label">Phone</div><div class="info-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
-                    <div class="info-item"><div class="info-icon">&#11088;</div><div class="info-label">Rating</div><div class="info-value">4.9 / 5.0<br>168 Reviews</div></div>
+                    <div class="info-item"><div class="info-icon">&#11088;</div><div class="info-label">Rating</div><div class="info-value">4.9 / 5.0<br />168 Reviews</div></div>
                 </div>
             </div>
         </div>
@@ -1032,7 +1038,7 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-img-wrap reveal from-left">
-                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=85" alt="Barber at work" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=85" alt="Barber at work" loading="lazy" />
                     </div>
                     <div class="about-text reveal from-right">
                         <div class="section-eyebrow">About Us</div>
@@ -1050,7 +1056,7 @@
             </div>
         </section>
 
-        <!-- SERVICES PREVIEW -->
+        <!-- SERVICES PREVIEW (UPDATED) -->
         <section class="services-section">
             <div class="container">
                 <div style="text-align:center" class="reveal">
@@ -1060,24 +1066,27 @@
                     <p style="max-width:550px;margin:0 auto;color:var(--text-light);line-height:1.8">A full range of men's barber services — from modern haircuts to traditional shaves and beard care, to emphasise your style and confidence.</p>
                 </div>
                 <div class="services-grid">
+                    <!-- Service 1 -->
                     <div class="service-card reveal">
-                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=85" alt="Haircut" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=85" alt="Haircut" loading="lazy" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
                             <h3>Hair Cutting</h3>
                             <p>Professional and personalised solutions using modern and classic cutting techniques, tailored to your preferences and style.</p>
                         </div>
                     </div>
+                    <!-- Service 2 -->
                     <div class="service-card reveal">
-                        <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800&q=85" alt="Shave" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800&q=85" alt="Shave" loading="lazy" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
                             <h3>Traditional Shave</h3>
                             <p>A unique traditional shaving experience with hot towels, aromatic oils and expert technique for a smooth, close shave.</p>
                         </div>
                     </div>
+                    <!-- Service 3 -->
                     <div class="service-card reveal">
-                        <img src="https://img.freepik.com/free-photo/handsome-man-cutting-beard-barber-shop-salon_1303-20931.jpg" alt="Beard" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=85" alt="Beard" loading="lazy" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
                             <h3>Beard Grooming</h3>
@@ -1132,7 +1141,7 @@
                         <div class="divider"></div>
                         <div class="contact-detail">
                             <div class="contact-icon">&#128205;</div>
-                            <div><div class="contact-label">Address</div><div class="contact-value">Anzengruberstra&szlig;e 4<br>12043 Berlin, Germany</div></div>
+                            <div><div class="contact-label">Address</div><div class="contact-value">Anzengruberstra&szlig;e 4<br />12043 Berlin, Germany</div></div>
                         </div>
                         <div class="contact-detail">
                             <div class="contact-icon">&#128222;</div>
@@ -1140,7 +1149,7 @@
                         </div>
                         <div class="contact-detail">
                             <div class="contact-icon">&#128336;</div>
-                            <div><div class="contact-label">Opening Hours</div><div class="contact-value">Mon&ndash;Fri: 9:00 AM &ndash; 7:00 PM<br>Saturday: 9:00 AM &ndash; 7:00 PM<br>Sunday: Closed</div></div>
+                            <div><div class="contact-label">Opening Hours</div><div class="contact-value">Mon&ndash;Fri: 9:00 AM &ndash; 7:00 PM<br />Saturday: 9:00 AM &ndash; 7:00 PM<br />Sunday: Closed</div></div>
                         </div>
                         <div class="contact-label" style="margin-bottom:12px">Follow Us</div>
                         <div class="social-row">
@@ -1178,7 +1187,7 @@
                 <div class="container">
                     <div class="about-grid">
                         <div class="about-img-wrap reveal from-left">
-                            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=85" alt="Barber shop" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=85" alt="Barber shop" loading="lazy" />
                         </div>
                         <div class="about-text reveal from-right">
                             <div class="section-eyebrow">Our Story</div>
@@ -1244,7 +1253,7 @@
                     </div>
                     <div class="services-list">
                         <div class="service-item reveal">
-                            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=85" alt="Haircut" loading="lazy"></div>
+                            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=85" alt="Haircut" loading="lazy" /></div>
                             <div class="service-item-text">
                                 <div class="section-eyebrow">Service 01</div>
                                 <h3>Hair Cutting</h3>
@@ -1254,7 +1263,7 @@
                             </div>
                         </div>
                         <div class="service-item reverse reveal">
-                            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=900&q=85" alt="Shave" loading="lazy"></div>
+                            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=900&q=85" alt="Shave" loading="lazy" /></div>
                             <div class="service-item-text">
                                 <div class="section-eyebrow">Service 02</div>
                                 <h3>Traditional Shave</h3>
@@ -1264,7 +1273,7 @@
                             </div>
                         </div>
                         <div class="service-item reveal">
-                            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&q=85" alt="Beard" loading="lazy"></div>
+                            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&q=85" alt="Beard" loading="lazy" /></div>
                             <div class="service-item-text">
                                 <div class="section-eyebrow">Service 03</div>
                                 <h3>Beard Grooming</h3>
@@ -1302,7 +1311,7 @@
                             <div class="divider"></div>
                             <div class="contact-detail">
                                 <div class="contact-icon">&#128205;</div>
-                                <div><div class="contact-label">Address</div><div class="contact-value">Anzengruberstra&szlig;e 4<br>12043 Berlin, Germany</div></div>
+                                <div><div class="contact-label">Address</div><div class="contact-value">Anzengruberstra&szlig;e 4<br />12043 Berlin, Germany</div></div>
                             </div>
                             <div class="contact-detail">
                                 <div class="contact-icon">&#128222;</div>
@@ -1358,7 +1367,7 @@
                 '  <div class="footer-grid">' +
                 '    <div class="footer-brand">' +
                 '      <div class="footer-logo">' +
-                '        <img src="' + LOGO_PATH + '" alt="Logo">' +
+                '        <img src="' + LOGO_PATH + '" alt="Logo" />' +
                 '        <div class="footer-logo-text">Men\'s Cut by Taskin <span>Berlin &middot; Germany</span></div>' +
                 '      </div>' +
                 '      <p class="footer-desc">Full service barbershop &amp; men\'s grooming in Berlin, Germany.</p>' +
