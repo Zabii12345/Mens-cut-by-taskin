@@ -457,6 +457,89 @@
             opacity: 1;
         }
 
+        /* ── PRICE LIST ── */
+        .pricelist-section {
+            background: var(--cream);
+        }
+        .pricelist-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px 30px;
+            margin-top: 60px;
+        }
+        .pricelist-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform .3s, box-shadow .3s;
+            cursor: default;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .05);
+        }
+        .pricelist-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, .08);
+        }
+        .pricelist-card img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+            transition: transform .6s;
+        }
+        .pricelist-card:hover img {
+            transform: scale(1.03);
+        }
+        .pricelist-card-content {
+            padding: 22px 24px 26px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background: var(--white);
+        }
+        .pricelist-card-content .service-card-line {
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 0 14px 0;
+        }
+        .pricelist-card-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .pricelist-card-content .pricelist-desc {
+            font-size: .82rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 14px;
+            flex: 1;
+        }
+        .pricelist-card-content .pricelist-price {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.7rem;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            border-top: 1px solid rgba(201, 162, 77, .15);
+            padding-top: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .pricelist-card-content .pricelist-price .price-label {
+            font-size: .7rem;
+            font-weight: 400;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
         /* ── REVIEWS ── */
         .reviews-section {
             background: var(--cream);
@@ -962,6 +1045,10 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+            .pricelist-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
             .reviews-grid {
                 grid-template-columns: 1fr;
             }
@@ -985,6 +1072,51 @@
             .reviews-header {
                 flex-direction: column;
                 gap: 20px;
+            }
+            .pricelist-card-content {
+                padding: 18px 18px 22px 18px;
+            }
+            .pricelist-card-content h3 {
+                font-size: 1.05rem;
+            }
+            .pricelist-card-content .pricelist-price {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .pricelist-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .pricelist-card-content {
+                padding: 14px 14px 18px 14px;
+            }
+            .pricelist-card-content h3 {
+                font-size: .9rem;
+                margin-bottom: 4px;
+            }
+            .pricelist-card-content .pricelist-desc {
+                font-size: .7rem;
+                margin-bottom: 10px;
+                line-height: 1.4;
+            }
+            .pricelist-card-content .pricelist-price {
+                font-size: 1.2rem;
+                padding-top: 10px;
+            }
+            .pricelist-card-content .pricelist-price .price-label {
+                font-size: .6rem;
+            }
+            .pricelist-card-content .service-card-line {
+                width: 28px;
+                margin: 0 0 10px 0;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            section {
+                padding: 50px 0;
             }
         }
     </style>
@@ -1098,6 +1230,98 @@
                             <div class="service-card-line"></div>
                             <h3 data-i18n="services.beard.title">Beard Grooming</h3>
                             <p data-i18n="services.beard.desc">Expert beard trimming, shaping and styling using premium products to keep your beard impeccable at all times.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== NEW: PRICE LIST SECTION ====== -->
+        <section class="pricelist-section">
+            <div class="container">
+                <div style="text-align:center" class="reveal">
+                    <div class="section-eyebrow" data-i18n="pricelist.eyebrow">Price List</div>
+                    <h2 class="section-title" data-i18n="pricelist.title">Our Prices</h2>
+                    <div class="divider center"></div>
+                    <p style="max-width:550px;margin:0 auto;color:var(--text-light);line-height:1.8" data-i18n="pricelist.desc">Fair and transparent pricing for all our services — quality grooming at honest rates.</p>
+                </div>
+                <div class="pricelist-grid">
+                    <!-- 1. Wash, Haircut, Blow Dry & Beard -->
+                    <div class="pricelist-card reveal">
+                        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80" alt="Wash, Haircut, Blow Dry & Beard" loading="lazy" />
+                        <div class="pricelist-card-content">
+                            <div class="service-card-line"></div>
+                            <h3 data-i18n="pricelist.s1.title">Wash, Haircut, Blow Dry &amp; Beard</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s1.desc">Complete grooming package including hair wash, precision haircut, styling, and beard shaping.</p>
+                            <div class="pricelist-price">
+                                <span data-i18n="pricelist.s1.price">€27</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2. Haircut -->
+                    <div class="pricelist-card reveal">
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80" alt="Haircut" loading="lazy" />
+                        <div class="pricelist-card-content">
+                            <div class="service-card-line"></div>
+                            <h3 data-i18n="pricelist.s2.title">Haircut</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s2.desc">Professional haircut tailored to your preferred style and look.</p>
+                            <div class="pricelist-price">
+                                <span data-i18n="pricelist.s2.price">€15</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3. Wash, Haircut & Blow Dry -->
+                    <div class="pricelist-card reveal">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80" alt="Wash, Haircut & Blow Dry" loading="lazy" />
+                        <div class="pricelist-card-content">
+                            <div class="service-card-line"></div>
+                            <h3 data-i18n="pricelist.s3.title">Wash, Haircut &amp; Blow Dry</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s3.desc">Refreshing hair wash followed by a stylish haircut and professional blow dry.</p>
+                            <div class="pricelist-price">
+                                <span data-i18n="pricelist.s3.price">€18</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4. Beard Trim -->
+                    <div class="pricelist-card reveal">
+                        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80" alt="Beard Trim" loading="lazy" />
+                        <div class="pricelist-card-content">
+                            <div class="service-card-line"></div>
+                            <h3 data-i18n="pricelist.s4.title">Beard Trim</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s4.desc">Clean and precise beard trimming for a sharp and polished appearance.</p>
+                            <div class="pricelist-price">
+                                <span data-i18n="pricelist.s4.price">€12</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 5. Kids Haircut (up to 6 years) -->
+                    <div class="pricelist-card reveal">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Kids Haircut" loading="lazy" />
+                        <div class="pricelist-card-content">
+                            <div class="service-card-line"></div>
+                            <h3 data-i18n="pricelist.s5.title">Kids Haircut (up to 6 years)</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s5.desc">Comfortable and friendly haircut service specially designed for young children.</p>
+                            <div class="pricelist-price">
+                                <span data-i18n="pricelist.s5.price">€12</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 6. Honey Wax (per zone) -->
+                    <div class="pricelist-card reveal">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80" alt="Honey Wax" loading="lazy" />
+                        <div class="pricelist-card-content">
+                            <div class="service-card-line"></div>
+                            <h3 data-i18n="pricelist.s6.title">Honey Wax (per zone)</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s6.desc">Gentle honey wax treatment for smooth and clean skin.</p>
+                            <div class="pricelist-price">
+                                <span data-i18n="pricelist.s6.price">€3</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1578,7 +1802,29 @@
                 'footer.explore.contact': 'Kontakt',
                 'footer.contact': 'Kontakt',
                 'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
-                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010'
+                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010',
+                'pricelist.eyebrow': 'Preisliste',
+                'pricelist.title': 'Unsere Preise',
+                'pricelist.desc': 'Faire und transparente Preise für alle unsere Dienstleistungen — hochwertige Pflege zu fairen Preisen.',
+                'pricelist.s1.title': 'Waschen, Haarschnitt, Föhnen &amp; Bart',
+                'pricelist.s1.desc': 'Komplettes Pflegepaket inklusive Haarwäsche, präzisem Haarschnitt, Styling und Bartformung.',
+                'pricelist.s1.price': '€27',
+                'pricelist.s2.title': 'Haarschnitt',
+                'pricelist.s2.desc': 'Professioneller Haarschnitt, ganz nach Ihrem bevorzugten Stil und Look.',
+                'pricelist.s2.price': '€15',
+                'pricelist.s3.title': 'Waschen, Haarschnitt &amp; Föhnen',
+                'pricelist.s3.desc': 'Erfrischende Haarwäsche gefolgt von einem stilvollen Haarschnitt und professionellem Föhnen.',
+                'pricelist.s3.price': '€18',
+                'pricelist.s4.title': 'Bart trimmen',
+                'pricelist.s4.desc': 'Sauberes und präzises Barttrimmen für ein scharfes und gepflegtes Erscheinungsbild.',
+                'pricelist.s4.price': '€12',
+                'pricelist.s5.title': 'Kinderhaarschnitt (bis 6 Jahre)',
+                'pricelist.s5.desc': 'Angenehmer und freundlicher Haarschnittservice, speziell für kleine Kinder entwickelt.',
+                'pricelist.s5.price': '€12',
+                'pricelist.s6.title': 'Honigwachs (pro Zone)',
+                'pricelist.s6.desc': 'Sanfte Honigwachsbehandlung für glatte und saubere Haut.',
+                'pricelist.s6.price': '€3',
+                'pricelist.price_label': 'Preis'
             },
             en: {
                 'nav.home': 'Home',
@@ -1692,7 +1938,29 @@
                 'footer.explore.contact': 'Contact',
                 'footer.contact': 'Contact',
                 'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
-                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010'
+                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010',
+                'pricelist.eyebrow': 'Price List',
+                'pricelist.title': 'Our Prices',
+                'pricelist.desc': 'Fair and transparent pricing for all our services — quality grooming at honest rates.',
+                'pricelist.s1.title': 'Wash, Haircut, Blow Dry &amp; Beard',
+                'pricelist.s1.desc': 'Complete grooming package including hair wash, precision haircut, styling, and beard shaping.',
+                'pricelist.s1.price': '€27',
+                'pricelist.s2.title': 'Haircut',
+                'pricelist.s2.desc': 'Professional haircut tailored to your preferred style and look.',
+                'pricelist.s2.price': '€15',
+                'pricelist.s3.title': 'Wash, Haircut &amp; Blow Dry',
+                'pricelist.s3.desc': 'Refreshing hair wash followed by a stylish haircut and professional blow dry.',
+                'pricelist.s3.price': '€18',
+                'pricelist.s4.title': 'Beard Trim',
+                'pricelist.s4.desc': 'Clean and precise beard trimming for a sharp and polished appearance.',
+                'pricelist.s4.price': '€12',
+                'pricelist.s5.title': 'Kids Haircut (up to 6 years)',
+                'pricelist.s5.desc': 'Comfortable and friendly haircut service specially designed for young children.',
+                'pricelist.s5.price': '€12',
+                'pricelist.s6.title': 'Honey Wax (per zone)',
+                'pricelist.s6.desc': 'Gentle honey wax treatment for smooth and clean skin.',
+                'pricelist.s6.price': '€3',
+                'pricelist.price_label': 'Price'
             },
             ur: {
                 'nav.home': 'ہوم',
@@ -1806,7 +2074,29 @@
                 'footer.explore.contact': 'رابطہ',
                 'footer.contact': 'رابطہ',
                 'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
-                'footer.copyright': '© 2024 مینز کٹ بائی تسکین · برلن · +49 30 68053010'
+                'footer.copyright': '© 2024 مینز کٹ بائی تسکین · برلن · +49 30 68053010',
+                'pricelist.eyebrow': 'قیمت کی فہرست',
+                'pricelist.title': 'ہماری قیمتیں',
+                'pricelist.desc': 'ہماری تمام خدمات کے لیے منصفانہ اور شفاف قیمتوں کا تعین — ایماندارانہ نرخوں پر معیاری گرومنگ۔',
+                'pricelist.s1.title': 'دھونا، ہیئر کٹ، بلو ڈرائی اور داڑھی',
+                'pricelist.s1.desc': 'مکمل گرومنگ پیکیج جس میں بال دھونا، درست ہیئر کٹ، اسٹائلنگ اور داڑھی کی شکل دینا شامل ہے۔',
+                'pricelist.s1.price': '€27',
+                'pricelist.s2.title': 'ہیئر کٹ',
+                'pricelist.s2.desc': 'آپ کے پسندیدہ اسٹائل اور شکل کے مطابق پیشہ ورانہ ہیئر کٹ۔',
+                'pricelist.s2.price': '€15',
+                'pricelist.s3.title': 'دھونا، ہیئر کٹ اور بلو ڈرائی',
+                'pricelist.s3.desc': 'تازگی بخش بال دھونا، اس کے بعد اسٹائلش ہیئر کٹ اور پیشہ ورانہ بلو ڈرائی۔',
+                'pricelist.s3.price': '€18',
+                'pricelist.s4.title': 'داڑھی تراشنا',
+                'pricelist.s4.desc': 'صاف اور درست داڑھی تراشنا ایک تیز اور چمکدار ظہور کے لیے۔',
+                'pricelist.s4.price': '€12',
+                'pricelist.s5.title': 'بچوں کا ہیئر کٹ (6 سال تک)',
+                'pricelist.s5.desc': 'چھوٹے بچوں کے لیے خاص طور پر ڈیزائن کردہ آرام دہ اور دوستانہ ہیئر کٹ سروس۔',
+                'pricelist.s5.price': '€12',
+                'pricelist.s6.title': 'شہد کا موم (فی زون)',
+                'pricelist.s6.desc': 'ہموار اور صاف جلد کے لیے نرم شہد کے موم کا علاج۔',
+                'pricelist.s6.price': '€3',
+                'pricelist.price_label': 'قیمت'
             },
             fr: {
                 'nav.home': 'Accueil',
@@ -1920,7 +2210,29 @@
                 'footer.explore.contact': 'Contact',
                 'footer.contact': 'Contact',
                 'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
-                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010'
+                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlin · +49 30 68053010',
+                'pricelist.eyebrow': 'Liste des prix',
+                'pricelist.title': 'Nos tarifs',
+                'pricelist.desc': 'Des prix justes et transparents pour tous nos services — des soins de qualité à des tarifs honnêtes.',
+                'pricelist.s1.title': 'Lavage, coupe, brushing et barbe',
+                'pricelist.s1.desc': 'Forfait soin complet incluant lavage, coupe de précision, coiffage et mise en forme de la barbe.',
+                'pricelist.s1.price': '€27',
+                'pricelist.s2.title': 'Coupe de cheveux',
+                'pricelist.s2.desc': 'Coupe professionnelle adaptée à votre style et à votre look préféré.',
+                'pricelist.s2.price': '€15',
+                'pricelist.s3.title': 'Lavage, coupe et brushing',
+                'pricelist.s3.desc': 'Lavage rafraîchissant suivi d\'une coupe stylée et d\'un brushing professionnel.',
+                'pricelist.s3.price': '€18',
+                'pricelist.s4.title': 'Taille de barbe',
+                'pricelist.s4.desc': 'Taille de barbe nette et précise pour une apparence soignée et élégante.',
+                'pricelist.s4.price': '€12',
+                'pricelist.s5.title': 'Coupe enfants (jusqu\'à 6 ans)',
+                'pricelist.s5.desc': 'Service de coupe confortable et convivial spécialement conçu pour les jeunes enfants.',
+                'pricelist.s5.price': '€12',
+                'pricelist.s6.title': 'Cire au miel (par zone)',
+                'pricelist.s6.desc': 'Traitement doux à la cire au miel pour une peau lisse et propre.',
+                'pricelist.s6.price': '€3',
+                'pricelist.price_label': 'Prix'
             },
             es: {
                 'nav.home': 'Inicio',
@@ -2034,7 +2346,29 @@
                 'footer.explore.contact': 'Contacto',
                 'footer.contact': 'Contacto',
                 'footer.contact.address': 'Anzengruberstr. 4, 12043 Berlin',
-                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlín · +49 30 68053010'
+                'footer.copyright': '© 2024 Men\'s Cut by Taskin · Berlín · +49 30 68053010',
+                'pricelist.eyebrow': 'Lista de precios',
+                'pricelist.title': 'Nuestros precios',
+                'pricelist.desc': 'Precios justos y transparentes para todos nuestros servicios — cuidado de calidad a precios honestos.',
+                'pricelist.s1.title': 'Lavado, corte, secado y barba',
+                'pricelist.s1.desc': 'Paquete de cuidado completo que incluye lavado de cabello, corte de precisión, peinado y modelado de barba.',
+                'pricelist.s1.price': '€27',
+                'pricelist.s2.title': 'Corte de pelo',
+                'pricelist.s2.desc': 'Corte profesional adaptado a tu estilo y look preferido.',
+                'pricelist.s2.price': '€15',
+                'pricelist.s3.title': 'Lavado, corte y secado',
+                'pricelist.s3.desc': 'Lavado refrescante seguido de un corte con estilo y secado profesional.',
+                'pricelist.s3.price': '€18',
+                'pricelist.s4.title': 'Recorte de barba',
+                'pricelist.s4.desc': 'Recorte de barba limpio y preciso para una apariencia elegante y pulida.',
+                'pricelist.s4.price': '€12',
+                'pricelist.s5.title': 'Corte infantil (hasta 6 años)',
+                'pricelist.s5.desc': 'Servicio de corte cómodo y amigable especialmente diseñado para niños pequeños.',
+                'pricelist.s5.price': '€12',
+                'pricelist.s6.title': 'Cera de miel (por zona)',
+                'pricelist.s6.desc': 'Tratamiento suave con cera de miel para una piel suave y limpia.',
+                'pricelist.s6.price': '€3',
+                'pricelist.price_label': 'Precio'
             }
         };
 
