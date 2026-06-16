@@ -1,620 +1,1484 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Men\'s Cut by Taskin – Berlin</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--gold:#C9A24D;--dark:#1a1a1a;--darker:#0f0f0f;--cream:#f5f0e8;--text:#2d2d2d;--text-light:#666;--white:#fff}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:\'Montserrat\',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,15,15,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;border-bottom:1px solid rgba(201,162,77,.2);transition:border-color .3s}
-.nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none}
-.nav-logo img{height:48px;width:auto;filter:invert(1) brightness(2)}
-.nav-logo-text{color:var(--white);font-family:\'Playfair Display\',serif;font-size:1.1rem;font-weight:700;line-height:1.2}
-.nav-logo-text span{display:block;font-family:\'Montserrat\',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:2px}
-.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{color:#ccc;text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s;padding:4px 0;border-bottom:2px solid transparent;cursor:pointer}
-.nav-links a:hover,.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold)}
-.nav-book-btn{background:var(--gold);color:var(--darker);padding:10px 22px;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s;text-decoration:none;font-family:\'Montserrat\',sans-serif}
-.nav-book-btn:hover{background:var(--white)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
-.hamburger span{width:24px;height:2px;background:var(--white);transition:.3s}
-.page{display:none}.page.active{display:block}
-.hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:flex-end}
-.hero-bg{position:absolute;inset:0;background:url(\'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1920&q=85\') center/cover no-repeat;filter:brightness(.4);transform:scale(1.05);animation:heroZoom 10s ease-out forwards}
-@keyframes heroZoom{to{transform:scale(1)}}
-.hero-content{position:relative;z-index:2;text-align:right;padding:0 80px;max-width:720px}
-.hero-eyebrow{color:var(--gold);font-size:.72rem;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;font-weight:600;opacity:0;animation:fadeInRight .8s .4s forwards}
-.hero-h1{font-family:\'Playfair Display\',serif;font-size:clamp(2.8rem,5vw,4.8rem);font-weight:900;color:var(--white);line-height:1.1;margin-bottom:24px;opacity:0;animation:fadeInRight .8s .7s forwards}
-.hero-h1 em{color:var(--gold);font-style:normal}
-.hero-sub{color:rgba(255,255,255,.75);font-size:1rem;line-height:1.8;margin-bottom:40px;font-weight:300;opacity:0;animation:fadeInRight .8s 1s forwards}
-.hero-rating{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-bottom:40px;opacity:0;animation:fadeInRight .8s 1.2s forwards}
-.stars{color:var(--gold);font-size:1.1rem}
-.rating-text{color:rgba(255,255,255,.8);font-size:.85rem}
-.hero-btn{display:inline-block;background:var(--gold);color:var(--darker);padding:16px 40px;font-size:.8rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s;border:2px solid var(--gold);font-family:\'Montserrat\',sans-serif;opacity:0;animation:fadeInRight .8s 1.4s forwards}
-.hero-btn:hover{background:transparent;color:var(--gold)}
-.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:.65rem;letter-spacing:3px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:bounce 2s 2s infinite}
-.hero-scroll::after{content:\'\';width:1px;height:40px;background:var(--gold)}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-@keyframes fadeInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
-@keyframes fadeInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-section{padding:100px 0}
-.container{max-width:1200px;margin:0 auto;padding:0 48px}
-.section-eyebrow{color:var(--gold);font-size:.7rem;letter-spacing:4px;text-transform:uppercase;font-weight:600;margin-bottom:12px}
-.section-title{font-family:\'Playfair Display\',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;color:var(--dark);line-height:1.2;margin-bottom:20px}
-.section-title.light{color:var(--white)}
-.divider{width:60px;height:3px;background:var(--gold);margin-bottom:32px}
-.divider.center{margin:0 auto 32px}
-.info-strip{background:var(--gold);padding:60px 0}
-.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
-.info-icon{font-size:1.8rem;margin-bottom:12px}
-.info-label{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(26,26,26,.6);margin-bottom:6px;font-weight:600}
-.info-value{font-size:.9rem;font-weight:700;color:var(--darker);line-height:1.6}
-.info-value a{color:inherit;text-decoration:none}
-.about-strip{background:var(--cream)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.about-img-wrap{position:relative;overflow:hidden;aspect-ratio:4/5}
-.about-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.about-img-wrap:hover img{transform:scale(1.04)}
-.about-text p{font-size:.95rem;line-height:1.9;color:var(--text-light);margin-bottom:20px}
-.stats-row{display:flex;gap:40px;margin-top:40px}
-.stat{text-align:center}
-.stat-num{font-family:\'Playfair Display\',serif;font-size:2.5rem;font-weight:900;color:var(--gold)}
-.stat-label{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-top:4px}
-.services-section{background:var(--white)}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px}
-.service-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer}
-.service-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s;filter:brightness(.65)}
-.service-card:hover img{transform:scale(1.06);filter:brightness(.5)}
-.service-card-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:40px 30px;text-align:center}
-.service-card h3{font-family:\'Playfair Display\',serif;font-size:1.8rem;color:var(--white);font-weight:700;margin-bottom:12px}
-.service-card p{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .5s,opacity .4s;opacity:0}
-.service-card:hover p{max-height:200px;opacity:1}
-.service-card-line{width:40px;height:2px;background:var(--gold);margin:0 auto 16px}
-.reviews-section{background:var(--dark);padding:100px 0}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
-.review-card{background:rgba(255,255,255,.05);border:1px solid rgba(201,162,77,.2);padding:32px;transition:border-color .3s,transform .3s}
-.review-card:hover{border-color:var(--gold);transform:translateY(-4px)}
-.review-stars{color:var(--gold);margin-bottom:16px;font-size:1rem}
-.review-text{color:rgba(255,255,255,.75);font-size:.88rem;line-height:1.8;margin-bottom:20px;font-style:italic}
-.reviewer{display:flex;align-items:center;gap:12px}
-.reviewer-avatar{width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:var(--darker);font-weight:700;font-size:.9rem}
-.reviewer-name{color:var(--white);font-size:.85rem;font-weight:600}
-.reviewer-date{color:rgba(255,255,255,.4);font-size:.72rem;margin-top:2px}
-.reviews-header{display:flex;align-items:flex-end;justify-content:space-between}
-.rating-big{font-family:\'Playfair Display\',serif;font-size:4rem;font-weight:900;color:var(--gold);line-height:1}
-.rating-sub{color:rgba(255,255,255,.5);font-size:.75rem;letter-spacing:1px}
-.contact-section{background:var(--cream)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.contact-detail{display:flex;align-items:flex-start;gap:16px;margin-bottom:32px}
-.contact-icon{width:44px;height:44px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
-.contact-label{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:4px}
-.contact-value{font-size:.95rem;color:var(--text);line-height:1.7;font-weight:500}
-.contact-value a{color:inherit;text-decoration:none}
-.contact-value a:hover{color:var(--gold)}
-.social-row{display:flex;gap:12px;margin-top:20px}
-.social-btn{width:44px;height:44px;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;transition:all .3s;text-decoration:none}
-.social-btn:hover{background:var(--gold);color:var(--darker)}
-.map-embed{width:100%;height:420px;border:none}
-footer{background:var(--darker);color:rgba(255,255,255,.6);padding:60px 0 30px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:50px}
-.footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.footer-logo img{height:50px;filter:invert(1) brightness(2)}
-.footer-logo-text{color:var(--white);font-family:\'Playfair Display\',serif;font-size:1.1rem;font-weight:700;line-height:1.2}
-.footer-logo-text span{display:block;font-family:\'Montserrat\',sans-serif;font-size:.6rem;letter-spacing:3px;color:var(--gold);margin-top:2px}
-.footer-desc{font-size:.85rem;line-height:1.8;color:rgba(255,255,255,.5)}
-.footer-col h4{color:var(--white);font-size:.75rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;font-weight:600}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:10px}
-.footer-col ul li a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;transition:color .3s;cursor:pointer}
-.footer-col ul li a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;text-align:center;font-size:.75rem;color:rgba(255,255,255,.3)}
-.footer-social{display:flex;gap:10px;margin-top:20px}
-.footer-social a{width:36px;height:36px;border:1px solid rgba(201,162,77,.3);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.9rem;text-decoration:none;transition:all .3s}
-.footer-social a:hover{border-color:var(--gold);color:var(--gold)}
-.hours-table{width:100%;border-collapse:collapse}
-.hours-table tr{border-bottom:1px solid rgba(0,0,0,.07)}
-.hours-table td{padding:12px 0;font-size:.88rem}
-.hours-table td:first-child{font-weight:600;color:var(--dark)}
-.hours-table td:last-child{text-align:right;color:var(--text-light)}
-.hours-table .closed td:last-child{color:#c00}
-.inner-hero{height:400px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;margin-top:72px}
-.inner-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.35)}
-.inner-hero-content{position:relative;z-index:2}
-.inner-hero h1{font-family:\'Playfair Display\',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:var(--white)}
-.inner-hero p{color:rgba(255,255,255,.65);font-size:1rem;margin-top:12px}
-.breadcrumb{color:rgba(255,255,255,.4);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
-.breadcrumb span{color:var(--gold)}
-.services-list{}
-.service-item{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px}
-.service-item.reverse{direction:rtl}
-.service-item.reverse>*{direction:ltr}
-.service-item-img{overflow:hidden;aspect-ratio:4/3}
-.service-item-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.service-item-img:hover img{transform:scale(1.05)}
-.service-item-text h3{font-family:\'Playfair Display\',serif;font-size:2rem;font-weight:700;color:var(--dark);margin-bottom:16px}
-.service-item-text p{font-size:.92rem;line-height:1.9;color:var(--text-light);margin-bottom:20px}
-.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px}
-.value-card{background:var(--white);padding:40px 30px;border-top:3px solid var(--gold);transition:transform .3s,box-shadow .3s}
-.value-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.08)}
-.value-icon{font-size:2rem;margin-bottom:16px}
-.value-card h4{font-family:\'Playfair Display\',serif;font-size:1.2rem;margin-bottom:12px}
-.value-card p{font-size:.85rem;line-height:1.8;color:var(--text-light)}
-.contact-page-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
-.reveal.from-left{transform:translateX(-40px)}
-.reveal.from-right{transform:translateX(40px)}
-.reveal.visible{opacity:1;transform:translate(0)}
-@media(max-width:900px){
-  nav{padding:0 24px}
-  .nav-links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(15,15,15,.98);padding:30px 24px;gap:20px}
-  .nav-links.open{display:flex}
-  .hamburger{display:flex}
-  .nav-book-btn{display:none}
-  .hero-content{padding:0 30px;text-align:center}
-  .hero-rating{justify-content:center}
-  .about-grid,.contact-grid,.contact-page-grid,.service-item{grid-template-columns:1fr;gap:40px}
-  .service-item.reverse{direction:ltr}
-  .services-grid{grid-template-columns:1fr}
-  .reviews-grid{grid-template-columns:1fr}
-  .info-grid{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr;gap:30px}
-  .value-grid{grid-template-columns:1fr}
-  .container{padding:0 24px}
-  section{padding:70px 0}
-  .stats-row{flex-wrap:wrap;gap:20px}
-  .reviews-header{flex-direction:column;gap:20px}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Cut by Taskin – Berlin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── RESET & BASE ── */
+        :root {
+            --gold: #C9A24D;
+            --dark: #1a1a1a;
+            --darker: #0f0f0f;
+            --cream: #f5f0e8;
+            --text: #2d2d2d;
+            --text-light: #666;
+            --white: #fff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ── NAVIGATION ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 15, .97);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 48px;
+            height: 72px;
+            border-bottom: 1px solid rgba(201, 162, 77, .2);
+            transition: border-color .3s;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .nav-logo img {
+            height: 48px;
+            width: auto;
+            /* no filter – we use a normal logo image */
+        }
+        .nav-logo-text {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .nav-logo-text span {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: .6rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 2px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: .78rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color .3s;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        .nav-book-btn {
+            background: var(--gold);
+            color: var(--darker);
+            padding: 10px 22px;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all .3s;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .nav-book-btn:hover {
+            background: var(--white);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: .3s;
+        }
+
+        /* ── PAGE SWITCH ── */
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1920&q=85') center/cover no-repeat;
+            filter: brightness(.4);
+            transform: scale(1.05);
+            animation: heroZoom 10s ease-out forwards;
+        }
+        @keyframes heroZoom {
+            to {
+                transform: scale(1);
+            }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: right;
+            padding: 0 80px;
+            max-width: 720px;
+        }
+        .hero-eyebrow {
+            color: var(--gold);
+            font-size: .72rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeInRight .8s .4s forwards;
+        }
+        .hero-h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.8rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeInRight .8s .7s forwards;
+        }
+        .hero-h1 em {
+            color: var(--gold);
+            font-style: normal;
+        }
+        .hero-sub {
+            color: rgba(255, 255, 255, .75);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeInRight .8s 1s forwards;
+        }
+        .hero-rating {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInRight .8s 1.2s forwards;
+        }
+        .stars {
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+        .rating-text {
+            color: rgba(255, 255, 255, .8);
+            font-size: .85rem;
+        }
+        .hero-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--darker);
+            padding: 16px 40px;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all .3s;
+            border: 2px solid var(--gold);
+            font-family: 'Montserrat', sans-serif;
+            opacity: 0;
+            animation: fadeInRight .8s 1.4s forwards;
+        }
+        .hero-btn:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, .5);
+            font-size: .65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: bounce 2s 2s infinite;
+        }
+        .hero-scroll::after {
+            content: '';
+            width: 1px;
+            height: 40px;
+            background: var(--gold);
+        }
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            padding: 100px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+        .section-eyebrow {
+            color: var(--gold);
+            font-size: .7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 900;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .section-title.light {
+            color: var(--white);
+        }
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin-bottom: 32px;
+        }
+        .divider.center {
+            margin: 0 auto 32px;
+        }
+
+        /* ── INFO STRIP ── */
+        .info-strip {
+            background: var(--gold);
+            padding: 60px 0;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        .info-icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+        .info-label {
+            font-size: .65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(26, 26, 26, .6);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .info-value {
+            font-size: .9rem;
+            font-weight: 700;
+            color: var(--darker);
+            line-height: 1.6;
+        }
+        .info-value a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ── ABOUT ── */
+        .about-strip {
+            background: var(--cream);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .about-img-wrap {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+        }
+        .about-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s;
+        }
+        .about-img-wrap:hover img {
+            transform: scale(1.04);
+        }
+        .about-text p {
+            font-size: .95rem;
+            line-height: 1.9;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        .stats-row {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold);
+        }
+        .stat-label {
+            font-size: .72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ── SERVICES GRID ── */
+        .services-section {
+            background: var(--white);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 60px;
+        }
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+        }
+        .service-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s;
+            filter: brightness(.65);
+        }
+        .service-card:hover img {
+            transform: scale(1.06);
+            filter: brightness(.5);
+        }
+        .service-card-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            font-size: .85rem;
+            color: rgba(255, 255, 255, .75);
+            line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s, opacity .4s;
+            opacity: 0;
+        }
+        .service-card:hover p {
+            max-height: 200px;
+            opacity: 1;
+        }
+        .service-card-line {
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto 16px;
+        }
+
+        /* ── REVIEWS ── */
+        .reviews-section {
+            background: var(--dark);
+            padding: 100px 0;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+        .review-card {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(201, 162, 77, .2);
+            padding: 32px;
+            transition: border-color .3s, transform .3s;
+        }
+        .review-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+        .review-stars {
+            color: var(--gold);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        .review-text {
+            color: rgba(255, 255, 255, .75);
+            font-size: .88rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .reviewer-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--darker);
+            font-weight: 700;
+            font-size: .9rem;
+        }
+        .reviewer-name {
+            color: var(--white);
+            font-size: .85rem;
+            font-weight: 600;
+        }
+        .reviewer-date {
+            color: rgba(255, 255, 255, .4);
+            font-size: .72rem;
+            margin-top: 2px;
+        }
+        .reviews-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        .rating-big {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .rating-sub {
+            color: rgba(255, 255, 255, .5);
+            font-size: .75rem;
+            letter-spacing: 1px;
+        }
+
+        /* ── CONTACT ── */
+        .contact-section {
+            background: var(--cream);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+        .contact-label {
+            font-size: .65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .contact-value {
+            font-size: .95rem;
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 500;
+        }
+        .contact-value a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .contact-value a:hover {
+            color: var(--gold);
+        }
+        .social-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.1rem;
+            transition: all .3s;
+            text-decoration: none;
+        }
+        .social-btn:hover {
+            background: var(--gold);
+            color: var(--darker);
+        }
+        .map-embed {
+            width: 100%;
+            height: 420px;
+            border: none;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--darker);
+            color: rgba(255, 255, 255, .6);
+            padding: 60px 0 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+        .footer-logo-text {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .footer-logo-text span {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: .6rem;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-top: 2px;
+        }
+        .footer-desc {
+            font-size: .85rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, .5);
+        }
+        .footer-col h4 {
+            color: var(--white);
+            font-size: .75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, .5);
+            text-decoration: none;
+            font-size: .85rem;
+            transition: color .3s;
+            cursor: pointer;
+        }
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 24px;
+            text-align: center;
+            font-size: .75rem;
+            color: rgba(255, 255, 255, .3);
+        }
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(201, 162, 77, .3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, .4);
+            font-size: .9rem;
+            text-decoration: none;
+            transition: all .3s;
+        }
+        .footer-social a:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ── HOURS TABLE ── */
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .hours-table tr {
+            border-bottom: 1px solid rgba(0, 0, 0, .07);
+        }
+        .hours-table td {
+            padding: 12px 0;
+            font-size: .88rem;
+        }
+        .hours-table td:first-child {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .hours-table td:last-child {
+            text-align: right;
+            color: var(--text-light);
+        }
+        .hours-table .closed td:last-child {
+            color: #c00;
+        }
+
+        /* ── INNER HERO ── */
+        .inner-hero {
+            height: 400px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 72px;
+        }
+        .inner-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(.35);
+        }
+        .inner-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .inner-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            color: var(--white);
+        }
+        .inner-hero p {
+            color: rgba(255, 255, 255, .65);
+            font-size: 1rem;
+            margin-top: 12px;
+        }
+        .breadcrumb {
+            color: rgba(255, 255, 255, .4);
+            font-size: .72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .breadcrumb span {
+            color: var(--gold);
+        }
+
+        /* ── SERVICES LIST ── */
+        .service-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        .service-item.reverse {
+            direction: rtl;
+        }
+        .service-item.reverse>* {
+            direction: ltr;
+        }
+        .service-item-img {
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+        .service-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s;
+        }
+        .service-item-img:hover img {
+            transform: scale(1.05);
+        }
+        .service-item-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+        .service-item-text p {
+            font-size: .92rem;
+            line-height: 1.9;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* ── VALUE CARDS ── */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .value-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-top: 3px solid var(--gold);
+            transition: transform .3s, box-shadow .3s;
+        }
+        .value-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+        }
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .value-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .value-card p {
+            font-size: .85rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        /* ── CONTACT PAGE GRID ── */
+        .contact-page-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        /* ── REVEAL ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .7s, transform .7s;
+        }
+        .reveal.from-left {
+            transform: translateX(-40px);
+        }
+        .reveal.from-right {
+            transform: translateX(40px);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translate(0);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            nav {
+                padding: 0 24px;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 15, 15, .98);
+                padding: 30px 24px;
+                gap: 20px;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-book-btn {
+                display: none;
+            }
+            .hero-content {
+                padding: 0 30px;
+                text-align: center;
+            }
+            .hero-rating {
+                justify-content: center;
+            }
+            .about-grid,
+            .contact-grid,
+            .contact-page-grid,
+            .service-item {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .service-item.reverse {
+                direction: ltr;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 0 24px;
+            }
+            section {
+                padding: 70px 0;
+            }
+            .stats-row {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .reviews-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<nav id="navbar">
-  <a class="nav-logo" onclick="showPage(\'home\')">
-    <img src="data:image/jpeg;base64,LOGO_PLACEHOLDER" alt="Men\'s Cut by Taskin Logo">
-    <div class="nav-logo-text">Men\'s Cut by Taskin <span>Berlin · Barbershop</span></div>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a onclick="showPage(\'home\')" class="active" id="nav-home">Home</a></li>
-    <li><a onclick="showPage(\'about\')" id="nav-about">About</a></li>
-    <li><a onclick="showPage(\'services\')" id="nav-services">Services</a></li>
-    <li><a onclick="showPage(\'contact\')" id="nav-contact">Contact</a></li>
-  </ul>
-  <a class="nav-book-btn" href="tel:+4930680530010">Call to Book</a>
-  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-</nav>
+    <!-- ====== NAVIGATION ====== -->
+    <nav id="navbar">
+        <a class="nav-logo" onclick="showPage('home')">
+            <img src="images/logo.png" alt="Men's Cut by Taskin Logo">
+            <div class="nav-logo-text">Men's Cut by Taskin <span>Berlin · Barbershop</span></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+            <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+            <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+            <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+        </ul>
+        <a class="nav-book-btn" href="tel:+4930680530010">Call to Book</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
 
-<!-- HOME PAGE -->
-<div class="page active" id="page-home">
-  <section class="hero" style="margin-top:0;padding:0">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="hero-eyebrow">Berlin\'s Premier Barbershop</div>
-      <h1 class="hero-h1">Best Haircut &amp; Hot Shave<br>in <em>Berlin</em></h1>
-      <p class="hero-sub">Our barbers offer the finest haircuts and traditional shaves, individually tailored to your style. Classic barbering traditions meet modern techniques.</p>
-      <div class="hero-rating">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="rating-text"><strong style="color:#fff">4.9</strong> &nbsp;&middot;&nbsp; 168 Google Reviews</div>
-      </div>
-      <a href="tel:+4930680530010" class="hero-btn">Call to Book Now</a>
-    </div>
-    <div class="hero-scroll">Scroll</div>
-  </section>
+    <!-- ============================================================ -->
+    <!-- HOME PAGE                                                     -->
+    <!-- ============================================================ -->
+    <div class="page active" id="page-home">
 
-  <div class="info-strip">
-    <div class="container">
-      <div class="info-grid">
-        <div class="info-item"><div class="info-icon">&#128205;</div><div class="info-label">Address</div><div class="info-value">Anzengruberstr. 4<br>12043 Berlin</div></div>
-        <div class="info-item"><div class="info-icon">&#128336;</div><div class="info-label">Hours</div><div class="info-value">Mon&ndash;Sat: 9AM&ndash;7PM<br>Sunday: Closed</div></div>
-        <div class="info-item"><div class="info-icon">&#128222;</div><div class="info-label">Phone</div><div class="info-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
-        <div class="info-item"><div class="info-icon">&#11088;</div><div class="info-label">Rating</div><div class="info-value">4.9 / 5.0<br>168 Reviews</div></div>
-      </div>
-    </div>
-  </div>
-
-  <section class="about-strip">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-img-wrap reveal from-left">
-          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=85" alt="Barber at work" loading="lazy">
-        </div>
-        <div class="about-text reveal from-right">
-          <div class="section-eyebrow">About Us</div>
-          <h2 class="section-title">Men\'s Cut by Taskin</h2>
-          <div class="divider"></div>
-          <p>We are passionate barbers with deep expertise in all aspects of our craft. Our success comes from years of experience working with a diverse clientele in the heart of Berlin.</p>
-          <p>We are committed and determined to make all our clients happy through listening carefully and suggesting the best style that fits you most — combining timeless barbering tradition with contemporary technique.</p>
-          <div class="stats-row">
-            <div class="stat"><div class="stat-num">4.9&#9733;</div><div class="stat-label">Rating</div></div>
-            <div class="stat"><div class="stat-num">168+</div><div class="stat-label">Reviews</div></div>
-            <div class="stat"><div class="stat-num">5K+</div><div class="stat-label">Happy Clients</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="services-section">
-    <div class="container">
-      <div style="text-align:center" class="reveal">
-        <div class="section-eyebrow">What We\'re Offering</div>
-        <h2 class="section-title">Barber Services</h2>
-        <div class="divider center"></div>
-        <p style="max-width:550px;margin:0 auto;color:var(--text-light);line-height:1.8">A full range of men\'s barber services &mdash; from modern haircuts to traditional shaves and beard care, to emphasise your style and confidence.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=85" alt="Haircut" loading="lazy">
-          <div class="service-card-content">
-            <div class="service-card-line"></div>
-            <h3>Hair Cutting</h3>
-            <p>Professional and personalised solutions using modern and classic cutting techniques, tailored to your preferences and style.</p>
-          </div>
-        </div>
-        <div class="service-card reveal">
-          <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800&q=85" alt="Shave" loading="lazy">
-          <div class="service-card-content">
-            <div class="service-card-line"></div>
-            <h3>Traditional Shave</h3>
-            <p>A unique traditional shaving experience with hot towels, aromatic oils and expert technique for a smooth, close shave.</p>
-          </div>
-        </div>
-        <div class="service-card reveal">
-          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=85" alt="Beard" loading="lazy">
-          <div class="service-card-content">
-            <div class="service-card-line"></div>
-            <h3>Beard Grooming</h3>
-            <p>Expert beard trimming, shaping and styling using premium products to keep your beard impeccable at all times.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="reviews-section">
-    <div class="container">
-      <div class="reviews-header reveal">
-        <div>
-          <div class="section-eyebrow">100% Good Reviews</div>
-          <h2 class="section-title light">Customers Say&hellip;</h2>
-        </div>
-        <div style="text-align:right">
-          <div class="rating-big">4.9</div>
-          <div class="stars" style="font-size:1.2rem;margin:6px 0">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div class="rating-sub">168 Google Reviews</div>
-        </div>
-      </div>
-      <div class="reviews-grid">
-        <div class="review-card reveal">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div class="review-text">"An unforgettable experience! Taskin\'s skill and the warm atmosphere make this an absolute must-visit in Berlin."</div>
-          <div class="reviewer"><div class="reviewer-avatar">LR</div><div><div class="reviewer-name">Lautaro Ramos</div><div class="reviewer-date">Google &middot; Oct 2024</div></div></div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div class="review-text">"Best haircut I\'ve had in Berlin. Precise, clean, exactly what I wanted. Great conversation too — highly recommend!"</div>
-          <div class="reviewer"><div class="reviewer-avatar">KM</div><div><div class="reviewer-name">Kai M&uuml;ller</div><div class="reviewer-date">Google &middot; Sep 2024</div></div></div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <div class="review-text">"Perfect cut. Great service. I travel from across Berlin just for this barbershop. Worth every minute."</div>
-          <div class="reviewer"><div class="reviewer-avatar">OG</div><div><div class="reviewer-name">Oleg Grishko</div><div class="reviewer-date">Google &middot; Sep 2024</div></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact-section">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="reveal from-left">
-          <div class="section-eyebrow">Find Us</div>
-          <h2 class="section-title">Visit the Shop</h2>
-          <div class="divider"></div>
-          <div class="contact-detail">
-            <div class="contact-icon">&#128205;</div>
-            <div><div class="contact-label">Address</div><div class="contact-value">Anzengruberstra&szlig;e 4<br>12043 Berlin, Germany</div></div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">&#128222;</div>
-            <div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">&#128336;</div>
-            <div><div class="contact-label">Opening Hours</div><div class="contact-value">Mon&ndash;Fri: 9:00 AM &ndash; 7:00 PM<br>Saturday: 9:00 AM &ndash; 7:00 PM<br>Sunday: Closed</div></div>
-          </div>
-          <div class="contact-label" style="margin-bottom:12px">Follow Us</div>
-          <div class="social-row">
-            <a class="social-btn" href="#" title="TikTok" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.72a4.85 4.85 0 0 1-1-.03z"/></svg></a>
-            <a class="social-btn" href="#" title="Instagram" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
-            <a class="social-btn" href="#" title="Facebook" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a class="social-btn" href="#" title="WhatsApp" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
-          </div>
-        </div>
-        <div class="reveal from-right">
-          <iframe class="map-embed" src="https://maps.google.com/maps?q=Anzengruberstra%C3%9Fe+4,+12043+Berlin&output=embed&z=16" allowfullscreen loading="lazy" title="Shop Location"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  FOOTER_HOME
-</div>
-
-<!-- ABOUT PAGE -->
-<div class="page" id="page-about">
-  <div style="margin-top:72px">
-    <div class="inner-hero">
-      <div class="inner-hero-bg" style="background-image:url(\'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1920&q=80\')"></div>
-      <div class="inner-hero-content">
-        <div class="breadcrumb">Home &middot; <span>About</span></div>
-        <h1>About Us</h1>
-        <p>Craft, passion &amp; Berlin heart</p>
-      </div>
-    </div>
-    <section style="background:var(--white)">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-img-wrap reveal from-left">
-            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=85" alt="Barber shop" loading="lazy">
-          </div>
-          <div class="about-text reveal from-right">
-            <div class="section-eyebrow">Our Story</div>
-            <h2 class="section-title">Men\'s Cut by Taskin</h2>
-            <div class="divider"></div>
-            <p>We are passionate barbers with a high level of experience and expertise in all aspects of our craft. The reason for our success is the overall experience we have working and learning from a diverse culture in different neighborhoods of Berlin.</p>
-            <p>We are committed and determined to make all our clients happy through listening and suggesting the best style that fits you the most — because your look is our art.</p>
-            <p>Located in the vibrant Neuk&ouml;lln district of Berlin, Men\'s Cut by Taskin has become a destination for those who demand the best in men\'s grooming, earning a 4.9-star rating from 168 satisfied customers.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section style="background:var(--cream)">
-      <div class="container">
-        <div style="text-align:center" class="reveal">
-          <div class="section-eyebrow">Why Choose Us</div>
-          <h2 class="section-title">Our Values</h2>
-          <div class="divider center"></div>
-        </div>
-        <div class="value-grid">
-          <div class="value-card reveal"><div class="value-icon">&#9986;&#65039;</div><h4>Master Craftsmanship</h4><p>Every cut is approached with precision and artistry. We use only premium tools and techniques refined over years of dedicated practice.</p></div>
-          <div class="value-card reveal"><div class="value-icon">&#129309;</div><h4>Personal Attention</h4><p>We listen to each client individually, understanding their unique style and suggesting the best approach for their face shape and lifestyle.</p></div>
-          <div class="value-card reveal"><div class="value-icon">&#11088;</div><h4>Consistent Quality</h4><p>Our 4.9-star rating with 168 reviews speaks for itself. Every visit delivers the same exceptional standard of service, every time.</p></div>
-        </div>
-      </div>
-    </section>
-    <section style="background:var(--dark);padding:80px 0">
-      <div class="container" style="text-align:center">
-        <div class="section-eyebrow reveal">Berlin\'s Best</div>
-        <h2 class="section-title light reveal">4.9 &#9733; on Google</h2>
-        <div class="divider center reveal"></div>
-        <div class="stats-row reveal" style="justify-content:center;margin-top:0">
-          <div class="stat"><div class="stat-num">4.9&#9733;</div><div class="stat-label" style="color:rgba(255,255,255,.5)">Average Rating</div></div>
-          <div class="stat"><div class="stat-num">168+</div><div class="stat-label" style="color:rgba(255,255,255,.5)">Google Reviews</div></div>
-          <div class="stat"><div class="stat-num">5K+</div><div class="stat-label" style="color:rgba(255,255,255,.5)">Happy Clients</div></div>
-        </div>
-      </div>
-    </section>
-    FOOTER_ABOUT
-  </div>
-</div>
-
-<!-- SERVICES PAGE -->
-<div class="page" id="page-services">
-  <div style="margin-top:72px">
-    <div class="inner-hero">
-      <div class="inner-hero-bg" style="background-image:url(\'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1920&q=80\')"></div>
-      <div class="inner-hero-content">
-        <div class="breadcrumb">Home &middot; <span>Services</span></div>
-        <h1>Our Services</h1>
-        <p>Haircuts &amp; Shaves for the modern gentleman</p>
-      </div>
-    </div>
-    <section style="background:var(--cream)">
-      <div class="container">
-        <div style="text-align:center;margin-bottom:70px" class="reveal">
-          <div class="section-eyebrow">What We Offer</div>
-          <h2 class="section-title">Barber Services</h2>
-          <div class="divider center"></div>
-          <p style="max-width:580px;margin:0 auto;color:var(--text-light);line-height:1.9">We offer a full range of men\'s barber services &mdash; from modern and classic haircuts to traditional shaves and beard care, to emphasise your style and confidence.</p>
-        </div>
-        <div class="services-list">
-          <div class="service-item reveal">
-            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=85" alt="Haircut" loading="lazy"></div>
-            <div class="service-item-text">
-              <div class="section-eyebrow">Service 01</div>
-              <h3>Hair Cutting</h3>
-              <div class="divider"></div>
-              <p>We offer professional and personalised solutions to create your perfect look. Our experienced barbers use modern and classic cutting techniques, considering your preferences and style nuances.</p>
-              <p>Whether you prefer a classic taper, fade, pompadour, or undercut &mdash; we strive to highlight your individuality and provide styling recommendations so you always look impeccable.</p>
+        <!-- HERO -->
+        <section class="hero" style="margin-top:0;padding:0">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="hero-eyebrow">Berlin's Premier Barbershop</div>
+                <h1 class="hero-h1">Best Haircut &amp; Hot Shave<br>in <em>Berlin</em></h1>
+                <p class="hero-sub">Our barbers offer the finest haircuts and traditional shaves, individually tailored to your style. Classic barbering traditions meet modern techniques.</p>
+                <div class="hero-rating">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="rating-text"><strong style="color:#fff">4.9</strong> &nbsp;&middot;&nbsp; 168 Google Reviews</div>
+                </div>
+                <a href="tel:+4930680530010" class="hero-btn">Call to Book Now</a>
             </div>
-          </div>
-          <div class="service-item reverse reveal">
-            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=900&q=85" alt="Shave" loading="lazy"></div>
-            <div class="service-item-text">
-              <div class="section-eyebrow">Service 02</div>
-              <h3>Traditional Shave</h3>
-              <div class="divider"></div>
-              <p>We offer a unique traditional shaving experience, turning an ordinary procedure into a relaxing ritual. Experienced barbers use the finest shaving tools and techniques, ensuring a smooth and comfortable shave.</p>
-              <p>The combination of hot towels, aromatic oils, and attentive care guarantees a feeling of freshness and renewal, allowing you to look and feel your best.</p>
-            </div>
-          </div>
-          <div class="service-item reveal">
-            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&q=85" alt="Beard" loading="lazy"></div>
-            <div class="service-item-text">
-              <div class="section-eyebrow">Service 03</div>
-              <h3>Beard Grooming</h3>
-              <div class="divider"></div>
-              <p>We offer professional beard care including trimming, styling, and the use of high-quality grooming products. Our experienced barbers will help you select the perfect beard shape and style considering your preferences and facial features.</p>
-              <p>We strive to highlight your individuality and provide care recommendations so that your beard always looks impeccable.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    FOOTER_SERVICES
-  </div>
-</div>
+            <div class="hero-scroll">Scroll</div>
+        </section>
 
-<!-- CONTACT PAGE -->
-<div class="page" id="page-contact">
-  <div style="margin-top:72px">
-    <div class="inner-hero">
-      <div class="inner-hero-bg" style="background-image:url(\'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1920&q=80\')"></div>
-      <div class="inner-hero-content">
-        <div class="breadcrumb">Home &middot; <span>Contact</span></div>
-        <h1>Contact Us</h1>
-        <p>We are in touch</p>
-      </div>
+        <!-- INFO STRIP -->
+        <div class="info-strip">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-item"><div class="info-icon">&#128205;</div><div class="info-label">Address</div><div class="info-value">Anzengruberstr. 4<br>12043 Berlin</div></div>
+                    <div class="info-item"><div class="info-icon">&#128336;</div><div class="info-label">Hours</div><div class="info-value">Mon&ndash;Sat: 9AM&ndash;7PM<br>Sunday: Closed</div></div>
+                    <div class="info-item"><div class="info-icon">&#128222;</div><div class="info-label">Phone</div><div class="info-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
+                    <div class="info-item"><div class="info-icon">&#11088;</div><div class="info-label">Rating</div><div class="info-value">4.9 / 5.0<br>168 Reviews</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT PREVIEW -->
+        <section class="about-strip">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-img-wrap reveal from-left">
+                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=85" alt="Barber at work" loading="lazy">
+                    </div>
+                    <div class="about-text reveal from-right">
+                        <div class="section-eyebrow">About Us</div>
+                        <h2 class="section-title">Men's Cut by Taskin</h2>
+                        <div class="divider"></div>
+                        <p>We are passionate barbers with deep expertise in all aspects of our craft. Our success comes from years of experience working with a diverse clientele in the heart of Berlin.</p>
+                        <p>We are committed and determined to make all our clients happy through listening carefully and suggesting the best style that fits you most — combining timeless barbering tradition with contemporary technique.</p>
+                        <div class="stats-row">
+                            <div class="stat"><div class="stat-num">4.9&#9733;</div><div class="stat-label">Rating</div></div>
+                            <div class="stat"><div class="stat-num">168+</div><div class="stat-label">Reviews</div></div>
+                            <div class="stat"><div class="stat-num">5K+</div><div class="stat-label">Happy Clients</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES PREVIEW -->
+        <section class="services-section">
+            <div class="container">
+                <div style="text-align:center" class="reveal">
+                    <div class="section-eyebrow">What We're Offering</div>
+                    <h2 class="section-title">Barber Services</h2>
+                    <div class="divider center"></div>
+                    <p style="max-width:550px;margin:0 auto;color:var(--text-light);line-height:1.8">A full range of men's barber services — from modern haircuts to traditional shaves and beard care, to emphasise your style and confidence.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=85" alt="Haircut" loading="lazy">
+                        <div class="service-card-content">
+                            <div class="service-card-line"></div>
+                            <h3>Hair Cutting</h3>
+                            <p>Professional and personalised solutions using modern and classic cutting techniques, tailored to your preferences and style.</p>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800&q=85" alt="Shave" loading="lazy">
+                        <div class="service-card-content">
+                            <div class="service-card-line"></div>
+                            <h3>Traditional Shave</h3>
+                            <p>A unique traditional shaving experience with hot towels, aromatic oils and expert technique for a smooth, close shave.</p>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=85" alt="Beard" loading="lazy">
+                        <div class="service-card-content">
+                            <div class="service-card-line"></div>
+                            <h3>Beard Grooming</h3>
+                            <p>Expert beard trimming, shaping and styling using premium products to keep your beard impeccable at all times.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section class="reviews-section">
+            <div class="container">
+                <div class="reviews-header reveal">
+                    <div>
+                        <div class="section-eyebrow">100% Good Reviews</div>
+                        <h2 class="section-title light">Customers Say&hellip;</h2>
+                    </div>
+                    <div style="text-align:right">
+                        <div class="rating-big">4.9</div>
+                        <div class="stars" style="font-size:1.2rem;margin:6px 0">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="rating-sub">168 Google Reviews</div>
+                    </div>
+                </div>
+                <div class="reviews-grid">
+                    <div class="review-card reveal">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="review-text">"An unforgettable experience! Taskin's skill and the warm atmosphere make this an absolute must-visit in Berlin."</div>
+                        <div class="reviewer"><div class="reviewer-avatar">LR</div><div><div class="reviewer-name">Lautaro Ramos</div><div class="reviewer-date">Google &middot; Oct 2024</div></div></div>
+                    </div>
+                    <div class="review-card reveal">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="review-text">"Best haircut I've had in Berlin. Precise, clean, exactly what I wanted. Great conversation too — highly recommend!"</div>
+                        <div class="reviewer"><div class="reviewer-avatar">KM</div><div><div class="reviewer-name">Kai M&uuml;ller</div><div class="reviewer-date">Google &middot; Sep 2024</div></div></div>
+                    </div>
+                    <div class="review-card reveal">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="review-text">"Perfect cut. Great service. I travel from across Berlin just for this barbershop. Worth every minute."</div>
+                        <div class="reviewer"><div class="reviewer-avatar">OG</div><div><div class="reviewer-name">Oleg Grishko</div><div class="reviewer-date">Google &middot; Sep 2024</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PREVIEW -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="reveal from-left">
+                        <div class="section-eyebrow">Find Us</div>
+                        <h2 class="section-title">Visit the Shop</h2>
+                        <div class="divider"></div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">&#128205;</div>
+                            <div><div class="contact-label">Address</div><div class="contact-value">Anzengruberstra&szlig;e 4<br>12043 Berlin, Germany</div></div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">&#128222;</div>
+                            <div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">&#128336;</div>
+                            <div><div class="contact-label">Opening Hours</div><div class="contact-value">Mon&ndash;Fri: 9:00 AM &ndash; 7:00 PM<br>Saturday: 9:00 AM &ndash; 7:00 PM<br>Sunday: Closed</div></div>
+                        </div>
+                        <div class="contact-label" style="margin-bottom:12px">Follow Us</div>
+                        <div class="social-row">
+                            <a class="social-btn" href="#" title="TikTok" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.72a4.85 4.85 0 0 1-1-.03z"/></svg></a>
+                            <a class="social-btn" href="#" title="Instagram" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+                            <a class="social-btn" href="#" title="Facebook" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                            <a class="social-btn" href="#" title="WhatsApp" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="reveal from-right">
+                        <iframe class="map-embed" src="https://maps.google.com/maps?q=Anzengruberstra%C3%9Fe+4,+12043+Berlin&output=embed&z=16" allowfullscreen loading="lazy" title="Shop Location"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOME FOOTER (injected) -->
+        <div id="footer-home"></div>
     </div>
-    <section style="background:var(--cream)">
-      <div class="container">
-        <div class="contact-page-grid">
-          <div class="reveal from-left">
-            <div class="section-eyebrow">Get In Touch</div>
-            <h2 class="section-title">Visit the Shop</h2>
-            <div class="divider"></div>
-            <div class="contact-detail">
-              <div class="contact-icon">&#128205;</div>
-              <div><div class="contact-label">Address</div><div class="contact-value">Anzengruberstra&szlig;e 4<br>12043 Berlin, Germany</div></div>
+
+    <!-- ============================================================ -->
+    <!-- ABOUT PAGE                                                    -->
+    <!-- ============================================================ -->
+    <div class="page" id="page-about">
+        <div style="margin-top:72px">
+            <div class="inner-hero">
+                <div class="inner-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1920&q=80')"></div>
+                <div class="inner-hero-content">
+                    <div class="breadcrumb">Home &middot; <span>About</span></div>
+                    <h1>About Us</h1>
+                    <p>Craft, passion &amp; Berlin heart</p>
+                </div>
             </div>
-            <div class="contact-detail">
-              <div class="contact-icon">&#128222;</div>
-              <div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
-            </div>
-            <div class="contact-detail">
-              <div class="contact-icon">&#128506;</div>
-              <div><div class="contact-label">Map Code</div><div class="contact-value">FCJQ+38 Berlin, Germany</div></div>
-            </div>
-            <div style="margin-top:40px">
-              <div class="contact-label" style="margin-bottom:16px">Opening Hours</div>
-              <table class="hours-table">
-                <tr><td>Monday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                <tr><td>Tuesday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                <tr><td>Wednesday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                <tr><td>Thursday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                <tr><td>Friday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                <tr><td>Saturday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
-                <tr class="closed"><td>Sunday</td><td>Closed</td></tr>
-              </table>
-            </div>
-            <div style="margin-top:40px">
-              <div class="contact-label" style="margin-bottom:14px">Follow Us</div>
-              <div class="social-row">
-                <a class="social-btn" href="#" title="TikTok" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.72a4.85 4.85 0 0 1-1-.03z"/></svg></a>
-                <a class="social-btn" href="#" title="Instagram" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
-                <a class="social-btn" href="#" title="Facebook" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                <a class="social-btn" href="#" title="WhatsApp" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="reveal from-right">
-            <iframe src="https://maps.google.com/maps?q=Anzengruberstra%C3%9Fe+4,+12043+Berlin&output=embed&z=16" width="100%" height="520" style="border:none;width:100%;display:block" allowfullscreen loading="lazy" title="Men\'s Cut by Taskin Map"></iframe>
-          </div>
+            <section style="background:var(--white)">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-img-wrap reveal from-left">
+                            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=85" alt="Barber shop" loading="lazy">
+                        </div>
+                        <div class="about-text reveal from-right">
+                            <div class="section-eyebrow">Our Story</div>
+                            <h2 class="section-title">Men's Cut by Taskin</h2>
+                            <div class="divider"></div>
+                            <p>We are passionate barbers with a high level of experience and expertise in all aspects of our craft. The reason for our success is the overall experience we have working and learning from a diverse culture in different neighborhoods of Berlin.</p>
+                            <p>We are committed and determined to make all our clients happy through listening and suggesting the best style that fits you the most — because your look is our art.</p>
+                            <p>Located in the vibrant Neuk&ouml;lln district of Berlin, Men's Cut by Taskin has become a destination for those who demand the best in men's grooming, earning a 4.9-star rating from 168 satisfied customers.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section style="background:var(--cream)">
+                <div class="container">
+                    <div style="text-align:center" class="reveal">
+                        <div class="section-eyebrow">Why Choose Us</div>
+                        <h2 class="section-title">Our Values</h2>
+                        <div class="divider center"></div>
+                    </div>
+                    <div class="value-grid">
+                        <div class="value-card reveal"><div class="value-icon">&#9986;&#65039;</div><h4>Master Craftsmanship</h4><p>Every cut is approached with precision and artistry. We use only premium tools and techniques refined over years of dedicated practice.</p></div>
+                        <div class="value-card reveal"><div class="value-icon">&#129309;</div><h4>Personal Attention</h4><p>We listen to each client individually, understanding their unique style and suggesting the best approach for their face shape and lifestyle.</p></div>
+                        <div class="value-card reveal"><div class="value-icon">&#11088;</div><h4>Consistent Quality</h4><p>Our 4.9-star rating with 168 reviews speaks for itself. Every visit delivers the same exceptional standard of service, every time.</p></div>
+                    </div>
+                </div>
+            </section>
+            <section style="background:var(--dark);padding:80px 0">
+                <div class="container" style="text-align:center">
+                    <div class="section-eyebrow reveal">Berlin's Best</div>
+                    <h2 class="section-title light reveal">4.9 &#9733; on Google</h2>
+                    <div class="divider center reveal"></div>
+                    <div class="stats-row reveal" style="justify-content:center;margin-top:0">
+                        <div class="stat"><div class="stat-num">4.9&#9733;</div><div class="stat-label" style="color:rgba(255,255,255,.5)">Average Rating</div></div>
+                        <div class="stat"><div class="stat-num">168+</div><div class="stat-label" style="color:rgba(255,255,255,.5)">Google Reviews</div></div>
+                        <div class="stat"><div class="stat-num">5K+</div><div class="stat-label" style="color:rgba(255,255,255,.5)">Happy Clients</div></div>
+                    </div>
+                </div>
+            </section>
+            <div id="footer-about"></div>
         </div>
-      </div>
-    </section>
-    FOOTER_CONTACT
-  </div>
-</div>
+    </div>
 
-<script>
-var LOGO_SRC = "data:image/jpeg;base64,LOGO_PLACEHOLDER";
+    <!-- ============================================================ -->
+    <!-- SERVICES PAGE                                                 -->
+    <!-- ============================================================ -->
+    <div class="page" id="page-services">
+        <div style="margin-top:72px">
+            <div class="inner-hero">
+                <div class="inner-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1920&q=80')"></div>
+                <div class="inner-hero-content">
+                    <div class="breadcrumb">Home &middot; <span>Services</span></div>
+                    <h1>Our Services</h1>
+                    <p>Haircuts &amp; Shaves for the modern gentleman</p>
+                </div>
+            </div>
+            <section style="background:var(--cream)">
+                <div class="container">
+                    <div style="text-align:center;margin-bottom:70px" class="reveal">
+                        <div class="section-eyebrow">What We Offer</div>
+                        <h2 class="section-title">Barber Services</h2>
+                        <div class="divider center"></div>
+                        <p style="max-width:580px;margin:0 auto;color:var(--text-light);line-height:1.9">We offer a full range of men's barber services — from modern and classic haircuts to traditional shaves and beard care, to emphasise your style and confidence.</p>
+                    </div>
+                    <div class="services-list">
+                        <div class="service-item reveal">
+                            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=85" alt="Haircut" loading="lazy"></div>
+                            <div class="service-item-text">
+                                <div class="section-eyebrow">Service 01</div>
+                                <h3>Hair Cutting</h3>
+                                <div class="divider"></div>
+                                <p>We offer professional and personalised solutions to create your perfect look. Our experienced barbers use modern and classic cutting techniques, considering your preferences and style nuances.</p>
+                                <p>Whether you prefer a classic taper, fade, pompadour, or undercut — we strive to highlight your individuality and provide styling recommendations so you always look impeccable.</p>
+                            </div>
+                        </div>
+                        <div class="service-item reverse reveal">
+                            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=900&q=85" alt="Shave" loading="lazy"></div>
+                            <div class="service-item-text">
+                                <div class="section-eyebrow">Service 02</div>
+                                <h3>Traditional Shave</h3>
+                                <div class="divider"></div>
+                                <p>We offer a unique traditional shaving experience, turning an ordinary procedure into a relaxing ritual. Experienced barbers use the finest shaving tools and techniques, ensuring a smooth and comfortable shave.</p>
+                                <p>The combination of hot towels, aromatic oils, and attentive care guarantees a feeling of freshness and renewal, allowing you to look and feel your best.</p>
+                            </div>
+                        </div>
+                        <div class="service-item reveal">
+                            <div class="service-item-img"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&q=85" alt="Beard" loading="lazy"></div>
+                            <div class="service-item-text">
+                                <div class="section-eyebrow">Service 03</div>
+                                <h3>Beard Grooming</h3>
+                                <div class="divider"></div>
+                                <p>We offer professional beard care including trimming, styling, and the use of high-quality grooming products. Our experienced barbers will help you select the perfect beard shape and style considering your preferences and facial features.</p>
+                                <p>We strive to highlight your individuality and provide care recommendations so that your beard always looks impeccable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="footer-services"></div>
+        </div>
+    </div>
 
-function makeFooter() {
-  return \'<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo"><img src="\' + LOGO_SRC + \'" alt="Logo"><div class="footer-logo-text">Men\\\'s Cut by Taskin <span>Berlin &middot; Germany</span></div></div><p class="footer-desc">Full service barbershop &amp; men\\\'s grooming in Berlin, Germany.</p><div class="footer-social"><a href="#" title="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.72a4.85 4.85 0 0 1-1-.03z"/></svg></a><a href="#" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a><a href="#" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" title="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a></div></div><div class="footer-col"><h4>Explore</h4><ul><li><a onclick="showPage(\\\'home\\\')">Home</a></li><li><a onclick="showPage(\\\'about\\\')">About Us</a></li><li><a onclick="showPage(\\\'services\\\')">Services</a></li><li><a onclick="showPage(\\\'contact\\\')">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><a>Anzengruberstr. 4, 12043 Berlin</a></li><li><a href="tel:+4930680530010">+49 30 68053010</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2024 Men\\\'s Cut by Taskin &middot; Berlin &middot; <a href="tel:+4930680530010" style="color:var(--gold);text-decoration:none">+49 30 68053010</a></p></div></div></footer>\';
-}
+    <!-- ============================================================ -->
+    <!-- CONTACT PAGE                                                  -->
+    <!-- ============================================================ -->
+    <div class="page" id="page-contact">
+        <div style="margin-top:72px">
+            <div class="inner-hero">
+                <div class="inner-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1920&q=80')"></div>
+                <div class="inner-hero-content">
+                    <div class="breadcrumb">Home &middot; <span>Contact</span></div>
+                    <h1>Contact Us</h1>
+                    <p>We are in touch</p>
+                </div>
+            </div>
+            <section style="background:var(--cream)">
+                <div class="container">
+                    <div class="contact-page-grid">
+                        <div class="reveal from-left">
+                            <div class="section-eyebrow">Get In Touch</div>
+                            <h2 class="section-title">Visit the Shop</h2>
+                            <div class="divider"></div>
+                            <div class="contact-detail">
+                                <div class="contact-icon">&#128205;</div>
+                                <div><div class="contact-label">Address</div><div class="contact-value">Anzengruberstra&szlig;e 4<br>12043 Berlin, Germany</div></div>
+                            </div>
+                            <div class="contact-detail">
+                                <div class="contact-icon">&#128222;</div>
+                                <div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+4930680530010">+49 30 68053010</a></div></div>
+                            </div>
+                            <div class="contact-detail">
+                                <div class="contact-icon">&#128506;</div>
+                                <div><div class="contact-label">Map Code</div><div class="contact-value">FCJQ+38 Berlin, Germany</div></div>
+                            </div>
+                            <div style="margin-top:40px">
+                                <div class="contact-label" style="margin-bottom:16px">Opening Hours</div>
+                                <table class="hours-table">
+                                    <tr><td>Monday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr><td>Tuesday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr><td>Wednesday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr><td>Thursday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr><td>Friday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr><td>Saturday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+                                    <tr class="closed"><td>Sunday</td><td>Closed</td></tr>
+                                </table>
+                            </div>
+                            <div style="margin-top:40px">
+                                <div class="contact-label" style="margin-bottom:14px">Follow Us</div>
+                                <div class="social-row">
+                                    <a class="social-btn" href="#" title="TikTok" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.72a4.85 4.85 0 0 1-1-.03z"/></svg></a>
+                                    <a class="social-btn" href="#" title="Instagram" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+                                    <a class="social-btn" href="#" title="Facebook" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                                    <a class="social-btn" href="#" title="WhatsApp" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reveal from-right">
+                            <iframe src="https://maps.google.com/maps?q=Anzengruberstra%C3%9Fe+4,+12043+Berlin&output=embed&z=16" width="100%" height="520" style="border:none;width:100%;display:block" allowfullscreen loading="lazy" title="Men's Cut by Taskin Map"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="footer-contact"></div>
+        </div>
+    </div>
 
-function showPage(name) {
-  document.querySelectorAll(\'.page\').forEach(function(p) { p.classList.remove(\'active\'); });
-  document.getElementById(\'page-\' + name).classList.add(\'active\');
-  [\'home\',\'about\',\'services\',\'contact\'].forEach(function(n) {
-    var el = document.getElementById(\'nav-\' + n);
-    if (el) el.classList.toggle(\'active\', n === name);
-  });
-  window.scrollTo(0, 0);
-  setTimeout(initReveal, 80);
-  document.getElementById(\'navLinks\').classList.remove(\'open\');
-  return false;
-}
+    <!-- ============================================================ -->
+    <!-- JAVASCRIPT                                                    -->
+    <!-- ============================================================ -->
+    <script>
+        // ── LOGO PATH ──
+        var LOGO_PATH = 'images/logo.png';
 
-function toggleMenu() {
-  document.getElementById(\'navLinks\').classList.toggle(\'open\');
-}
+        // ── FOOTER HTML (used for all pages) ──
+        function getFooterHTML() {
+            return '<footer>' +
+                '<div class="container">' +
+                '  <div class="footer-grid">' +
+                '    <div class="footer-brand">' +
+                '      <div class="footer-logo">' +
+                '        <img src="' + LOGO_PATH + '" alt="Logo">' +
+                '        <div class="footer-logo-text">Men\'s Cut by Taskin <span>Berlin &middot; Germany</span></div>' +
+                '      </div>' +
+                '      <p class="footer-desc">Full service barbershop &amp; men\'s grooming in Berlin, Germany.</p>' +
+                '      <div class="footer-social">' +
+                '        <a href="#" title="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.72a4.85 4.85 0 0 1-1-.03z"/></svg></a>' +
+                '        <a href="#" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>' +
+                '        <a href="#" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' +
+                '        <a href="#" title="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>' +
+                '      </div>' +
+                '    </div>' +
+                '    <div class="footer-col">' +
+                '      <h4>Explore</h4>' +
+                '      <ul>' +
+                '        <li><a onclick="showPage(\'home\')">Home</a></li>' +
+                '        <li><a onclick="showPage(\'about\')">About Us</a></li>' +
+                '        <li><a onclick="showPage(\'services\')">Services</a></li>' +
+                '        <li><a onclick="showPage(\'contact\')">Contact</a></li>' +
+                '      </ul>' +
+                '    </div>' +
+                '    <div class="footer-col">' +
+                '      <h4>Contact</h4>' +
+                '      <ul>' +
+                '        <li><a>Anzengruberstr. 4, 12043 Berlin</a></li>' +
+                '        <li><a href="tel:+4930680530010">+49 30 68053010</a></li>' +
+                '      </ul>' +
+                '    </div>' +
+                '  </div>' +
+                '  <div class="footer-bottom"><p>&copy; 2024 Men\'s Cut by Taskin &middot; Berlin &middot; <a href="tel:+4930680530010" style="color:var(--gold);text-decoration:none">+49 30 68053010</a></p></div>' +
+                '</div>' +
+                '</footer>';
+        }
 
-function initReveal() {
-  var els = document.querySelectorAll(\'.page.active .reveal\');
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.classList.add(\'visible\'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  els.forEach(function(el) { el.classList.remove(\'visible\'); obs.observe(el); });
-}
+        // ── INJECT FOOTERS ──
+        function injectFooters() {
+            var footerHTML = getFooterHTML();
+            var targets = ['home', 'about', 'services', 'contact'];
+            targets.forEach(function(name) {
+                var container = document.getElementById('footer-' + name);
+                if (container) {
+                    container.innerHTML = footerHTML;
+                }
+            });
+        }
 
-window.addEventListener(\'scroll\', function() {
-  document.getElementById(\'navbar\').style.borderBottomColor = window.scrollY > 50 ? \'rgba(201,162,77,.5)\' : \'rgba(201,162,77,.2)\';
-});
+        // ── PAGE SWITCH ──
+        function showPage(name) {
+            // hide all pages
+            document.querySelectorAll('.page').forEach(function(p) {
+                p.classList.remove('active');
+            });
+            // show target
+            var target = document.getElementById('page-' + name);
+            if (target) target.classList.add('active');
 
-// Inject footers and logos
-document.addEventListener(\'DOMContentLoaded\', function() {
-  // Update nav logo src
-  document.querySelectorAll(\'.nav-logo img, .footer-logo img\').forEach(function(img) {
-    img.src = LOGO_SRC;
-  });
-  // Inject footers
-  var footerHTML = makeFooter();
-  [\'home\',\'about\',\'services\',\'contact\'].forEach(function(name) {
-    var ph = document.getElementById(\'page-\' + name);
-    if (ph) {
-      var spans = ph.querySelectorAll(\'*\');
-      // Actually, replace text nodes - simpler approach: innerHTML replace
-    }
-  });
-  initReveal();
-});
-</script>
+            // update nav links
+            ['home', 'about', 'services', 'contact'].forEach(function(n) {
+                var el = document.getElementById('nav-' + n);
+                if (el) {
+                    el.classList.toggle('active', n === name);
+                }
+            });
+
+            // close mobile menu
+            document.getElementById('navLinks').classList.remove('open');
+
+            // scroll to top
+            window.scrollTo(0, 0);
+
+            // re-trigger reveal animations
+            setTimeout(initReveal, 100);
+        }
+
+        // ── MOBILE MENU ──
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // ── REVEAL ON SCROLL ──
+        function initReveal() {
+            var els = document.querySelectorAll('.page.active .reveal');
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            els.forEach(function(el) {
+                el.classList.remove('visible');
+                observer.observe(el);
+            });
+        }
+
+        // ── NAV BAR BORDER ON SCROLL ──
+        window.addEventListener('scroll', function() {
+            var nav = document.getElementById('navbar');
+            if (nav) {
+                nav.style.borderBottomColor = window.scrollY > 50 ?
+                    'rgba(201,162,77,.5)' :
+                    'rgba(201,162,77,.2)';
+            }
+        });
+
+        // ── DOM READY ──
+        document.addEventListener('DOMContentLoaded', function() {
+            // inject footers
+            injectFooters();
+
+            // ensure nav logo uses correct path (already set in HTML, but just in case)
+            document.querySelectorAll('.nav-logo img, .footer-logo img').forEach(function(img) {
+                if (img.src.indexOf('LOGO_PLACEHOLDER') !== -1 || img.src.indexOf('data:image') === 0) {
+                    img.src = LOGO_PATH;
+                }
+            });
+
+            // init reveals
+            initReveal();
+        });
+    </script>
+
 </body>
 </html>
-
-footer_html = '''<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="data:image/jpeg;base64,''' + logo_b64 + '''" alt="Logo">
-          <div class="footer-logo-text">Men\'s Cut by Taskin <span>Berlin &middot; Germany</span></div>
-        </div>
-        <p class="footer-desc">Full service barbershop &amp; men\'s grooming in Berlin, Germany.</p>
-        <div class="footer-social">
-          <a href="#" title="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.72a4.85 4.85 0 0 1-1-.03z"/></svg></a>
-          <a href="#" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
-          <a href="#" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a href="#" title="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a onclick="showPage(\'home\')">Home</a></li>
-          <li><a onclick="showPage(\'about\')">About Us</a></li>
-          <li><a onclick="showPage(\'services\')">Services</a></li>
-          <li><a onclick="showPage(\'contact\')">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a>Anzengruberstr. 4, 12043 Berlin</a></li>
-          <li><a href="tel:+4930680530010">+49 30 68053010</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom"><p>&copy; 2024 Men\'s Cut by Taskin &middot; Berlin &middot; <a href="tel:+4930680530010" style="color:var(--gold);text-decoration:none">+49 30 68053010</a></p></div>
-  </div>
-</footer>
