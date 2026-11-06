@@ -1,0 +1,7 @@
+# Robots.txt for https://menscutbarber.de/
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://menscutbarber.de/sitemap.xml
+
