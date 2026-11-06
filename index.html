@@ -9,6 +9,23 @@
         content="Men’s Cut by Taskin: Ihr Barbershop & Herrenfriseur in Berlin-Neukölln. Professioneller Herrenhaarschnitt, Fade Cut, Bartpflege und traditionelle Rasur." />
     <link rel="canonical" href="https://menscutbarber.de/" />
 
+    <!-- Open Graph & Social Sharing -->
+    <meta property="og:type" content="business.business" />
+    <meta property="og:site_name" content="Men's Cut by Taskin" />
+    <meta property="og:title" content="Herrenfriseur & Barbershop Berlin-Neukölln | Men’s Cut by Taskin" />
+    <meta property="og:description"
+        content="Men’s Cut by Taskin: Ihr Barbershop & Herrenfriseur in Berlin-Neukölln. Professioneller Herrenhaarschnitt, Fade Cut, Bartpflege und traditionelle Rasur." />
+    <meta property="og:url" content="https://menscutbarber.de/" />
+    <meta property="og:image" content="https://i.ibb.co/fGBGxNGJ/mens-cut-hero-1.webp" />
+    <meta property="og:locale" content="de_DE" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Herrenfriseur & Barbershop Berlin-Neukölln | Men’s Cut by Taskin" />
+    <meta name="twitter:description"
+        content="Men’s Cut by Taskin: Ihr Barbershop & Herrenfriseur in Berlin-Neukölln. Professioneller Herrenhaarschnitt, Fade Cut, Bartpflege und traditionelle Rasur." />
+    <meta name="twitter:image" content="https://i.ibb.co/fGBGxNGJ/mens-cut-hero-1.webp" />
+
     <!-- Schema Markup (Structured Data) -->
     <script type="application/ld+json">
     {
@@ -359,6 +376,10 @@
       ]
     }
     </script>
+    <!-- Resource Hints & LCP Image Preload -->
+    <link rel="preconnect" href="https://i.ibb.co" crossorigin />
+    <link rel="dns-prefetch" href="https://i.ibb.co" />
+    <link rel="preload" as="image" href="https://i.ibb.co/fGBGxNGJ/mens-cut-hero-1.webp" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -2269,14 +2290,18 @@
     <!-- ====== NAVIGATION ====== -->
     <nav id="navbar">
         <a class="nav-logo" href="#home" onclick="showPage('home')">
-            <img src="images/logo.png" alt="Men's Cut by Taskin Logo" />
+            <img src="images/logo.png" alt="Men's Cut by Taskin Logo" width="72" height="72" fetchpriority="high"
+                decoding="async" />
             <div class="nav-logo-text">Men's Cut by Taskin <span>Berlin-Neukölln · Barbershop</span></div>
         </a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#home" onclick="showPage('home')" class="active" id="nav-home" data-i18n="nav.home">Home</a></li>
+            <li><a href="#home" onclick="showPage('home')" class="active" id="nav-home" data-i18n="nav.home">Home</a>
+            </li>
             <li><a href="#about" onclick="showPage('about')" id="nav-about" data-i18n="nav.about">About</a></li>
-            <li><a href="#services" onclick="showPage('services')" id="nav-services" data-i18n="nav.services">Services</a></li>
-            <li><a href="#contact" onclick="showPage('contact')" id="nav-contact" data-i18n="nav.contact">Contact</a></li>
+            <li><a href="#services" onclick="showPage('services')" id="nav-services"
+                    data-i18n="nav.services">Services</a></li>
+            <li><a href="#contact" onclick="showPage('contact')" id="nav-contact" data-i18n="nav.contact">Contact</a>
+            </li>
         </ul>
         <div style="display:flex;align-items:center;gap:12px;">
             <a class="nav-book-btn" href="tel:+493068053010" data-i18n="nav.book">Call to Book</a>
@@ -2335,7 +2360,7 @@
                 <div class="about-grid">
                     <div class="about-img-wrap reveal from-left">
                         <img src="https://i.ibb.co/BKQQQksQ/Men-s-Cut-Shaving-Set-Display-1.webp" alt="Barber at work"
-                            loading="lazy" />
+                            loading="lazy" decoding="async" />
                     </div>
                     <div class="about-text reveal from-right">
                         <div class="section-eyebrow" data-i18n="about.eyebrow">About Us</div>
@@ -2367,7 +2392,7 @@
                     <!-- Service 1 -->
                     <div class="service-card reveal">
                         <img src="https://media.istockphoto.com/id/965168640/photo/handsome-young-man-getting-a-haircut.jpg?s=170667a&w=0&k=20&c=s1_r5ZPgLfu60mGZXLYErav_00UrtOE89yXC0L7fVUE="
-                            alt="Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                            alt="Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="services.haircut.title">Herrenhaarschnitt Berlin-Neukölln</h3>
@@ -2379,7 +2404,7 @@
                     <!-- Service 2 -->
                     <div class="service-card reveal">
                         <img src="https://i.ibb.co/TqhCXmNT/eacf79dd-e037-44b9-9154-3a02873daa92.png"
-                            alt="Skin Fade und Fade Cut in Berlin-Neukölln" loading="lazy" />
+                            alt="Skin Fade und Fade Cut in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="services.shave.title">Skin Fade & Fade Cut</h3>
@@ -2391,7 +2416,7 @@
                     <!-- Service 3 -->
                     <div class="service-card reveal">
                         <img src="https://img.magnific.com/free-photo/handsome-man-cutting-beard-barber-shop-salon_1303-20931.jpg"
-                            alt="Bartpflege und Bartkonturen in Berlin-Neukölln" loading="lazy" />
+                            alt="Bartpflege und Bartkonturen in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="services.beard.title">Bartpflege & Bartkonturen</h3>
@@ -2403,7 +2428,7 @@
                     <!-- Service 4 -->
                     <div class="service-card reveal">
                         <img src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg="
-                            alt="Traditionelle Rasur in Berlin-Neukölln" loading="lazy" />
+                            alt="Traditionelle Rasur in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
                             <h3>Traditionelle Rasur</h3>
@@ -2414,7 +2439,7 @@
                     <!-- Service 5 -->
                     <div class="service-card reveal">
                         <img src="https://img.magnific.com/premium-photo/handsome-boy-getting-his-hair-beard-cut-barber-shop-barber-shop-rear-view_494741-47404.jpg"
-                            alt="Kinderhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                            alt="Kinderhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
                             <h3>Kinderhaarschnitt in Berlin-Neukölln</h3>
@@ -2437,42 +2462,42 @@
                 <div class="gallery-grid">
                     <div class="gallery-item reveal">
                         <img src="https://cdn.shopify.com/s/files/1/0029/0868/4397/files/skin-fade-quiff-haircut-men.webp?v=1769775905"
-                            alt="Skin Fade haircut in Berlin-Neukölln" loading="lazy" />
+                            alt="Skin Fade haircut in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="gallery-label">Skin Fade</div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="https://cdn.shopify.com/s/files/1/0029/0868/4397/files/Low-Drop-Fade_600x600.webp?v=1750682896"
-                            alt="Low Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                            alt="Low Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="gallery-label">Low Fade</div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="https://cdn.shopify.com/s/files/1/0029/0868/4397/files/Mid-Fade-Haircut_600x600.webp?v=1751273586"
-                            alt="Mid Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                            alt="Mid Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="gallery-label">Mid Fade</div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="https://i.ibb.co/r1DZJ7Y/4ded8f52-0f99-486b-99fb-beb4b64ad658.png"
-                            alt="High Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                            alt="High Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="gallery-label">High Fade</div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="https://cdn.shopify.com/s/files/1/0029/0868/4397/files/low-taper-fade-wavy-hair.webp?v=1767697988"
-                            alt="Low Taper Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                            alt="Low Taper Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="gallery-label">Low Taper Fade</div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="https://i.pinimg.com/736x/2c/3e/ce/2c3ece8420f441ba9655298d95546c5b.jpg"
-                            alt="Modern Mullet Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                            alt="Modern Mullet Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="gallery-label">Modern Mullet</div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRur6njezw5Dc6YPE1mb_eOSW7l6VfGSFC3Mt5wwaSHRkCyeOkz24oXjIs&s=10"
-                            alt="Burst Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                            alt="Burst Fade Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="gallery-label">Burst Fade</div>
                     </div>
                     <div class="gallery-item reveal">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZCS4Kc5f841_10m-vz6rglxvcZBqNPAhuTO6S-KuopRN2P0YQ6cjeLjc&s=10"
-                            alt="Mid Fade V Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" />
+                            alt="Mid Fade V Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="gallery-label">Mid Fade V</div>
                     </div>
                 </div>
@@ -2493,7 +2518,7 @@
                 <div class="pricelist-grid">
                     <div class="pricelist-card reveal">
                         <img src="https://tse1.mm.bing.net/th/id/OIP.aTW35VdMx1V-sFSq5LXjLwHaE8?r=0&cb=thfc1falcon2&rs=1&pid=ImgDetMain&o=7&rm=3"
-                            alt="Wash, Haircut, Blow Dry & Beard" loading="lazy" />
+                            alt="Wash, Haircut, Blow Dry & Beard" loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="pricelist.s1.title">Wash, Haircut, Blow Dry, Beard</h3>
@@ -2507,7 +2532,7 @@
                     </div>
                     <div class="pricelist-card reveal">
                         <img src="https://www.moderngentlemanmagazine.com/wp-content/uploads/2025/06/Sling-Fade-Twist.jpeg"
-                            alt="Haircut" loading="lazy" />
+                            alt="Haircut" loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="pricelist.s2.title">Haircut</h3>
@@ -2521,7 +2546,7 @@
                     </div>
                     <div class="pricelist-card reveal">
                         <img src="https://thumbs.dreamstime.com/b/young-dark-haired-guy-indian-asian-appearance-barber-shop-black-chair-barber-washes-his-head-shampoo-175891551.jpg"
-                            alt="Wash, Haircut & Blow Dry" loading="lazy" />
+                            alt="Wash, Haircut & Blow Dry" loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="pricelist.s3.title">Wash, Haircut Blow Dry</h3>
@@ -2535,7 +2560,7 @@
                     </div>
                     <div class="pricelist-card reveal">
                         <img src="https://firstandmaneaz.com/wp-content/uploads/2025/01/Trim-a-Beard.jpg"
-                            alt="Beard Trim" loading="lazy" />
+                            alt="Beard Trim" loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="pricelist.s4.title">Bart Rasur</h3>
@@ -2549,7 +2574,7 @@
                     </div>
                     <div class="pricelist-card reveal">
                         <img src="https://img.magnific.com/premium-photo/handsome-boy-getting-his-hair-beard-cut-barber-shop-barber-shop-rear-view_494741-47404.jpg"
-                            alt="Kids Haircut" loading="lazy" />
+                            alt="Kids Haircut" loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="pricelist.s5.title">Kids Haircut (up to 6 years)</h3>
@@ -2563,7 +2588,7 @@
                     </div>
                     <div class="pricelist-card reveal">
                         <img src="https://baldandbeards.com/wp-content/uploads/beard-waxing-768x512.jpg" alt="Honey Wax"
-                            loading="lazy" />
+                            loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="pricelist.s6.title">Honey Wax (per zone)</h3>
@@ -2599,7 +2624,7 @@
                         <div class="reviewer">
                             <div class="reviewer-avatar"><img
                                     src="https://lh3.googleusercontent.com/a/ACg8ocJHEZfve12A2l4my3ti9UdXcMw-rFytiGCxvqjfWJndaMJtKw=w54-h54-p-rp-mo-br100"
-                                    alt="Eshal" /></div>
+                                    alt="Eshal" width="44" height="44" loading="lazy" decoding="async" /></div>
                             <div class="reviewer-info">
                                 <div class="reviewer-name">Eshal Malik</div>
                                 <div class="reviewer-date">Dec 2025</div>
@@ -2629,7 +2654,7 @@
                         <div class="reviewer">
                             <div class="reviewer-avatar"><img
                                     src="https://lh3.googleusercontent.com/a-/ALV-UjX54nHKsWXMfDWPEN_2qM-ZSTrKF_6-7KMk0_NpIeKw8S7IIpcVrQ=w54-h54-p-rp-mo-ba12-br100"
-                                    alt="Jürgen" /></div>
+                                    alt="Jürgen" width="44" height="44" loading="lazy" decoding="async" /></div>
                             <div class="reviewer-info">
                                 <div class="reviewer-name">Jürgen Mayerl</div>
                                 <div class="reviewer-date">Sep 2025</div>
@@ -2659,7 +2684,7 @@
                         <div class="reviewer">
                             <div class="reviewer-avatar"><img
                                     src="https://lh3.googleusercontent.com/a-/ALV-UjVNzXgkr04F6DbjRJpsvcj-ltRHqS2YHlOr2SZdXnJDYAdqRIzO=w54-h54-p-rp-mo-br100"
-                                    alt="Tobias" /></div>
+                                    alt="Tobias" width="44" height="44" loading="lazy" decoding="async" /></div>
                             <div class="reviewer-info">
                                 <div class="reviewer-name">Tobias Sternberg</div>
                                 <div class="reviewer-date">Jun 2025</div>
@@ -2689,7 +2714,7 @@
                         <div class="reviewer">
                             <div class="reviewer-avatar"><img
                                     src="https://lh3.googleusercontent.com/a-/ALV-UjW3t9lfkMf-d2cgc9_NAmEqJth5MQIyq2nqtJZniJoG9c9PDI9M=w108-h108-p-rp-mo-ba12-br100"
-                                    alt="Lautaro" /></div>
+                                    alt="Lautaro" width="44" height="44" loading="lazy" decoding="async" /></div>
                             <div class="reviewer-info">
                                 <div class="reviewer-name">Birkan Şimşek</div>
                                 <div class="reviewer-date">April 2024</div>
@@ -2719,7 +2744,7 @@
                         <div class="reviewer">
                             <div class="reviewer-avatar"><img
                                     src="https://lh3.googleusercontent.com/a-/ALV-UjVfiPixDtMgBQIuhRxfXCZrBUTHflxnOH7N1Hx6Em6MXVkHFPAc=w54-h54-p-rp-mo-br100"
-                                    alt="Soos" /></div>
+                                    alt="Soos" width="44" height="44" loading="lazy" decoding="async" /></div>
                             <div class="reviewer-info">
                                 <div class="reviewer-name">Mattestyle Soos</div>
                                 <div class="reviewer-date">Nov 2025</div>
@@ -2749,7 +2774,7 @@
                         <div class="reviewer">
                             <div class="reviewer-avatar"><img
                                     src="https://lh3.googleusercontent.com/a/ACg8ocLr9f6DdNChvE8RLWBwcpw2cAQbipkJglTT8oD6xWvy4Tv8QfI=w54-h54-p-rp-mo-ba12-br100"
-                                    alt="Saul" /></div>
+                                    alt="Saul" width="44" height="44" loading="lazy" decoding="async" /></div>
                             <div class="reviewer-info">
                                 <div class="reviewer-name">Saul Goodman</div>
                                 <div class="reviewer-date">May 2023</div>
@@ -2847,7 +2872,7 @@
                     <div class="reveal from-right">
                         <iframe class="map-embed"
                             src="https://maps.google.com/maps?q=Anzengruberstra%C3%9Fe+4,+12043+Berlin&output=embed&z=16"
-                            allowfullscreen loading="lazy" title="Shop Location"></iframe>
+                            allowfullscreen loading="lazy" decoding="async" title="Shop Location"></iframe>
                     </div>
                 </div>
             </div>
@@ -2874,7 +2899,7 @@
                     <div class="about-grid">
                         <div class="about-img-wrap reveal from-left">
                             <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=85"
-                                alt="Barber shop" loading="lazy" />
+                                alt="Barber shop" loading="lazy" decoding="async" />
                         </div>
                         <div class="about-text reveal from-right">
                             <div class="section-eyebrow" data-i18n="about-page.story.eyebrow">Our Story</div>
@@ -2982,7 +3007,7 @@
                         <div class="service-item reveal">
                             <div class="service-item-img"><img
                                     src="https://media.istockphoto.com/id/965168640/photo/handsome-young-man-getting-a-haircut.jpg?s=170667a&w=0&k=20&c=s1_r5ZPgLfu60mGZXLYErav_00UrtOE89yXC0L7fVUE="
-                                    alt="Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" /></div>
+                                    alt="Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" /></div>
                             <div class="service-item-text">
                                 <div class="section-eyebrow" data-i18n="services-page.s1.eyebrow">Service 01</div>
                                 <h3>Herrenhaarschnitt in Berlin-Neukölln</h3>
@@ -2998,7 +3023,8 @@
                         <div class="service-item reverse reveal">
                             <div class="service-item-img"><img
                                     src="https://i.ibb.co/TqhCXmNT/eacf79dd-e037-44b9-9154-3a02873daa92.png"
-                                    alt="Skin Fade und Fade Cut in Berlin-Neukölln" loading="lazy" /></div>
+                                    alt="Skin Fade und Fade Cut in Berlin-Neukölln" loading="lazy" decoding="async" />
+                            </div>
                             <div class="service-item-text">
                                 <div class="section-eyebrow" data-i18n="services-page.s2.eyebrow">Service 02</div>
                                 <h3>Skin Fade & Fade Cut</h3>
@@ -3014,7 +3040,8 @@
                         <div class="service-item reveal">
                             <div class="service-item-img"><img
                                     src="https://img.magnific.com/free-photo/handsome-man-cutting-beard-barber-shop-salon_1303-20931.jpg"
-                                    alt="Bartpflege und Bartkonturen in Berlin-Neukölln" loading="lazy" /></div>
+                                    alt="Bartpflege und Bartkonturen in Berlin-Neukölln" loading="lazy"
+                                    decoding="async" /></div>
                             <div class="service-item-text">
                                 <div class="section-eyebrow" data-i18n="services-page.s3.eyebrow">Service 03</div>
                                 <h3>Bartpflege & Bartkonturen</h3>
@@ -3029,7 +3056,8 @@
                         <div class="service-item reverse reveal">
                             <div class="service-item-img"><img
                                     src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg="
-                                    alt="Traditionelle Rasur in Berlin-Neukölln" loading="lazy" /></div>
+                                    alt="Traditionelle Rasur in Berlin-Neukölln" loading="lazy" decoding="async" />
+                            </div>
                             <div class="service-item-text">
                                 <div class="section-eyebrow">Service 04</div>
                                 <h3>Traditionelle Rasur</h3>
@@ -3044,7 +3072,7 @@
                         <div class="service-item reveal">
                             <div class="service-item-img"><img
                                     src="https://img.magnific.com/premium-photo/handsome-boy-getting-his-hair-beard-cut-barber-shop-barber-shop-rear-view_494741-47404.jpg"
-                                    alt="Kinderhaarschnitt in Berlin-Neukölln" loading="lazy" /></div>
+                                    alt="Kinderhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" /></div>
                             <div class="service-item-text">
                                 <div class="section-eyebrow">Service 05</div>
                                 <h3>Kinderhaarschnitt in Berlin-Neukölln</h3>
@@ -3058,7 +3086,8 @@
                         <div class="service-item reverse reveal">
                             <div class="service-item-img"><img
                                     src="https://thumbs.dreamstime.com/b/young-dark-haired-guy-indian-asian-appearance-barber-shop-black-chair-barber-washes-his-head-shampoo-175891551.jpg"
-                                    alt="Waschen, Schneiden und Föhnen in Berlin-Neukölln" loading="lazy" /></div>
+                                    alt="Waschen, Schneiden und Föhnen in Berlin-Neukölln" loading="lazy"
+                                    decoding="async" /></div>
                             <div class="service-item-text">
                                 <div class="section-eyebrow">Service 06</div>
                                 <h3>Waschen, Schneiden &amp; Föhnen</h3>
@@ -3072,7 +3101,8 @@
                         <div class="service-item reveal">
                             <div class="service-item-img"><img
                                     src="https://baldandbeards.com/wp-content/uploads/beard-waxing-768x512.jpg"
-                                    alt="Honigwachs Gesichtsenthaarung in Berlin-Neukölln" loading="lazy" /></div>
+                                    alt="Honigwachs Gesichtsenthaarung in Berlin-Neukölln" loading="lazy"
+                                    decoding="async" /></div>
                             <div class="service-item-text">
                                 <div class="section-eyebrow">Service 07</div>
                                 <h3>Honigwachs / Gesichtsenthaarung</h3>
@@ -3207,7 +3237,7 @@
                             <iframe
                                 src="https://maps.google.com/maps?q=Anzengruberstra%C3%9Fe+4,+12043+Berlin&output=embed&z=16"
                                 width="100%" height="520" style="border:none;width:100%;display:block" allowfullscreen
-                                loading="lazy" title="Men's Cut by Taskin Map"></iframe>
+                                loading="lazy" decoding="async" title="Men's Cut by Taskin Map"></iframe>
                         </div>
                     </div>
                 </div>
@@ -3917,7 +3947,7 @@
                 '  <div class="footer-grid">' +
                 '    <div class="footer-brand">' +
                 '      <div class="footer-logo">' +
-                '        <img src="' + LOGO_PATH + '" alt="Logo" />' +
+                '        <img src="' + LOGO_PATH + '" alt="Logo" width="72" height="72" loading="lazy" decoding="async" />' +
                 '        <div class="footer-logo-text" data-i18n="footer.brand">Men\'s Cut by Taskin <span data-i18n="footer.brand_sub">Berlin-Neukölln · Germany</span></div>' +
                 '      </div>' +
                 '      <p class="footer-desc" data-i18n="footer.desc">Herrenfriseur & Barbershop in Berlin-Neukölln.</p>' +
