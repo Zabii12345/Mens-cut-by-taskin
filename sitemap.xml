@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://menscutbarber.de/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://i.ibb.co/fGBGxNGJ/mens-cut-hero-1.webp</image:loc>
+      <image:title>Men’s Cut by Taskin – Herrenfriseur &amp; Barbershop in Berlin-Neukölln</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/BKQQQksQ/Men-s-Cut-Shaving-Set-Display-1.webp</image:loc>
+      <image:title>Men’s Cut by Taskin – Shaving Set Display</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://menscutbarber.de/images/logo.png</image:loc>
+      <image:title>Men’s Cut by Taskin Logo</image:title>
+    </image:image>
+  </url>
+</urlset>
+
