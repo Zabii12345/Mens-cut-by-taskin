@@ -30,354 +30,378 @@
     <meta name="twitter:image" content="https://i.ibb.co/fGBGxNGJ/mens-cut-hero-1.webp" />
 
     <!-- Schema Markup (Structured Data) -->
+    <!-- Schema Markup (Structured Data) -->
+    <!-- 1. HairSalon / Barbershop Business Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
+{
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "@id": "https://menscutbarber.de/#barbershop",
+    "name": "Men's Cut by Taskin",
+    "alternateName": "Men’s Cut by Taskin",
+    "url": "https://menscutbarber.de/",
+    "logo": "https://menscutbarber.de/images/logo.png",
+    "image": [
+        "https://menscutbarber.de/images/logo.png",
+        "https://i.ibb.co/fGBGxNGJ/mens-cut-hero-1.webp"
+    ],
+    "description": "Men’s Cut by Taskin – Professioneller Herrenfriseur & Barbershop in Berlin-Neukölln. Herrenhaarschnitte, Skin Fades, Taper Fades, Bartpflege, traditionelle Rasuren und Kinderhaarschnitte in der Anzengruberstraße 4.",
+    "telephone": "+49 30 68053010",
+    "priceRange": "€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Anzengruberstraße 4",
+        "addressLocality": "Berlin",
+        "addressRegion": "Berlin",
+        "postalCode": "12043",
+        "addressCountry": "DE"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.4804,
+        "longitude": 13.4406
+    },
+    "hasMap": "https://maps.google.com/maps?q=Anzengruberstra%C3%9Fe+4,+12043+Berlin",
+    "openingHoursSpecification": [
         {
-          "@type": "WebSite",
-          "@id": "https://menscutbarber.de/#website",
-          "url": "https://menscutbarber.de/",
-          "name": "Men's Cut by Taskin",
-          "alternateName": "Men’s Cut by Taskin",
-          "description": "Men’s Cut by Taskin – Herrenfriseur & Barbershop in Berlin-Neukölln. Herrenhaarschnitt, Skin Fade, Taper Fade, Bartpflege, traditionelle Rasur und Kinderhaarschnitt.",
-          "inLanguage": "de-DE",
-          "publisher": {
-            "@id": "https://menscutbarber.de/#barbershop"
-          }
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://menscutbarber.de/#webpage",
-          "url": "https://menscutbarber.de/",
-          "name": "Herrenfriseur & Barbershop Berlin-Neukölln | Men’s Cut by Taskin",
-          "isPartOf": {
-            "@id": "https://menscutbarber.de/#website"
-          },
-          "about": {
-            "@id": "https://menscutbarber.de/#barbershop"
-          },
-          "description": "Men’s Cut by Taskin – Herrenfriseur & Barbershop in Berlin-Neukölln. Herrenhaarschnitt, Skin Fade, Taper Fade, Bartpflege, traditionelle Rasur und Kinderhaarschnitt.",
-          "inLanguage": "de-DE",
-          "breadcrumb": {
-            "@id": "https://menscutbarber.de/#breadcrumb"
-          }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": "https://menscutbarber.de/#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Startseite",
-              "item": "https://menscutbarber.de/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Leistungen",
-              "item": "https://menscutbarber.de/#services"
-            }
-          ]
-        },
-        {
-          "@type": "HairSalon",
-          "@id": "https://menscutbarber.de/#barbershop",
-          "name": "Men's Cut by Taskin",
-          "alternateName": "Men’s Cut by Taskin",
-          "url": "https://menscutbarber.de/",
-          "logo": "https://menscutbarber.de/images/logo.png",
-          "image": [
-            "https://menscutbarber.de/images/logo.png",
-            "https://i.ibb.co/fGBGxNGJ/mens-cut-hero-1.webp"
-          ],
-          "description": "Men’s Cut by Taskin – Professioneller Herrenfriseur & Barbershop in Berlin-Neukölln. Herrenhaarschnitte, Skin Fades, Taper Fades, Bartpflege, traditionelle Rasuren und Kinderhaarschnitte in der Anzengruberstraße 4.",
-          "telephone": "+49 30 68053010",
-          "priceRange": "€",
-          "currenciesAccepted": "EUR",
-          "paymentAccepted": "Cash",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Anzengruberstraße 4",
-            "addressLocality": "Berlin",
-            "addressRegion": "Berlin",
-            "postalCode": "12043",
-            "addressCountry": "DE"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 52.4804,
-            "longitude": 13.4406
-          },
-          "hasMap": "https://maps.google.com/maps?q=Anzengruberstra%C3%9Fe+4,+12043+Berlin",
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
                 "Monday",
                 "Tuesday",
                 "Wednesday",
                 "Thursday",
                 "Friday",
                 "Saturday"
-              ],
-              "opens": "09:00",
-              "closes": "19:00"
-            }
-          ],
-          "sameAs": [
-            "https://www.instagram.com/menscutbytaskin",
-            "https://www.facebook.com/share/18b5GmeCER/"
-          ],
-          "areaServed": [
+            ],
+            "opens": "09:00",
+            "closes": "19:00"
+        }
+    ],
+    "sameAs": [
+        "https://www.instagram.com/menscutbytaskin",
+        "https://www.facebook.com/share/18b5GmeCER/"
+    ],
+    "areaServed": [
+        {
+            "@type": "AdministrativeArea",
+            "name": "Berlin-Neukölln"
+        },
+        {
+            "@type": "City",
+            "name": "Berlin"
+        }
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Barber Services & Preisliste",
+        "itemListElement": [
             {
-              "@type": "AdministrativeArea",
-              "name": "Berlin-Neukölln"
-            },
-            {
-              "@type": "City",
-              "name": "Berlin"
-            }
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Barber Services & Preisliste",
-            "itemListElement": [
-              {
                 "@type": "OfferCatalog",
                 "name": "Haarschnitte & Styling",
                 "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Herrenhaarschnitt Berlin-Neukölln",
-                      "description": "Professionelle Herrenhaarschnitte in Berlin-Neukölln – von klassischen Schnitten bis zu modernen Styles. Individuelle Beratung passend zu Haarstruktur, Gesichtsform und gewünschtem Look."
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Herrenhaarschnitt Berlin-Neukölln",
+                            "description": "Professionelle Herrenhaarschnitte in Berlin-Neukölln – von klassischen Schnitten bis zu modernen Styles. Individuelle Beratung passend zu Haarstruktur, Gesichtsform und gewünschtem Look."
+                        },
+                        "price": "15.00",
+                        "priceCurrency": "EUR"
                     },
-                    "price": "15.00",
-                    "priceCurrency": "EUR"
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Skin Fade & Fade Cut",
-                      "description": "Präzise Fade Cuts und Skin Fades mit sauberen Übergängen und exakten Konturen (Low Fade, Mid Fade, High Fade, Taper Fade)."
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Skin Fade & Fade Cut",
+                            "description": "Präzise Fade Cuts und Skin Fades mit sauberen Übergängen und exakten Konturen (Low Fade, Mid Fade, High Fade, Taper Fade)."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Waschen, Schneiden & Föhnen",
+                            "description": "Erfrischende Haarwäsche gefolgt von einem stilvollen Herrenhaarschnitt und professionellem Föhnen."
+                        },
+                        "price": "18.00",
+                        "priceCurrency": "EUR"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Kinderhaarschnitt in Berlin-Neukölln (bis 6 Jahre)",
+                            "description": "Kinderhaarschnitte in entspannter und freundlicher Atmosphäre speziell für junge Kinder bis 6 Jahre."
+                        },
+                        "price": "12.00",
+                        "priceCurrency": "EUR"
                     }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Waschen, Schneiden & Föhnen",
-                      "description": "Erfrischende Haarwäsche gefolgt von einem stilvollen Herrenhaarschnitt und professionellem Föhnen."
-                    },
-                    "price": "18.00",
-                    "priceCurrency": "EUR"
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Kinderhaarschnitt in Berlin-Neukölln (bis 6 Jahre)",
-                      "description": "Kinderhaarschnitte in entspannter und freundlicher Atmosphäre speziell für junge Kinder bis 6 Jahre."
-                    },
-                    "price": "12.00",
-                    "priceCurrency": "EUR"
-                  }
                 ]
-              },
-              {
+            },
+            {
                 "@type": "OfferCatalog",
                 "name": "Bartpflege & Rasuren",
                 "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Bartpflege & Bartkonturen",
-                      "description": "Professionelles Barttrimmen, Bartstyling und präzise Bartkonturen passend zur Gesichtsform."
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Bartpflege & Bartkonturen",
+                            "description": "Professionelles Barttrimmen, Bartstyling und präzise Bartkonturen passend zur Gesichtsform."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Traditionelle Rasur",
+                            "description": "Traditionelle Rasur mit professioneller Barber-Technik, heißen Tüchern und sorgfältiger Vorbereitung."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Bart Rasur",
+                            "description": "Professionelle Bartrasur mit sorgfältiger Vorbereitung, sauberen Konturen und gepflegtem Ergebnis."
+                        },
+                        "price": "12.00",
+                        "priceCurrency": "EUR"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Waschen, Haarschnitt, Föhnen & Bart",
+                            "description": "Komplettes Pflegepaket inklusive Haarwäsche, präzisem Haarschnitt, Styling und Bartformung."
+                        },
+                        "price": "27.00",
+                        "priceCurrency": "EUR"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Honigwachs / Gesichtsenthaarung (pro Zone)",
+                            "description": "Sanfte Honigwachs-Behandlung für eine gründliche und hautschonende Gesichtsenthaarung und saubere Konturen."
+                        },
+                        "price": "3.00",
+                        "priceCurrency": "EUR"
                     }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Traditionelle Rasur",
-                      "description": "Traditionelle Rasur mit professioneller Barber-Technik, heißen Tüchern und sorgfältiger Vorbereitung."
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Bart Rasur",
-                      "description": "Professionelle Bartrasur mit sorgfältiger Vorbereitung, sauberen Konturen und gepflegtem Ergebnis."
-                    },
-                    "price": "12.00",
-                    "priceCurrency": "EUR"
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Waschen, Haarschnitt, Föhnen & Bart",
-                      "description": "Komplettes Pflegepaket inklusive Haarwäsche, präzisem Haarschnitt, Styling und Bartformung."
-                    },
-                    "price": "27.00",
-                    "priceCurrency": "EUR"
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Honigwachs / Gesichtsenthaarung (pro Zone)",
-                      "description": "Sanfte Honigwachs-Behandlung für eine gründliche und hautschonende Gesichtsenthaarung und saubere Konturen."
-                    },
-                    "price": "3.00",
-                    "priceCurrency": "EUR"
-                  }
                 ]
-              }
-            ]
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://menscutbarber.de/#service-haircut",
-          "name": "Herrenhaarschnitt Berlin-Neukölln",
-          "serviceType": "Herrenhaarschnitt",
-          "description": "Professionelle Herrenhaarschnitte in Berlin-Neukölln – von klassischen Schnitten bis zu modernen Styles. Individuelle Beratung passend zu Haarstruktur, Gesichtsform und gewünschtem Look.",
-          "provider": {
-            "@id": "https://menscutbarber.de/#barbershop"
-          },
-          "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": "Berlin-Neukölln"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "15.00",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://menscutbarber.de/"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://menscutbarber.de/#service-skinfade",
-          "name": "Skin Fade & Fade Cut",
-          "serviceType": "Skin Fade & Fade Cut",
-          "description": "Präzise Fade Cuts und Skin Fades mit sauberen Übergängen und exakten Konturen. Wir bieten unter anderem Low Fade, Mid Fade, High Fade und moderne Taper-Fade-Styles.",
-          "provider": {
-            "@id": "https://menscutbarber.de/#barbershop"
-          },
-          "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": "Berlin-Neukölln"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://menscutbarber.de/#service-beard",
-          "name": "Bartpflege & Bartkonturen",
-          "serviceType": "Bartpflege",
-          "description": "Professionelles Barttrimmen, Bartstyling und präzise Bartkonturen passend zur Gesichtsform für ein sauberes, gepflegtes Ergebnis.",
-          "provider": {
-            "@id": "https://menscutbarber.de/#barbershop"
-          },
-          "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": "Berlin-Neukölln"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "12.00",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://menscutbarber.de/"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://menscutbarber.de/#service-shave",
-          "name": "Traditionelle Rasur",
-          "serviceType": "Rasur",
-          "description": "Traditionelle Rasur mit professioneller Barber-Technik, heißen Tüchern und sorgfältiger Vorbereitung für eine gründliche und angenehme Rasur.",
-          "provider": {
-            "@id": "https://menscutbarber.de/#barbershop"
-          },
-          "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": "Berlin-Neukölln"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://menscutbarber.de/#service-kidshaircut",
-          "name": "Kinderhaarschnitt in Berlin-Neukölln",
-          "serviceType": "Kinderhaarschnitt",
-          "description": "Kinderhaarschnitte in entspannter und freundlicher Atmosphäre speziell für Kinder bis 6 Jahre.",
-          "provider": {
-            "@id": "https://menscutbarber.de/#barbershop"
-          },
-          "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": "Berlin-Neukölln"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "12.00",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://menscutbarber.de/"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://menscutbarber.de/#service-washcutblowdry",
-          "name": "Waschen, Schneiden & Föhnen",
-          "serviceType": "Waschen, Haarschnitt & Föhnen",
-          "description": "Erfrischende Haarwäsche gefolgt von einem stilvollen Herrenhaarschnitt und professionellem Föhnen für den perfekten Look.",
-          "provider": {
-            "@id": "https://menscutbarber.de/#barbershop"
-          },
-          "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": "Berlin-Neukölln"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "18.00",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://menscutbarber.de/"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://menscutbarber.de/#service-honeywax",
-          "name": "Honigwachs / Gesichtsenthaarung",
-          "serviceType": "Honigwachs",
-          "description": "Sanfte Honigwachs-Behandlung für eine gründliche und hautschonende Gesichtsenthaarung – ideal für saubere Konturen und ein glattes Hautgefühl.",
-          "provider": {
-            "@id": "https://menscutbarber.de/#barbershop"
-          },
-          "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": "Berlin-Neukölln"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "3.00",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/InStock",
-            "url": "https://menscutbarber.de/"
-          }
-        }
-      ]
+            }
+        ]
     }
+}
+    </script>
+
+    <!-- 2. Breadcrumb Navigation Schema -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://menscutbarber.de/#breadcrumb",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startseite",
+            "item": "https://menscutbarber.de/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Leistungen",
+            "item": "https://menscutbarber.de/#services"
+        }
+    ]
+}
+    </script>
+
+    <!-- 3. WebSite Schema -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://menscutbarber.de/#website",
+    "url": "https://menscutbarber.de/",
+    "name": "Men's Cut by Taskin",
+    "alternateName": "Men’s Cut by Taskin",
+    "description": "Men’s Cut by Taskin – Herrenfriseur & Barbershop in Berlin-Neukölln. Herrenhaarschnitt, Skin Fade, Taper Fade, Bartpflege, traditionelle Rasur und Kinderhaarschnitt.",
+    "inLanguage": "de-DE"
+}
+    </script>
+
+    <!-- 4. WebPage Schema -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://menscutbarber.de/#webpage",
+    "url": "https://menscutbarber.de/",
+    "name": "Herrenfriseur & Barbershop Berlin-Neukölln | Men’s Cut by Taskin",
+    "description": "Men’s Cut by Taskin – Herrenfriseur & Barbershop in Berlin-Neukölln. Herrenhaarschnitt, Skin Fade, Taper Fade, Bartpflege, traditionelle Rasur und Kinderhaarschnitt.",
+    "inLanguage": "de-DE"
+}
+    </script>
+
+    <!-- 5. Barber Services & Pricing Schema -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "@id": "https://menscutbarber.de/#service-haircut",
+            "name": "Herrenhaarschnitt Berlin-Neukölln",
+            "serviceType": "Herrenhaarschnitt",
+            "description": "Professionelle Herrenhaarschnitte in Berlin-Neukölln – von klassischen Schnitten bis zu modernen Styles. Individuelle Beratung passend zu Haarstruktur, Gesichtsform und gewünschtem Look.",
+            "provider": {
+                "@type": "HairSalon",
+                "name": "Men's Cut by Taskin",
+                "url": "https://menscutbarber.de/"
+            },
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Berlin-Neukölln"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "15.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://menscutbarber.de/"
+            }
+        },
+        {
+            "@type": "Service",
+            "@id": "https://menscutbarber.de/#service-skinfade",
+            "name": "Skin Fade & Fade Cut",
+            "serviceType": "Skin Fade & Fade Cut",
+            "description": "Präzise Fade Cuts und Skin Fades mit sauberen Übergängen und exakten Konturen. Wir bieten unter anderem Low Fade, Mid Fade, High Fade und moderne Taper-Fade-Styles.",
+            "provider": {
+                "@type": "HairSalon",
+                "name": "Men's Cut by Taskin",
+                "url": "https://menscutbarber.de/"
+            },
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Berlin-Neukölln"
+            }
+        },
+        {
+            "@type": "Service",
+            "@id": "https://menscutbarber.de/#service-beard",
+            "name": "Bartpflege & Bartkonturen",
+            "serviceType": "Bartpflege",
+            "description": "Professionelles Barttrimmen, Bartstyling und präzise Bartkonturen passend zur Gesichtsform für ein sauberes, gepflegtes Ergebnis.",
+            "provider": {
+                "@type": "HairSalon",
+                "name": "Men's Cut by Taskin",
+                "url": "https://menscutbarber.de/"
+            },
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Berlin-Neukölln"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://menscutbarber.de/"
+            }
+        },
+        {
+            "@type": "Service",
+            "@id": "https://menscutbarber.de/#service-shave",
+            "name": "Traditionelle Rasur",
+            "serviceType": "Rasur",
+            "description": "Traditionelle Rasur mit professioneller Barber-Technik, heißen Tüchern und sorgfältiger Vorbereitung für eine gründliche und angenehme Rasur.",
+            "provider": {
+                "@type": "HairSalon",
+                "name": "Men's Cut by Taskin",
+                "url": "https://menscutbarber.de/"
+            },
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Berlin-Neukölln"
+            }
+        },
+        {
+            "@type": "Service",
+            "@id": "https://menscutbarber.de/#service-kidshaircut",
+            "name": "Kinderhaarschnitt in Berlin-Neukölln",
+            "serviceType": "Kinderhaarschnitt",
+            "description": "Kinderhaarschnitte in entspannter und freundlicher Atmosphäre speziell für Kinder bis 6 Jahre.",
+            "provider": {
+                "@type": "HairSalon",
+                "name": "Men's Cut by Taskin",
+                "url": "https://menscutbarber.de/"
+            },
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Berlin-Neukölln"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "12.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://menscutbarber.de/"
+            }
+        },
+        {
+            "@type": "Service",
+            "@id": "https://menscutbarber.de/#service-washcutblowdry",
+            "name": "Waschen, Schneiden & Föhnen",
+            "serviceType": "Waschen, Haarschnitt & Föhnen",
+            "description": "Erfrischende Haarwäsche gefolgt von einem stilvollen Herrenhaarschnitt und professionellem Föhnen für den perfekten Look.",
+            "provider": {
+                "@type": "HairSalon",
+                "name": "Men's Cut by Taskin",
+                "url": "https://menscutbarber.de/"
+            },
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Berlin-Neukölln"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "18.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://menscutbarber.de/"
+            }
+        },
+        {
+            "@type": "Service",
+            "@id": "https://menscutbarber.de/#service-honeywax",
+            "name": "Honigwachs / Gesichtsenthaarung",
+            "serviceType": "Honigwachs",
+            "description": "Sanfte Honigwachs-Behandlung für eine gründliche und hautschonende Gesichtsenthaarung – ideal für saubere Konturen und ein glattes Hautgefühl.",
+            "provider": {
+                "@type": "HairSalon",
+                "name": "Men's Cut by Taskin",
+                "url": "https://menscutbarber.de/"
+            },
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Berlin-Neukölln"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "3.00",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "url": "https://menscutbarber.de/"
+            }
+        }
+    ]
+}
     </script>
     <!-- Resource Hints & LCP Image Preload -->
     <link rel="preconnect" href="https://i.ibb.co" crossorigin />
