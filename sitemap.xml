@@ -3,12 +3,16 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://menscutbarber.de/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://i.ibb.co/fGBGxNGJ/mens-cut-hero-1.webp</image:loc>
       <image:title>Men’s Cut by Taskin – Herrenfriseur &amp; Barbershop in Berlin-Neukölln</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/LzrRqR5N/colorize-1-1.webp</image:loc>
+      <image:title>Men’s Cut by Taskin – Barbershop Berlin-Neukölln</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ibb.co/BKQQQksQ/Men-s-Cut-Shaving-Set-Display-1.webp</image:loc>
