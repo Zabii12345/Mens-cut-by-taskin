@@ -1,8 +1,20 @@
 # ----------------------------------------------------------------------
-# Men's Cut by Taskin - Apache Performance & Caching Configuration
+# Men's Cut by Taskin - Apache Performance & Security Configuration
 # ----------------------------------------------------------------------
 
-# 1. Gzip / Deflate Compression
+# 1. Custom 404 Error Document
+ErrorDocument 404 /404.html
+
+# 2. HTTPS & Canonical Redirection
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Enforce HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 3. Gzip / Deflate Compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html
     AddOutputFilterByType DEFLATE text/css
@@ -17,7 +29,7 @@
     AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
-# 2. Browser Caching (Expires Headers)
+# 4. Browser Caching (Expires Headers)
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresDefault "access plus 1 month"
@@ -45,7 +57,7 @@
     ExpiresByType application/font-woff2 "access plus 1 year"
 </IfModule>
 
-# 3. Cache-Control Headers
+# 5. Cache-Control & Security Headers
 <IfModule mod_headers.c>
     # 1 Year Immutable Cache for Static Assets
     <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|woff|woff2)$">
@@ -59,5 +71,6 @@
 
     # Security Headers
     Header set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
-
