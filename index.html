@@ -1539,6 +1539,7 @@
             margin-bottom: 16px;
         }
 
+        .value-card h3,
         .value-card h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -2338,16 +2339,16 @@
             <div class="nav-logo-text">Men's Cut by Taskin <span>Berlin-Neukölln · Barbershop</span></div>
         </a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#home" onclick="showPage('home')" class="active" id="nav-home" data-i18n="nav.home">Home</a>
+            <li><a href="#home" onclick="showPage('home')" class="active" id="nav-home" data-i18n="nav.home">Startseite</a>
             </li>
-            <li><a href="#about" onclick="showPage('about')" id="nav-about" data-i18n="nav.about">About</a></li>
+            <li><a href="#about" onclick="showPage('about')" id="nav-about" data-i18n="nav.about">Über uns</a></li>
             <li><a href="#services" onclick="showPage('services')" id="nav-services"
-                    data-i18n="nav.services">Services</a></li>
-            <li><a href="#contact" onclick="showPage('contact')" id="nav-contact" data-i18n="nav.contact">Contact</a>
+                    data-i18n="nav.services">Leistungen</a></li>
+            <li><a href="#contact" onclick="showPage('contact')" id="nav-contact" data-i18n="nav.contact">Kontakt</a>
             </li>
         </ul>
         <div style="display:flex;align-items:center;gap:12px;">
-            <a class="nav-book-btn" href="tel:+493068053010" data-i18n="nav.book">Call to Book</a>
+            <a class="nav-book-btn" href="tel:+493068053010" data-i18n="nav.book">Termin vereinbaren</a>
             <div class="lang-wrap">
                 <button class="lang-btn" onclick="toggleLangDropdown()" id="langBtn"
                     aria-label="Sprache wählen / Select language" aria-expanded="false" aria-haspopup="true">
@@ -2376,10 +2377,10 @@
         <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Navigation">
             <button class="drawer-close" onclick="toggleMobileDrawer()"
                 aria-label="Menü schließen / Close menu">&times;</button>
-            <a href="#home" onclick="showPage('home')" data-i18n="nav.home">Home</a>
-            <a href="#about" onclick="showPage('about')" data-i18n="nav.about">About</a>
-            <a href="#services" onclick="showPage('services')" data-i18n="nav.services">Services</a>
-            <a href="#contact" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a>
+            <a href="#home" onclick="showPage('home')" data-i18n="nav.home">Startseite</a>
+            <a href="#about" onclick="showPage('about')" data-i18n="nav.about">Über uns</a>
+            <a href="#services" onclick="showPage('services')" data-i18n="nav.services">Leistungen</a>
+            <a href="#contact" onclick="showPage('contact')" data-i18n="nav.contact">Kontakt</a>
         </div>
     </nav>
 
@@ -2392,11 +2393,11 @@
         <section class="hero" style="margin-top:0;padding:0">
             <div class="hero-bg"></div>
             <div class="hero-content">
-                <div class="hero-eyebrow" data-i18n="hero.eyebrow">Crafting Timeless Style</div>
+                <div class="hero-eyebrow" data-i18n="hero.eyebrow">Zeitlosen Stil kreieren</div>
                 <h1 class="hero-h1" data-i18n="hero.title">Herrenfriseur & Barbershop in <em>Berlin-Neukölln</em></h1>
                 <p class="hero-sub" data-i18n="hero.sub">Professionelle Herrenhaarschnitte, Skin Fades, Taper Fades,
                     Bartpflege und traditionelle Rasuren in der Anzengruberstraße 4 in Berlin-Neukölln.</p>
-                <a href="tel:+493068053010" class="hero-btn" data-i18n="hero.btn">Call to Book Now</a>
+                <a href="tel:+493068053010" class="hero-btn" data-i18n="hero.btn">Jetzt anrufen</a>
             </div>
         </section>
 
@@ -2405,11 +2406,11 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-img-wrap reveal from-left">
-                        <img src="https://i.ibb.co/BKQQQksQ/Men-s-Cut-Shaving-Set-Display-1.webp" alt="Barber at work"
+                        <img src="https://i.ibb.co/BKQQQksQ/Men-s-Cut-Shaving-Set-Display-1.webp" alt="Rasier-Set und Barber-Ausstattung bei Men's Cut by Taskin in Berlin-Neukölln"
                             loading="lazy" decoding="async" />
                     </div>
                     <div class="about-text reveal from-right">
-                        <div class="section-eyebrow" data-i18n="about.eyebrow">About Us</div>
+                        <div class="section-eyebrow" data-i18n="about.eyebrow">Über uns</div>
                         <h2 class="section-title" data-i18n="about.title">Men's Cut by Taskin</h2>
                         <div class="divider"></div>
                         <p><strong>Seit 2013 in Berlin</strong> – wir sind leidenschaftliche Barbiere mit tiefer
@@ -2427,12 +2428,11 @@
         <section class="services-section">
             <div class="container">
                 <div style="text-align:center" class="reveal">
-                    <div class="section-eyebrow" data-i18n="services.eyebrow">What We're Offering</div>
-                    <h2 class="section-title" data-i18n="services.title">Barber Services</h2>
+                    <div class="section-eyebrow" data-i18n="services.eyebrow">Unser Angebot</div>
+                    <h2 class="section-title" data-i18n="services.title">Barber-Leistungen</h2>
                     <div class="divider center"></div>
                     <p style="max-width:550px;margin:0 auto;color:var(--text-light);line-height:1.8"
-                        data-i18n="services.desc">A full range of men's barber services — from modern haircuts to
-                        traditional shaves and beard care, to emphasise your style and confidence.</p>
+                        data-i18n="services.desc">Ein umfassendes Angebot an Barber-Dienstleistungen für Männer – von modernen Haarschnitten über traditionelle Rasuren bis hin zur Bartpflege, um Ihren Stil und Ihr Selbstbewusstsein zu unterstreichen.</p>
                 </div>
                 <div class="services-grid">
                     <!-- Service 1 -->
@@ -2508,7 +2508,7 @@
                 <div class="gallery-grid">
                     <div class="gallery-item reveal">
                         <img src="https://cdn.shopify.com/s/files/1/0029/0868/4397/files/skin-fade-quiff-haircut-men.webp?v=1769775905"
-                            alt="Skin Fade haircut in Berlin-Neukölln" loading="lazy" decoding="async" />
+                            alt="Skin Fade Haarschnitt bei Men's Cut by Taskin Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="gallery-label">Skin Fade</div>
                     </div>
                     <div class="gallery-item reveal">
@@ -2554,59 +2554,55 @@
         <section class="pricelist-section">
             <div class="container">
                 <div style="text-align:center" class="reveal">
-                    <div class="section-eyebrow" data-i18n="pricelist.eyebrow">Price List</div>
-                    <h2 class="section-title" data-i18n="pricelist.title">Our Prices</h2>
+                    <div class="section-eyebrow" data-i18n="pricelist.eyebrow">Preisliste</div>
+                    <h2 class="section-title" data-i18n="pricelist.title">Unsere Preise</h2>
                     <div class="divider center"></div>
                     <p style="max-width:550px;margin:0 auto;color:var(--text-light);line-height:1.8"
-                        data-i18n="pricelist.desc">Fair and transparent pricing for all our services — quality grooming
-                        at honest rates.</p>
+                        data-i18n="pricelist.desc">Faire und transparente Preise für alle unsere Dienstleistungen — hochwertige Pflege zu fairen Preisen.</p>
                 </div>
                 <div class="pricelist-grid">
                     <div class="pricelist-card reveal">
                         <img src="https://tse1.mm.bing.net/th/id/OIP.aTW35VdMx1V-sFSq5LXjLwHaE8?r=0&cb=thfc1falcon2&rs=1&pid=ImgDetMain&o=7&rm=3"
-                            alt="Wash, Haircut, Blow Dry & Beard" loading="lazy" decoding="async" />
+                            alt="Waschen, Haarschnitt, Föhnen und Bart bei Men's Cut by Taskin" loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
-                            <h3 data-i18n="pricelist.s1.title">Wash, Haircut, Blow Dry, Beard</h3>
-                            <p class="pricelist-desc" data-i18n="pricelist.s1.desc">Complete grooming package including
-                                hair wash, precision haircut, styling, and beard shaping.</p>
+                            <h3 data-i18n="pricelist.s1.title">Waschen, Haarschnitt, Föhnen &amp; Bart</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s1.desc">Komplettes Pflegepaket inklusive Haarwäsche, präzisem Haarschnitt, Styling und Bartformung.</p>
                             <div class="pricelist-price">
                                 <span data-i18n="pricelist.s1.price">€27</span>
-                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Preis</span>
                             </div>
                         </div>
                     </div>
                     <div class="pricelist-card reveal">
                         <img src="https://www.moderngentlemanmagazine.com/wp-content/uploads/2025/06/Sling-Fade-Twist.jpeg"
-                            alt="Haircut" loading="lazy" decoding="async" />
+                            alt="Professioneller Herrenhaarschnitt bei Men's Cut by Taskin Berlin" loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
-                            <h3 data-i18n="pricelist.s2.title">Haircut</h3>
-                            <p class="pricelist-desc" data-i18n="pricelist.s2.desc">Professional haircut tailored to
-                                your preferred style and look.</p>
+                            <h3 data-i18n="pricelist.s2.title">Haarschnitt</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s2.desc">Professioneller Haarschnitt, ganz nach Ihrem bevorzugten Stil und Look.</p>
                             <div class="pricelist-price">
                                 <span data-i18n="pricelist.s2.price">€15</span>
-                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Preis</span>
                             </div>
                         </div>
                     </div>
                     <div class="pricelist-card reveal">
                         <img src="https://thumbs.dreamstime.com/b/young-dark-haired-guy-indian-asian-appearance-barber-shop-black-chair-barber-washes-his-head-shampoo-175891551.jpg"
-                            alt="Wash, Haircut & Blow Dry" loading="lazy" decoding="async" />
+                            alt="Waschen, Haarschnitt und Föhnen bei Men's Cut by Taskin" loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
-                            <h3 data-i18n="pricelist.s3.title">Wash, Haircut Blow Dry</h3>
-                            <p class="pricelist-desc" data-i18n="pricelist.s3.desc">Refreshing hair wash followed by a
-                                stylish haircut and professional blow dry.</p>
+                            <h3 data-i18n="pricelist.s3.title">Waschen, Haarschnitt &amp; Föhnen</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s3.desc">Erfrischende Haarwäsche gefolgt von einem stilvollen Haarschnitt und professionellem Föhnen.</p>
                             <div class="pricelist-price">
                                 <span data-i18n="pricelist.s3.price">€18</span>
-                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Preis</span>
                             </div>
                         </div>
                     </div>
                     <div class="pricelist-card reveal">
                         <img src="https://firstandmaneaz.com/wp-content/uploads/2025/01/Trim-a-Beard.jpg"
-                            alt="Beard Trim" loading="lazy" decoding="async" />
+                            alt="Professionelle Bartrasur bei Men's Cut by Taskin Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="pricelist.s4.title">Bart Rasur</h3>
@@ -2614,35 +2610,33 @@
                                 sorgfältiger Vorbereitung, sauberen Konturen und angenehmem, gepflegtem Ergebnis.</p>
                             <div class="pricelist-price">
                                 <span data-i18n="pricelist.s4.price">€12</span>
-                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Preis</span>
                             </div>
                         </div>
                     </div>
                     <div class="pricelist-card reveal">
                         <img src="https://img.magnific.com/premium-photo/handsome-boy-getting-his-hair-beard-cut-barber-shop-barber-shop-rear-view_494741-47404.jpg"
-                            alt="Kids Haircut" loading="lazy" decoding="async" />
+                            alt="Kinderhaarschnitt bei Men's Cut by Taskin Berlin-Neukölln" loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
-                            <h3 data-i18n="pricelist.s5.title">Kids Haircut (up to 6 years)</h3>
-                            <p class="pricelist-desc" data-i18n="pricelist.s5.desc">Comfortable and friendly haircut
-                                service specially designed for young children.</p>
+                            <h3 data-i18n="pricelist.s5.title">Kinderhaarschnitt (bis 6 Jahre)</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s5.desc">Angenehmer und freundlicher Haarschnittservice, speziell für kleine Kinder entwickelt.</p>
                             <div class="pricelist-price">
                                 <span data-i18n="pricelist.s5.price">€12</span>
-                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Preis</span>
                             </div>
                         </div>
                     </div>
                     <div class="pricelist-card reveal">
-                        <img src="https://baldandbeards.com/wp-content/uploads/beard-waxing-768x512.jpg" alt="Honey Wax"
+                        <img src="https://baldandbeards.com/wp-content/uploads/beard-waxing-768x512.jpg" alt="Honigwachs Gesichtsenthaarung bei Men's Cut by Taskin Berlin"
                             loading="lazy" decoding="async" />
                         <div class="pricelist-card-content">
                             <div class="service-card-line"></div>
-                            <h3 data-i18n="pricelist.s6.title">Honey Wax (per zone)</h3>
-                            <p class="pricelist-desc" data-i18n="pricelist.s6.desc">Gentle honey wax treatment for
-                                smooth and clean skin.</p>
+                            <h3 data-i18n="pricelist.s6.title">Honigwachs (pro Zone)</h3>
+                            <p class="pricelist-desc" data-i18n="pricelist.s6.desc">Sanfte Honigwachsbehandlung für glatte und saubere Haut.</p>
                             <div class="pricelist-price">
                                 <span data-i18n="pricelist.s6.price">€3</span>
-                                <span class="price-label" data-i18n="pricelist.price_label">Price</span>
+                                <span class="price-label" data-i18n="pricelist.price_label">Preis</span>
                             </div>
                         </div>
                     </div>
@@ -2655,14 +2649,14 @@
             <div class="container">
                 <div class="reviews-header reveal">
                     <div>
-                        <div class="section-eyebrow" data-i18n="reviews.eyebrow">Google Reviews</div>
-                        <h2 class="section-title" data-i18n="reviews.title">Customers Say</h2>
+                        <div class="section-eyebrow" data-i18n="reviews.eyebrow">Google Bewertungen</div>
+                        <h2 class="section-title" data-i18n="reviews.title">Kunden sagen</h2>
                     </div>
                     <div style="text-align:right">
                         <div class="rating-big">4.9</div>
                         <div class="stars" style="font-size:1.2rem;margin:6px 0;color:#fbbc04;">
                             &#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="rating-sub" data-i18n="reviews.sub">Google Rating</div>
+                        <div class="rating-sub" data-i18n="reviews.sub">Google Bewertung</div>
                     </div>
                 </div>
                 <div class="reviews-grid">
@@ -2693,8 +2687,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text" data-i18n="reviews.r1.text">Absolute cleanliness throughout the entire
-                            store.</div>
+                        <div class="review-text" data-i18n="reviews.r1.text">Absolute Sauberkeit im gesamten Laden.</div>
                     </div>
                     <div class="review-card reveal">
                         <div class="reviewer">
@@ -2723,8 +2716,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text" data-i18n="reviews.r2.text">This is my regular hairdresser in Neukölln.
-                            I've always been very satisfied so far.</div>
+                        <div class="review-text" data-i18n="reviews.r2.text">Das ist mein Stammfriseur in Neukölln. Ich war bisher immer sehr zufrieden.</div>
                     </div>
                     <div class="review-card reveal">
                         <div class="reviewer">
@@ -2753,8 +2745,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text" data-i18n="reviews.r3.text">Very happy. Great service, short wait, and
-                            reasonable price.</div>
+                        <div class="review-text" data-i18n="reviews.r3.text">Sehr zufrieden. Tolle Bedienung, kurze Wartezeit und angemessener Preis.</div>
                     </div>
                     <div class="review-card reveal">
                         <div class="reviewer">
@@ -2783,8 +2774,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text" data-i18n="reviews.r4.text">Yahya is the best in this business. Young,
-                            but professional in his job. The prices are good compared to the market.</div>
+                        <div class="review-text" data-i18n="reviews.r4.text">Yahya ist der Beste in diesem Geschäft. Jung, aber professionell in seinem Job. Die Preise sind gut im Vergleich zum Markt.</div>
                     </div>
                     <div class="review-card reveal">
                         <div class="reviewer">
@@ -2813,8 +2803,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text" data-i18n="reviews.r5.text">A good barbershop that takes its time and
-                            offers a fair price. I'll come back when I'm in Berlin.</div>
+                        <div class="review-text" data-i18n="reviews.r5.text">Ein guter Barbershop, der sich Zeit nimmt und einen fairen Preis bietet. Ich komme wieder, wenn ich in Berlin bin.</div>
                     </div>
                     <div class="review-card reveal">
                         <div class="reviewer">
@@ -2843,10 +2832,7 @@
                             </div>
                         </div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="review-text" data-i18n="reviews.r6.text">I got a haircut there last week. And, I can
-                            really say that I'm satisfied with the result. The workers are really friendly and
-                            professional. And, the price for a haircut was 15€ which is a very affordable price in
-                            Berlin.</div>
+                        <div class="review-text" data-i18n="reviews.r6.text">Ich war letzte Woche dort zum Haareschneiden. Ich kann wirklich sagen, dass ich mit dem Ergebnis zufrieden bin. Die Mitarbeiter sind wirklich freundlich und professionell. Der Preis für einen Haarschnitt betrug 15 €, was in Berlin ein sehr erschwinglicher Preis ist.</div>
                     </div>
                 </div>
             </div>
@@ -2857,8 +2843,8 @@
             <div class="container">
                 <div class="contact-grid">
                     <div class="reveal from-left">
-                        <div class="section-eyebrow" data-i18n="contact.eyebrow">Find Us</div>
-                        <h2 class="section-title" data-i18n="contact.title">Visit the Shop</h2>
+                        <div class="section-eyebrow" data-i18n="contact.eyebrow">Finden Sie uns</div>
+                        <h2 class="section-title" data-i18n="contact.title">Besuchen Sie uns</h2>
                         <div class="divider"></div>
                         <div class="contact-detail">
                             <div class="contact-icon">
@@ -2869,9 +2855,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="contact-label" data-i18n="contact.address.label">Address</div>
+                                <div class="contact-label" data-i18n="contact.address.label">Adresse</div>
                                 <div class="contact-value" data-i18n="contact.address.value">Anzengruberstraße
-                                    4<br />12043 Berlin, Germany</div>
+                                    4<br />12043 Berlin, Deutschland</div>
                             </div>
                         </div>
                         <div class="contact-detail">
@@ -2883,7 +2869,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="contact-label" data-i18n="contact.phone.label">Phone</div>
+                                <div class="contact-label" data-i18n="contact.phone.label">Telefon</div>
                                 <div class="contact-value"><a href="tel:+493068053010">+49 30 68053010</a></div>
                             </div>
                         </div>
@@ -2896,12 +2882,12 @@
                                 </svg>
                             </div>
                             <div>
-                                <div class="contact-label" data-i18n="contact.hours.label">Opening Hours</div>
-                                <div class="contact-value" data-i18n="contact.hours.value">Mon&ndash;Fri: 09:00 &ndash;
-                                    19:00<br />Saturday: 09:00 &ndash; 19:00<br />Sunday: Closed</div>
+                                <div class="contact-label" data-i18n="contact.hours.label">Öffnungszeiten</div>
+                                <div class="contact-value" data-i18n="contact.hours.value">Mo&ndash;Fr: 09:00 &ndash;
+                                    19:00<br />Samstag: 09:00 &ndash; 19:00<br />Sonntag: Geschlossen</div>
                             </div>
                         </div>
-                        <div class="contact-label" style="margin-bottom:12px" data-i18n="contact.follow">Follow Us</div>
+                        <div class="contact-label" style="margin-bottom:12px" data-i18n="contact.follow">Folgen Sie uns</div>
                         <div class="social-row">
                             <a class="social-btn" href="https://www.instagram.com/menscutbytaskin" target="_blank"
                                 title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor">
@@ -2918,7 +2904,7 @@
                     <div class="reveal from-right">
                         <iframe class="map-embed"
                             src="https://maps.google.com/maps?q=Anzengruberstra%C3%9Fe+4,+12043+Berlin&output=embed&z=16"
-                            allowfullscreen loading="lazy" decoding="async" title="Shop Location"></iframe>
+                            allowfullscreen loading="lazy" decoding="async" title="Standort des Barbershops"></iframe>
                     </div>
                 </div>
             </div>
@@ -2935,9 +2921,9 @@
             <div class="inner-hero">
                 <div class="inner-hero-bg"></div>
                 <div class="inner-hero-content">
-                    <div class="breadcrumb">Home &middot; <span data-i18n="about-page.breadcrumb">About</span></div>
-                    <h1 data-i18n="about-page.hero.title">About Us</h1>
-                    <p data-i18n="about-page.hero.sub">Craft, passion & Berlin heart</p>
+                    <div class="breadcrumb">Startseite &middot; <span data-i18n="about-page.breadcrumb">Über uns</span></div>
+                    <h1 data-i18n="about-page.hero.title">Über uns</h1>
+                    <p data-i18n="about-page.hero.sub">Handwerk, Leidenschaft &amp; Berliner Herz</p>
                 </div>
             </div>
             <section style="background:var(--white)">
@@ -2945,10 +2931,10 @@
                     <div class="about-grid">
                         <div class="about-img-wrap reveal from-left">
                             <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=85"
-                                alt="Barber shop" loading="lazy" decoding="async" />
+                                alt="Barbershop-Interieur bei Men's Cut by Taskin in Berlin-Neukölln" loading="lazy" decoding="async" />
                         </div>
                         <div class="about-text reveal from-right">
-                            <div class="section-eyebrow" data-i18n="about-page.story.eyebrow">Our Story</div>
+                            <div class="section-eyebrow" data-i18n="about-page.story.eyebrow">Unsere Geschichte</div>
                             <h2 class="section-title" data-i18n="about-page.story.title">Men's Cut by Taskin</h2>
                             <div class="divider"></div>
                             <p><strong>Seit 2013 in Berlin</strong> – wir sind leidenschaftliche Barbiere mit einem
@@ -2968,54 +2954,49 @@
             <section style="background:var(--cream)">
                 <div class="container">
                     <div style="text-align:center" class="reveal">
-                        <div class="section-eyebrow" data-i18n="about-page.values.eyebrow">Why Choose Us</div>
-                        <h2 class="section-title" data-i18n="about-page.values.title">Our Values</h2>
+                        <div class="section-eyebrow" data-i18n="about-page.values.eyebrow">Warum uns wählen</div>
+                        <h2 class="section-title" data-i18n="about-page.values.title">Unsere Werte</h2>
                         <div class="divider center"></div>
                     </div>
                     <div class="value-grid">
                         <div class="value-card reveal">
                             <div class="value-icon">&#9986;&#65039;</div>
-                            <h4 data-i18n="about-page.values.v1.title">Master Craftsmanship</h4>
-                            <p data-i18n="about-page.values.v1.desc">Every cut is approached with precision and
-                                artistry. We use only premium tools and techniques refined over years of dedicated
-                                practice.</p>
+                            <h3 data-i18n="about-page.values.v1.title">Meisterhaftes Handwerk</h3>
+                            <p data-i18n="about-page.values.v1.desc">Jeder Schnitt wird mit Präzision und Kunstfertigkeit ausgeführt. Wir verwenden nur hochwertige Werkzeuge und Techniken, die über Jahre intensiver Praxis verfeinert wurden.</p>
                         </div>
                         <div class="value-card reveal">
                             <div class="value-icon">&#129309;</div>
-                            <h4 data-i18n="about-page.values.v2.title">Personal Attention</h4>
-                            <p data-i18n="about-page.values.v2.desc">We listen to each client individually,
-                                understanding their unique style and suggesting the best approach for their face shape
-                                and lifestyle.</p>
+                            <h3 data-i18n="about-page.values.v2.title">Persönliche Aufmerksamkeit</h3>
+                            <p data-i18n="about-page.values.v2.desc">Wir hören jedem Kunden individuell zu, verstehen seinen einzigartigen Stil und schlagen den besten Ansatz für seine Gesichtsform und seinen Lebensstil vor.</p>
                         </div>
                         <div class="value-card reveal">
                             <div class="value-icon">&#11088;</div>
-                            <h4 data-i18n="about-page.values.v3.title">Consistent Quality</h4>
-                            <p data-i18n="about-page.values.v3.desc">Our 4.9-star rating with 168 reviews speaks for
-                                itself. Every visit delivers the same exceptional standard of service, every time.</p>
+                            <h3 data-i18n="about-page.values.v3.title">Konstante Qualität</h3>
+                            <p data-i18n="about-page.values.v3.desc">Unsere 4,9-Sterne-Bewertung mit 168 Rezensionen spricht für sich. Jeder Besuch bietet den gleichen außergewöhnlichen Service, jedes Mal.</p>
                         </div>
                     </div>
                 </div>
             </section>
             <section style="background:var(--dark);padding:80px 0">
                 <div class="container" style="text-align:center">
-                    <div class="section-eyebrow reveal" data-i18n="about-page.stats.eyebrow">Berlin's Best</div>
-                    <h2 class="section-title light reveal" data-i18n="about-page.stats.title">4.9 ★ on Google</h2>
+                    <div class="section-eyebrow reveal" data-i18n="about-page.stats.eyebrow">Berlins Beste</div>
+                    <h2 class="section-title light reveal" data-i18n="about-page.stats.title">4,9 ★ auf Google</h2>
                     <div class="divider center reveal"></div>
                     <div class="stats-row reveal" style="justify-content:center;margin-top:0">
                         <div class="stat">
                             <div class="stat-num">4.9★</div>
                             <div class="stat-label" style="color:rgba(255,255,255,.5)"
-                                data-i18n="about-page.stats.stat1">Google Rating</div>
+                                data-i18n="about-page.stats.stat1">Google Bewertung</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-num">4.9</div>
+                            <div class="stat-num">168+</div>
                             <div class="stat-label" style="color:rgba(255,255,255,.5)"
-                                data-i18n="about-page.stats.stat2">Google Rating</div>
+                                data-i18n="about-page.stats.stat2">Zufriedene Kunden</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-num">4.9</div>
+                            <div class="stat-num">10+</div>
                             <div class="stat-label" style="color:rgba(255,255,255,.5)"
-                                data-i18n="about-page.stats.stat3">Google Rating</div>
+                                data-i18n="about-page.stats.stat3">Jahre Erfahrung</div>
                         </div>
                     </div>
                 </div>
@@ -3032,17 +3013,17 @@
             <div class="inner-hero">
                 <div class="inner-hero-bg"></div>
                 <div class="inner-hero-content">
-                    <div class="breadcrumb">Home &middot; <span data-i18n="services-page.breadcrumb">Services</span>
+                    <div class="breadcrumb">Startseite &middot; <span data-i18n="services-page.breadcrumb">Leistungen</span>
                     </div>
-                    <h1 data-i18n="services-page.hero.title">Our Services</h1>
-                    <p data-i18n="services-page.hero.sub">Haircuts & Shaves for the modern gentleman</p>
+                    <h1 data-i18n="services-page.hero.title">Unsere Leistungen</h1>
+                    <p data-i18n="services-page.hero.sub">Haarschnitte &amp; Rasuren für den modernen Gentleman</p>
                 </div>
             </div>
             <section style="background:var(--cream)">
                 <div class="container">
                     <div style="text-align:center;margin-bottom:70px" class="reveal">
-                        <div class="section-eyebrow" data-i18n="services-page.eyebrow">What We Offer</div>
-                        <h2 class="section-title" data-i18n="services-page.title">Barber Services</h2>
+                        <div class="section-eyebrow" data-i18n="services-page.eyebrow">Unser Angebot</div>
+                        <h2 class="section-title" data-i18n="services-page.title">Barber-Leistungen</h2>
                         <div class="divider center"></div>
                         <p style="max-width:580px;margin:0 auto;color:var(--text-light);line-height:1.9"
                             data-i18n="services-page.desc">Wir bieten ein umfassendes Angebot an Barber-Dienstleistungen
@@ -3055,7 +3036,7 @@
                                     src="https://media.istockphoto.com/id/965168640/photo/handsome-young-man-getting-a-haircut.jpg?s=170667a&w=0&k=20&c=s1_r5ZPgLfu60mGZXLYErav_00UrtOE89yXC0L7fVUE="
                                     alt="Herrenhaarschnitt in Berlin-Neukölln" loading="lazy" decoding="async" /></div>
                             <div class="service-item-text">
-                                <div class="section-eyebrow" data-i18n="services-page.s1.eyebrow">Service 01</div>
+                                <div class="section-eyebrow" data-i18n="services-page.s1.eyebrow">Leistung 01</div>
                                 <h3>Herrenhaarschnitt in Berlin-Neukölln</h3>
                                 <div class="divider"></div>
                                 <p>Professionelle Herrenhaarschnitte in Berlin-Neukölln – von klassischen Schnitten bis
@@ -3072,7 +3053,7 @@
                                     alt="Skin Fade und Fade Cut in Berlin-Neukölln" loading="lazy" decoding="async" />
                             </div>
                             <div class="service-item-text">
-                                <div class="section-eyebrow" data-i18n="services-page.s2.eyebrow">Service 02</div>
+                                <div class="section-eyebrow" data-i18n="services-page.s2.eyebrow">Leistung 02</div>
                                 <h3>Skin Fade & Fade Cut</h3>
                                 <div class="divider"></div>
                                 <p>Präzise Fade Cuts und Skin Fades mit sauberen Übergängen und exakten Konturen. Wir
@@ -3089,7 +3070,7 @@
                                     alt="Bartpflege und Bartkonturen in Berlin-Neukölln" loading="lazy"
                                     decoding="async" /></div>
                             <div class="service-item-text">
-                                <div class="section-eyebrow" data-i18n="services-page.s3.eyebrow">Service 03</div>
+                                <div class="section-eyebrow" data-i18n="services-page.s3.eyebrow">Leistung 03</div>
                                 <h3>Bartpflege & Bartkonturen</h3>
                                 <div class="divider"></div>
                                 <p>Professionelles Barttrimmen, Bartstyling und präzise Bartkonturen. Wir bringen den
@@ -3174,17 +3155,17 @@
             <div class="inner-hero">
                 <div class="inner-hero-bg"></div>
                 <div class="inner-hero-content">
-                    <div class="breadcrumb">Home &middot; <span data-i18n="contact-page.breadcrumb">Contact</span></div>
-                    <h1 data-i18n="contact-page.hero.title">Contact Us</h1>
-                    <p data-i18n="contact-page.hero.sub">We are in touch</p>
+                    <div class="breadcrumb">Startseite &middot; <span data-i18n="contact-page.breadcrumb">Kontakt</span></div>
+                    <h1 data-i18n="contact-page.hero.title">Kontakt</h1>
+                    <p data-i18n="contact-page.hero.sub">Wir sind in Verbindung</p>
                 </div>
             </div>
             <section style="background:var(--cream)">
                 <div class="container">
                     <div class="contact-page-grid">
                         <div class="reveal from-left">
-                            <div class="section-eyebrow" data-i18n="contact-page.eyebrow">Get In Touch</div>
-                            <h2 class="section-title" data-i18n="contact-page.title">Visit the Shop</h2>
+                            <div class="section-eyebrow" data-i18n="contact-page.eyebrow">Nehmen Sie Kontakt auf</div>
+                            <h2 class="section-title" data-i18n="contact-page.title">Besuchen Sie den Shop</h2>
                             <div class="divider"></div>
                             <div class="contact-detail">
                                 <div class="contact-icon">
@@ -3195,9 +3176,9 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <div class="contact-label" data-i18n="contact-page.address.label">Address</div>
+                                    <div class="contact-label" data-i18n="contact-page.address.label">Adresse</div>
                                     <div class="contact-value" data-i18n="contact-page.address.value">Anzengruberstraße
-                                        4<br />12043 Berlin, Germany</div>
+                                        4<br />12043 Berlin, Deutschland</div>
                                 </div>
                             </div>
                             <div class="contact-detail">
@@ -3209,7 +3190,7 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <div class="contact-label" data-i18n="contact-page.phone.label">Phone</div>
+                                    <div class="contact-label" data-i18n="contact-page.phone.label">Telefon</div>
                                     <div class="contact-value"><a href="tel:+493068053010">+49 30 68053010</a></div>
                                 </div>
                             </div>
@@ -3221,48 +3202,48 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <div class="contact-label" data-i18n="contact-page.map.label">Map Code</div>
+                                    <div class="contact-label" data-i18n="contact-page.map.label">Karten-Code</div>
                                     <div class="contact-value" data-i18n="contact-page.map.value">FCJQ+38 Berlin,
-                                        Germany</div>
+                                        Deutschland</div>
                                 </div>
                             </div>
                             <div style="margin-top:40px">
                                 <div class="contact-label" style="margin-bottom:16px"
-                                    data-i18n="contact-page.hours.title">Opening Hours</div>
+                                    data-i18n="contact-page.hours.title">Öffnungszeiten</div>
                                 <table class="hours-table">
                                     <tr>
-                                        <td data-i18n="contact-page.hours.mon">Monday</td>
+                                        <td data-i18n="contact-page.hours.mon">Montag</td>
                                         <td>09:00 – 19:00</td>
                                     </tr>
                                     <tr>
-                                        <td data-i18n="contact-page.hours.tue">Tuesday</td>
+                                        <td data-i18n="contact-page.hours.tue">Dienstag</td>
                                         <td>09:00 – 19:00</td>
                                     </tr>
                                     <tr>
-                                        <td data-i18n="contact-page.hours.wed">Wednesday</td>
+                                        <td data-i18n="contact-page.hours.wed">Mittwoch</td>
                                         <td>09:00 – 19:00</td>
                                     </tr>
                                     <tr>
-                                        <td data-i18n="contact-page.hours.thu">Thursday</td>
+                                        <td data-i18n="contact-page.hours.thu">Donnerstag</td>
                                         <td>09:00 – 19:00</td>
                                     </tr>
                                     <tr>
-                                        <td data-i18n="contact-page.hours.fri">Friday</td>
+                                        <td data-i18n="contact-page.hours.fri">Freitag</td>
                                         <td>09:00 – 19:00</td>
                                     </tr>
                                     <tr>
-                                        <td data-i18n="contact-page.hours.sat">Saturday</td>
+                                        <td data-i18n="contact-page.hours.sat">Samstag</td>
                                         <td>09:00 – 19:00</td>
                                     </tr>
                                     <tr class="closed">
-                                        <td data-i18n="contact-page.hours.sun">Sunday</td>
-                                        <td data-i18n="contact-page.hours.closed">Closed</td>
+                                        <td data-i18n="contact-page.hours.sun">Sonntag</td>
+                                        <td data-i18n="contact-page.hours.closed">Geschlossen</td>
                                     </tr>
                                 </table>
                             </div>
                             <div style="margin-top:40px">
                                 <div class="contact-label" style="margin-bottom:14px" data-i18n="contact-page.follow">
-                                    Follow Us</div>
+                                    Folgen Sie uns</div>
                                 <div class="social-row">
                                     <a class="social-btn" href="https://www.instagram.com/menscutbytaskin"
                                         target="_blank" title="Instagram" aria-label="Instagram"><svg
@@ -3283,7 +3264,7 @@
                             <iframe
                                 src="https://maps.google.com/maps?q=Anzengruberstra%C3%9Fe+4,+12043+Berlin&output=embed&z=16"
                                 width="100%" height="520" style="border:none;width:100%;display:block" allowfullscreen
-                                loading="lazy" decoding="async" title="Men's Cut by Taskin Map"></iframe>
+                                loading="lazy" decoding="async" title="Men's Cut by Taskin Standort auf der Karte"></iframe>
                         </div>
                     </div>
                 </div>
@@ -3306,7 +3287,7 @@
                 'nav.about': 'Über uns',
                 'nav.services': 'Leistungen',
                 'nav.contact': 'Kontakt',
-                'nav.book': 'Termin anrufen',
+                'nav.book': 'Termin vereinbaren',
                 'hero.eyebrow': 'Zeitlosen Stil kreieren',
                 'hero.title': 'Herrenfriseur & Barbershop in <em>Berlin-Neukölln</em>',
                 'hero.sub': 'Professionelle Herrenhaarschnitte, Skin Fades, Taper Fades, Bartpflege und traditionelle Rasuren in der Anzengruberstraße 4 in Berlin-Neukölln.',
@@ -3362,9 +3343,9 @@
                 'about-page.values.v3.desc': 'Unsere 4,9-Sterne-Bewertung mit 168 Rezensionen spricht für sich. Jeder Besuch bietet den gleichen außergewöhnlichen Service, jedes Mal.',
                 'about-page.stats.eyebrow': 'Berlins Beste',
                 'about-page.stats.title': '4,9 ★ auf Google',
-                'about-page.stats.stat1': 'Google Rating',
-                'about-page.stats.stat2': 'Google Rating',
-                'about-page.stats.stat3': 'Google Rating',
+                'about-page.stats.stat1': 'Google Bewertung',
+                'about-page.stats.stat2': 'Zufriedene Kunden',
+                'about-page.stats.stat3': 'Jahre Erfahrung',
                 'services-page.breadcrumb': 'Leistungen',
                 'services-page.hero.title': 'Unsere Leistungen',
                 'services-page.hero.sub': 'Haarschnitte & Rasuren für den modernen Gentleman',
@@ -3499,8 +3480,8 @@
                 'about-page.stats.eyebrow': 'Berlin\'s Best',
                 'about-page.stats.title': '4.9 ★ on Google',
                 'about-page.stats.stat1': 'Google Rating',
-                'about-page.stats.stat2': 'Google Rating',
-                'about-page.stats.stat3': 'Google Rating',
+                'about-page.stats.stat2': 'Happy Clients',
+                'about-page.stats.stat3': 'Years Experience',
                 'services-page.breadcrumb': 'Services',
                 'services-page.hero.title': 'Our Services',
                 'services-page.hero.sub': 'Haircuts & Shaves for the modern gentleman',
@@ -3771,8 +3752,8 @@
                 'about-page.stats.eyebrow': 'Le meilleur de Berlin',
                 'about-page.stats.title': '4,9 ★ sur Google',
                 'about-page.stats.stat1': 'Google Rating',
-                'about-page.stats.stat2': 'Google Rating',
-                'about-page.stats.stat3': 'Google Rating',
+                'about-page.stats.stat2': 'Happy Clients',
+                'about-page.stats.stat3': 'Years Experience',
                 'services-page.breadcrumb': 'Services',
                 'services-page.hero.title': 'Nos services',
                 'services-page.hero.sub': 'Coupes et rasages pour le gentleman moderne',
@@ -3993,26 +3974,26 @@
                 '  <div class="footer-grid">' +
                 '    <div class="footer-brand">' +
                 '      <div class="footer-logo">' +
-                '        <img src="' + LOGO_PATH + '" alt="Logo" width="72" height="72" loading="lazy" decoding="async" />' +
-                '        <div class="footer-logo-text" data-i18n="footer.brand">Men\'s Cut by Taskin <span data-i18n="footer.brand_sub">Berlin-Neukölln · Germany</span></div>' +
+                '        <img src="' + LOGO_PATH + '" alt="Men\'s Cut by Taskin Logo – Barbershop Berlin-Neukölln" width="72" height="72" loading="lazy" decoding="async" />' +
+                '        <div class="footer-logo-text" data-i18n="footer.brand">Men\'s Cut by Taskin <span data-i18n="footer.brand_sub">Berlin-Neukölln · Deutschland</span></div>' +
                 '      </div>' +
                 '      <p class="footer-desc" data-i18n="footer.desc">Herrenfriseur & Barbershop in Berlin-Neukölln.</p>' +
                 '      <div class="footer-social">' +
-                '        <a href="https://www.instagram.com/menscutbytaskin" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>' +
-                '        <a href="https://www.facebook.com/share/18b5GmeCER/" target="_blank" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' +
+                '        <a href="https://www.instagram.com/menscutbytaskin" target="_blank" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>' +
+                '        <a href="https://www.facebook.com/share/18b5GmeCER/" target="_blank" title="Facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>' +
                 '        </div>' +
                 '    </div>' +
                 '    <div class="footer-col">' +
-                '      <h4 data-i18n="footer.explore">Explore</h4>' +
+                '      <h4 data-i18n="footer.explore">Entdecken</h4>' +
                 '      <ul>' +
-                '        <li><a href="#home" onclick="showPage(\'home\')" data-i18n="footer.explore.home">Home</a></li>' +
-                '        <li><a href="#about" onclick="showPage(\'about\')" data-i18n="footer.explore.about">About Us</a></li>' +
-                '        <li><a href="#services" onclick="showPage(\'services\')" data-i18n="footer.explore.services">Services</a></li>' +
-                '        <li><a href="#contact" onclick="showPage(\'contact\')" data-i18n="footer.explore.contact">Contact</a></li>' +
+                '        <li><a href="#home" onclick="showPage(\'home\')" data-i18n="footer.explore.home">Startseite</a></li>' +
+                '        <li><a href="#about" onclick="showPage(\'about\')" data-i18n="footer.explore.about">Über uns</a></li>' +
+                '        <li><a href="#services" onclick="showPage(\'services\')" data-i18n="footer.explore.services">Leistungen</a></li>' +
+                '        <li><a href="#contact" onclick="showPage(\'contact\')" data-i18n="footer.explore.contact">Kontakt</a></li>' +
                 '      </ul>' +
                 '    </div>' +
                 '    <div class="footer-col">' +
-                '      <h4 data-i18n="footer.contact">Contact</h4>' +
+                '      <h4 data-i18n="footer.contact">Kontakt</h4>' +
                 '      <ul>' +
                 '        <li><a data-i18n="footer.contact.address">Anzengruberstr. 4, 12043 Berlin</a></li>' +
                 '        <li><a href="tel:+493068053010">+49 30 68053010</a></li>' +
@@ -4094,12 +4075,29 @@
 
             var pageTitles = {
                 home: 'Herrenfriseur & Barbershop Berlin-Neukölln | Men’s Cut by Taskin',
-                about: 'Über uns & Handwerk | Men’s Cut by Taskin Berlin-Neukölln',
-                services: 'Barber Services & Preise | Men’s Cut by Taskin Berlin',
-                contact: 'Kontakt & Öffnungszeiten | Men’s Cut by Taskin Berlin'
+                about: 'Über uns & Barbier-Handwerk | Men’s Cut by Taskin Berlin',
+                services: 'Barber-Leistungen & Preise | Men’s Cut by Taskin Berlin',
+                contact: 'Kontakt & Öffnungszeiten | Men’s Cut by Taskin Berlin-Neukölln'
             };
             if (pageTitles[name]) {
                 document.title = pageTitles[name];
+            }
+
+            var metaDescriptions = {
+                home: 'Men’s Cut by Taskin: Ihr Barbershop & Herrenfriseur in Berlin-Neukölln. Professioneller Herrenhaarschnitt, Fade Cut, Bartpflege und traditionelle Rasur.',
+                about: 'Lernen Sie Men’s Cut by Taskin kennen: Leidenschaftliche Barbiere mit langjähriger Erfahrung in Berlin-Neukölln. Höchste Qualität und persönliche Beratung.',
+                services: 'Barber-Services & faire Preise bei Men’s Cut by Taskin in Berlin-Neukölln: Herrenhaarschnitt, Skin Fade, Taper Fade, Bartkonturen und traditionelle Rasur.',
+                contact: 'Men’s Cut by Taskin in Berlin-Neukölln (Anzengruberstr. 4). Öffnungszeiten Mo–Sa 09:00–19:00 Uhr. Rufen Sie uns für eine Terminvereinbarung direkt an!'
+            };
+            var metaDescEl = document.querySelector('meta[name="description"]');
+            if (metaDescEl && metaDescriptions[name]) {
+                metaDescEl.setAttribute('content', metaDescriptions[name]);
+            }
+
+            if (window.location.hash !== '#' + name) {
+                try {
+                    history.replaceState(null, '', '#' + name);
+                } catch (e) {}
             }
 
             ['home', 'about', 'services', 'contact'].forEach(function (n) {
@@ -4174,7 +4172,20 @@
             CURRENT_LANG = initialLang;
 
             applyTranslations(initialLang);
-            setTimeout(initReveal, 150);
+
+            var initialHash = window.location.hash.replace('#', '').toLowerCase();
+            if (['home', 'about', 'services', 'contact'].indexOf(initialHash) !== -1) {
+                showPage(initialHash);
+            } else {
+                initReveal();
+            }
+
+            window.addEventListener('hashchange', function () {
+                var hash = window.location.hash.replace('#', '').toLowerCase();
+                if (['home', 'about', 'services', 'contact'].indexOf(hash) !== -1) {
+                    showPage(hash);
+                }
+            });
         });
     </script>
 
