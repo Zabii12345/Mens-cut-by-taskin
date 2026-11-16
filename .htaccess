@@ -9,6 +9,10 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Redirect www to non-www (canonical domain)
+    RewriteCond %{HTTP_HOST} ^www\.menscutbarber\.de [NC]
+    RewriteRule ^(.*)$ https://menscutbarber.de/$1 [L,R=301]
+
     # Enforce HTTPS
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
