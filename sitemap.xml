@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://menscutbarber.de/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -12,16 +12,23 @@
     </image:image>
     <image:image>
       <image:loc>https://i.ibb.co/LzrRqR5N/colorize-1-1.webp</image:loc>
-      <image:title>Men’s Cut by Taskin – Barbershop Berlin-Neukölln</image:title>
+      <image:title>Men’s Cut by Taskin – Moderner Barbershop Berlin-Neukölln</image:title>
     </image:image>
     <image:image>
       <image:loc>https://i.ibb.co/BKQQQksQ/Men-s-Cut-Shaving-Set-Display-1.webp</image:loc>
-      <image:title>Men’s Cut by Taskin – Shaving Set Display</image:title>
+      <image:title>Men’s Cut by Taskin – Professionelle Rasier- und Bartpflegeausstattung</image:title>
     </image:image>
     <image:image>
       <image:loc>https://menscutbarber.de/images/logo.png</image:loc>
-      <image:title>Men’s Cut by Taskin Logo</image:title>
+      <image:title>Men’s Cut by Taskin – Offizielles Logo Barbershop Berlin</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://i.ibb.co/TqhCXmNT/eacf79dd-e037-44b9-9154-3a02873daa92.png</image:loc>
+      <image:title>Skin Fade &amp; Fade Cut Herrenhaarschnitt Berlin-Neukölln</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdn.shopify.com/s/files/1/0029/0868/4397/files/skin-fade-quiff-haircut-men.webp?v=1769775905</image:loc>
+      <image:title>Skin Fade Quiff Herrenfrisur – Men’s Cut by Taskin</image:title>
     </image:image>
   </url>
 </urlset>
-
