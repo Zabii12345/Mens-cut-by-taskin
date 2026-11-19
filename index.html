@@ -1461,6 +1461,30 @@
             color: var(--gold);
         }
 
+        /* ── SERVICE DETAIL LINK ── */
+        .service-detail-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            color: var(--gold);
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color .3s, transform .3s;
+        }
+
+        .service-detail-link:hover {
+            color: var(--white);
+            transform: translateX(4px);
+        }
+
+        .service-item .service-detail-link:hover {
+            color: var(--dark);
+        }
+
         /* ── SERVICES LIST ── */
         .service-item {
             display: grid;
@@ -2451,6 +2475,8 @@
                             <p data-i18n="services.haircut.desc">Professionelle Herrenhaarschnitte in Berlin-Neukölln –
                                 von klassischen Schnitten bis zu modernen Styles. Wir beraten individuell und schneiden
                                 passend zu Haarstruktur, Gesichtsform und gewünschtem Look.</p>
+                            <a href="/herrenhaarschnitt-neukoelln/" class="service-detail-link">Mehr zum
+                                Herrenhaarschnitt &rarr;</a>
                         </div>
                     </div>
                     <!-- Service 2 -->
@@ -2463,18 +2489,21 @@
                             <p data-i18n="services.shave.desc">Präzise Fade Cuts und Skin Fades mit sauberen Übergängen
                                 und exakten Konturen. Wir bieten unter anderem Low Fade, Mid Fade, High Fade und moderne
                                 Taper-Fade-Styles.</p>
+                            <a href="/skin-fade-neukoelln/" class="service-detail-link">Mehr zum Skin Fade &rarr;</a>
                         </div>
                     </div>
                     <!-- Service 3 -->
                     <div class="service-card reveal">
                         <img src="https://media.istockphoto.com/id/939978446/photo/close-up-of-a-hairdressers-work-for-an-attractive-young-man-at-the-barber-shop-he-is-doing.jpg?b=1&s=612x612&w=0&k=20&c=Idr8YrdJkVUZAYjWgQxXdjYxXHfTjs8L47DjG_s4cbs="
-                            alt="Professionelle Bartpflege und Bartkonturen in Berlin-Neukölln" loading="lazy" decoding="async" />
+                            alt="Professionelle Bartpflege und Bartkonturen in Berlin-Neukölln" loading="lazy"
+                            decoding="async" />
                         <div class="service-card-content">
                             <div class="service-card-line"></div>
                             <h3 data-i18n="services.beard.title">Bartpflege & Bartkonturen</h3>
                             <p data-i18n="services.beard.desc">Professionelles Barttrimmen, Bartstyling und präzise
                                 Bartkonturen. Wir bringen den Bart passend zur Gesichtsform in Form und sorgen für ein
                                 sauberes, gepflegtes Ergebnis.</p>
+                            <a href="/bartpflege-neukoelln/" class="service-detail-link">Mehr zur Bartpflege &rarr;</a>
                         </div>
                     </div>
                     <!-- Service 4 -->
@@ -3082,6 +3111,8 @@
                                 <p>Ob Sie einen klassischen Taper, Fade, Pompadour oder Undercut bevorzugen – wir
                                     streben danach, Ihre Individualität hervorzuheben und Styling-Empfehlungen zu geben,
                                     damit Sie immer makellos aussehen.</p>
+                                <a href="/herrenhaarschnitt-neukoelln/" class="service-detail-link">Mehr zum
+                                    Herrenhaarschnitt &rarr;</a>
                             </div>
                         </div>
                         <div class="service-item reverse reveal">
@@ -3099,6 +3130,8 @@
                                 <p>Unsere erfahrenen Barbiere beherrschen alle Fade-Techniken und schaffen einen
                                     perfekten Übergang von der Haut bis zum Deckhaar – für einen modernen und gepflegten
                                     Look.</p>
+                                <a href="/skin-fade-neukoelln/" class="service-detail-link">Mehr zum Skin Fade
+                                    &rarr;</a>
                             </div>
                         </div>
                         <div class="service-item reveal">
@@ -3115,6 +3148,8 @@
                                     Ergebnis.</p>
                                 <p>Unser Ziel ist es, Ihre Individualität hervorzuheben und Pflegeempfehlungen zu geben,
                                     damit Ihr Bart immer makellos aussieht.</p>
+                                <a href="/bartpflege-neukoelln/" class="service-detail-link">Mehr zur Bartpflege
+                                    &rarr;</a>
                             </div>
                         </div>
                         <div class="service-item reverse reveal">
@@ -3203,7 +3238,8 @@
                     <div class="contact-page-grid">
                         <div class="reveal from-left">
                             <div class="section-eyebrow" data-i18n="contact-page.eyebrow">Nehmen Sie Kontakt auf</div>
-                            <h2 class="section-title" data-i18n="contact-page.title">Besuchen Sie unseren Barbershop in Neukölln</h2>
+                            <h2 class="section-title" data-i18n="contact-page.title">Besuchen Sie unseren Barbershop in
+                                Neukölln</h2>
                             <div class="divider"></div>
                             <div class="contact-detail">
                                 <div class="contact-icon">
