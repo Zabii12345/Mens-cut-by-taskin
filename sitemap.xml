@@ -1,100 +1,81 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url>
-    <loc>https://menscutbarber.de/</loc>
-    <lastmod>2026-11-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://i.ibb.co/fGBGxNGJ/mens-cut-hero-1.webp</image:loc>
-      <image:title>Men’s Cut by Taskin – Herrenfriseur &amp; Barbershop in Berlin-Neukölln</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ibb.co/LzrRqR5N/colorize-1-1.webp</image:loc>
-      <image:title>Men’s Cut by Taskin – Moderner Barbershop Berlin-Neukölln</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ibb.co/BKQQQksQ/Men-s-Cut-Shaving-Set-Display-1.webp</image:loc>
-      <image:title>Men’s Cut by Taskin – Professionelle Rasier- und Bartpflegeausstattung</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://menscutbarber.de/images/logo.png</image:loc>
-      <image:title>Men’s Cut by Taskin – Offizielles Logo Barbershop Berlin</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://i.ibb.co/TqhCXmNT/eacf79dd-e037-44b9-9154-3a02873daa92.png</image:loc>
-      <image:title>Skin Fade &amp; Fade Cut Herrenhaarschnitt Berlin-Neukölln</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://cdn.shopify.com/s/files/1/0029/0868/4397/files/skin-fade-quiff-haircut-men.webp?v=1769775905</image:loc>
-      <image:title>Skin Fade Quiff Herrenfrisur – Men’s Cut by Taskin</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/830427680/photo/young-man-in-barber-shop-hair-care-service-concept.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=tH4onluJjomtZ8YYK7U9pMo6KOY6HO2AbyWQeba25HI=</image:loc>
-      <image:title>Professionelle Herrenpflege &amp; Styling – Men’s Cut by Taskin Berlin-Neukölln</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/939978446/photo/close-up-of-a-hairdressers-work-for-an-attractive-young-man-at-the-barber-shop-he-is-doing.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=Idr8YrdJkVUZAYjWgQxXdjYxXHfTjs8L47DjG_s4cbs=</image:loc>
-      <image:title>Bartpflege &amp; Bartkonturen – Men’s Cut by Taskin Berlin-Neukölln</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/680907176/photo/little-boy-getting-haircut-by-barber-while-sitting-in-chair-at-barbershop.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=ovJHn4ncUzKGWQqz5bC1-_A5C52EEmXBeEFV9pqQzWY=</image:loc>
-      <image:title>Kinderhaarschnitt in Berlin-Neukölln – Men’s Cut by Taskin</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/506514402/photo/new-hairstyle.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=y3ZLTAgMe0G9BYUWRmLaVjmmkbn90SufW1k5coDeNzc=</image:loc>
-      <image:title>Waschen, Haarschnitt, Föhnen &amp; Bart – Men’s Cut by Taskin Berlin-Neukölln</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/640278900/photo/male-client-getting-haircut-by-hairdresser.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=C8Gq6uLh6q2C1Aq3VlOlp0QJ-9zkx06DQHvS3bhjK5k=</image:loc>
-      <image:title>Herrenhaarschnitt &amp; Styling – Men’s Cut by Taskin Berlin-Neukölln</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/655671096/photo/at-the-hairdresser.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=l4yDjB0-P73_PAq6BmeRdxkub2E5HlC_ClqcqZyBSKQ=</image:loc>
-      <image:title>Waschen, Haarschnitt &amp; Föhnen – Men’s Cut by Taskin Berlin-Neukölln</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/872361244/photo/man-getting-his-beard-trimmed-with-electric-razor.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=vx6-oGkjB0nB3dwMBZf5QSQnvnlqZ0xWGdFFl7aETH0=</image:loc>
-      <image:title>Bart Rasur &amp; Bartpflege – Men’s Cut by Taskin Berlin-Neukölln</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/648984076/photo/hairdresser-shears-scissors-boy-home.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=gwzSbVbpYnBlvgQOtK_sWSsoe0O-Em5ST9PDPgkPSWo=</image:loc>
-      <image:title>Kinderhaarschnitt bis 6 Jahre – Men’s Cut by Taskin Berlin-Neukölln</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/1076057482/photo/hair-removal-mans-face-sugaring-epilation-in-turkey.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=A94JwiixLhdXlLS68sQ53YVBuXBUdMlU8KMwPhtdgp8=</image:loc>
-      <image:title>Honigwachs Gesichtsenthaarung – Men’s Cut by Taskin Berlin-Neukölln</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://menscutbarber.de/herrenhaarschnitt-neukoelln/</loc>
-    <lastmod>2026-11-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/965168640/photo/handsome-young-man-getting-a-haircut.jpg?s=170667a&amp;w=0&amp;k=20&amp;c=s1_r5ZPgLfu60mGZXLYErav_00UrtOE89yXC0L7fVUE=</image:loc>
-      <image:title>Herrenhaarschnitt Berlin-Neukölln – Men’s Cut by Taskin</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://menscutbarber.de/skin-fade-neukoelln/</loc>
-    <lastmod>2026-11-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://i.ibb.co/TqhCXmNT/eacf79dd-e037-44b9-9154-3a02873daa92.png</image:loc>
-      <image:title>Skin Fade &amp; Fade Cut in Berlin-Neukölln – Men’s Cut by Taskin</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://menscutbarber.de/bartpflege-neukoelln/</loc>
-    <lastmod>2026-11-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://media.istockphoto.com/id/872361244/photo/man-getting-his-beard-trimmed-with-electric-razor.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=vx6-oGkjB0nB3dwMBZf5QSQnvnlqZ0xWGdFFl7aETH0=</image:loc>
-      <image:title>Bartpflege &amp; Bartstyling in Berlin-Neukölln – Men’s Cut by Taskin</image:title>
-    </image:image>
-  </url>
-</urlset>
+# ----------------------------------------------------------------------
+# Men's Cut by Taskin - Apache Performance & Security Configuration
+# ----------------------------------------------------------------------
+
+# 1. Custom 404 Error Document & Directory Index
+ErrorDocument 404 /404.html
+DirectoryIndex index.html
+
+# 2. HTTPS & Canonical Redirection
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect www to non-www (canonical domain)
+    RewriteCond %{HTTP_HOST} ^www\.menscutbarber\.de [NC]
+    RewriteRule ^(.*)$ https://menscutbarber.de/$1 [L,R=301]
+
+    # Enforce HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 3. Gzip / Deflate Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/ld+json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# 4. Browser Caching (Expires Headers)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML
+    ExpiresByType text/html "access plus 1 hour"
+
+    # CSS & JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # Images
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Web Fonts
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# 5. Cache-Control & Security Headers
+<IfModule mod_headers.c>
+    # 1 Year Immutable Cache for Static Assets
+    <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|woff|woff2)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </FilesMatch>
+
+    # HTML dynamic cache
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=3600, must-revalidate"
+    </FilesMatch>
+
+    # Security Headers
+    Header set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
