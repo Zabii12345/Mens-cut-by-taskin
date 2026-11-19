@@ -575,48 +575,168 @@
             flex-shrink: 0;
         }
 
-        /* ── STYLES CARDS GRID ── */
+        /* ── STYLES CARDS SECTION (MATCHING REFERENCE) ── */
+        .styles-section {
+            background: var(--cream);
+            padding: 85px 0 95px;
+        }
+
+        .styles-eyebrow-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .styles-eyebrow-line {
+            display: inline-block;
+            width: 48px;
+            height: 1.5px;
+            background: #C9A24D;
+        }
+
+        .styles-eyebrow {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #C9A24D;
+            text-transform: uppercase;
+        }
+
+        .styles-title {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: #111111;
+            margin: 0 0 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .styles-gold-bar {
+            width: 46px;
+            height: 3.5px;
+            background: #C9A24D;
+            margin: 0 auto 18px;
+            border-radius: 2px;
+        }
+
+        .styles-lead {
+            max-width: 620px;
+            margin: 0 auto;
+            color: #555555;
+            line-height: 1.75;
+            font-size: 0.96rem;
+        }
+
         .styles-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
-            margin-top: 40px;
+            gap: 24px;
+            margin-top: 48px;
         }
 
         .style-card {
-            background: var(--white);
-            padding: 36px 30px;
-            border-top: 3px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .04);
-            transition: transform .3s, box-shadow .3s;
+            background: #FFFFFF;
+            border: 1px solid rgba(201, 162, 77, 0.32);
+            border-radius: 22px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 24px 26px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+            box-sizing: border-box;
         }
 
         .style-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, .08);
+            border-color: #C9A24D;
+            box-shadow: 0 14px 32px rgba(201, 162, 77, 0.16), 0 3px 8px rgba(0, 0, 0, 0.04);
         }
 
-        .style-card-icon {
-            color: var(--gold);
-            margin-bottom: 16px;
+        /* Diagonal Folded Gold Corner Ribbons */
+        .style-corner-tl {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #dfba63 0%, #c9a24d 55%, #9e782f 100%);
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+            z-index: 2;
+            pointer-events: none;
         }
 
-        .style-card-icon svg {
-            width: 28px;
-            height: 28px;
+        .style-corner-br {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(315deg, #dfba63 0%, #c9a24d 55%, #9e782f 100%);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            z-index: 2;
+            pointer-events: none;
         }
 
-        .style-card h3 {
-            font-size: 1.15rem;
-            color: var(--dark);
-            margin-bottom: 12px;
+        /* Circular Medallion Badge */
+        .style-badge-wrap {
+            flex-shrink: 0;
+            position: relative;
+            z-index: 3;
+        }
+
+        .style-card-badge {
+            width: 66px;
+            height: 66px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #fffdf8 0%, #f7eedb 100%);
+            border: 1.5px solid #C9A24D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 3px 8px rgba(201, 162, 77, 0.15);
+        }
+
+        .style-card-badge svg {
+            width: 34px;
+            height: 34px;
+            display: block;
+        }
+
+        /* Vertical Divider Line */
+        .style-card-divider {
+            width: 1px;
+            height: 52px;
+            background: rgba(201, 162, 77, 0.28);
+            margin: 0 20px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Text Column */
+        .style-card-content {
+            flex: 1;
+            min-width: 0;
+            position: relative;
+            z-index: 3;
+        }
+
+        .style-card-title {
+            font-size: 1.08rem;
             font-weight: 700;
+            color: #111111;
+            line-height: 1.3;
+            margin: 0 0 6px;
         }
 
-        .style-card p {
-            font-size: .88rem;
-            color: var(--text-light);
-            line-height: 1.7;
+        .style-card-desc {
+            font-size: 0.90rem;
+            color: #4a4a4a;
+            line-height: 1.55;
+            margin: 0;
         }
 
         /* ── TRANSPARENTE KONDITIONEN / PRICING SECTION ── */
@@ -853,9 +973,11 @@
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
+
             .pricing-grid.grid-4 {
                 grid-template-columns: 1fr;
             }
+
             .terms-title {
                 font-size: 1.8rem;
             }
@@ -1332,7 +1454,7 @@
             }
 
             .styles-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .pricing-grid {
@@ -1409,6 +1531,59 @@
             opacity: 1;
             transform: translateY(0);
         }
+            /* ── MOBILE STYLES GRID RESPONSIVENESS ── */
+
+        @media (max-width: 991px) {
+            .styles-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 16px !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .styles-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+                margin-top: 24px !important;
+            }
+            .style-card {
+                padding: 14px 10px 12px !important;
+                border-radius: 14px !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+            .style-card-divider {
+                display: none !important;
+            }
+            .style-card-badge {
+                width: 40px !important;
+                height: 40px !important;
+                min-width: 40px !important;
+                margin-bottom: 8px !important;
+            }
+            .style-card-badge svg {
+                width: 20px !important;
+                height: 20px !important;
+            }
+            .style-card-title {
+                font-size: 0.82rem !important;
+                line-height: 1.25 !important;
+                margin-bottom: 4px !important;
+            }
+            .style-card-desc {
+                font-size: 0.72rem !important;
+                line-height: 1.38 !important;
+            }
+            .style-corner-tl,
+            .style-corner-br {
+                width: 24px !important;
+                height: 24px !important;
+            }
+            .styles-title {
+                font-size: 1.75rem !important;
+            }
+        }
+
     </style>
 </head>
 
@@ -1506,76 +1681,102 @@
         </div>
     </section>
 
-    <!-- ====== STYLES & TECHNIQUES ====== -->
-    <section style="background:var(--cream)">
+        <!-- ====== STYLES & VARIANTS ====== -->
+    <section class="styles-section" id="styles">
         <div class="container">
             <div style="text-align:center" class="reveal">
-                <div class="section-eyebrow">Stile & Varianten</div>
-                <h2 class="section-title">Beliebte Haarschnitte & Schnitt-Techniken</h2>
-                <div class="divider center"></div>
-                <p style="max-width:620px;margin:0 auto;color:var(--text-light);line-height:1.8">Vom eleganten
-                    Business-Look bis zum markanten Streetstyle – unsere Barbiere beherrschen das gesamte Spektrum des
-                    Friseurhandwerks.</p>
+                <div class="styles-eyebrow-wrap">
+                    <span class="styles-eyebrow-line"></span>
+                    <span class="styles-eyebrow">Stile & Varianten</span>
+                    <span class="styles-eyebrow-line"></span>
+                </div>
+                <h2 class="styles-title">Beliebte Haarschnitte & Schnitt-Techniken</h2>
+                <div class="styles-gold-bar"></div>
+                <p class="styles-lead">Vom eleganten Business-Look bis zum markanten Streetstyle – unsere Barbiere beherrschen das gesamte Spektrum des Friseurhandwerks.</p>
             </div>
             <div class="styles-grid">
 
                 <div class="style-card reveal">
-                    <div class="style-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
+                    <div class="style-corner-tl"></div>
+                    <div class="style-corner-br"></div>
+                    <div class="style-badge-wrap">
+                        <div class="style-card-badge">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="#A27C2C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 5c4-2 9-1 12 1 2.5 1.8 3.5 4.5 3.5 7.5 0 2-.8 3.8-2 5 1 1 1.5 2.2 1.5 3.5 0 2.5-2 4.5-4.5 4.5h-3c-2 0-3.5-1-4.5-2.5-.8.5-1.8.8-2.8.8-2.5 0-4.5-2-4.5-4.5v-7c0-4 2.5-7.5 5.3-8.3z"/>
+                                <path d="M14 14c0 1.5-.8 2.5-2 2.5"/>
+                                <path d="M10 24c2.5 2 6 2.5 9 2.5"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3>Klassischer Fassonschnitt & Business Cut</h3>
-                    <div class="divider"></div>
-                    <p>Zeitlos, gepflegt und souverän. Feine Übergänge an den Seiten und ein harmonisch abgestimmtes
-                        Deckhaar für den perfekten Auftritt im Beruf und Alltag.</p>
+                    <div class="style-card-divider"></div>
+                    <div class="style-card-content">
+                        <h3 class="style-card-title">Klassischer Fassonschnitt & Business Cut</h3>
+                        <p class="style-card-desc">Zeitlos, gepflegt und souverän. Feine Übergänge an den Seiten und ein harmonisch abgestimmtes Deckhaar für den perfekten Auftritt im Beruf und Alltag.</p>
+                    </div>
                 </div>
+
                 <div class="style-card reveal">
-                    <div class="style-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
+                    <div class="style-corner-tl"></div>
+                    <div class="style-corner-br"></div>
+                    <div class="style-badge-wrap">
+                        <div class="style-card-badge">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="#A27C2C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 4c3-1.5 7-.5 9 1.5 2 2 2.5 5 2 8-.5 2.5-2 4-3 5.5 1 .8 1.5 2 1.5 3.5 0 2.5-2 4.5-4.5 4.5h-4c-2 0-3.5-1.2-4-2.5-.5.5-1.2.8-2 .8-2.5 0-4-2-4-4.5V13c0-4.5 3-8 6-9z"/>
+                                <path d="M11 8c3-1 7 0 9 2"/>
+                                <path d="M12 19c1.5 1.5 4 1.5 6 0"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3>Moderner Undercut & Pompadour</h3>
-                    <div class="divider"></div>
-                    <p>Starker Kontrast zwischen kurzen Seiten und vollem Deckhaar. Individuell gestylt mit hochwertigen
-                        Pomaden für optimalen Halt und Glanz.</p>
+                    <div class="style-card-divider"></div>
+                    <div class="style-card-content">
+                        <h3 class="style-card-title">Moderner Undercut & Pompadour</h3>
+                        <p class="style-card-desc">Starker Kontrast zwischen kurzen Seiten und vollem Deckhaar. Individuell gestylt mit hochwertigen Pomaden für optimalen Halt und Glanz.</p>
+                    </div>
                 </div>
+
                 <div class="style-card reveal">
-                    <div class="style-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
+                    <div class="style-corner-tl"></div>
+                    <div class="style-corner-br"></div>
+                    <div class="style-badge-wrap">
+                        <div class="style-card-badge">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="#A27C2C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 6c4-2 9-1.5 12 .5 2 1.8 2.5 4.5 2 7.5-.5 2.5-2 4-3 5 1 1 1.5 2.2 1.5 3.5 0 2.5-2 4.5-4.5 4.5h-3c-2 0-3.5-1-4-2.2-.6.4-1.4.7-2.2.7-2.2 0-4-1.8-4-4v-8c0-4 2.5-7 5.2-7.5z"/>
+                                <path d="M13 14h.01"/>
+                                <path d="M11 22c2 1.5 5 2 8 2"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3>Texturierter Crop & Caesar Cut</h3>
-                    <div class="divider"></div>
-                    <p>Moderner, pflegeleichter Kurzhaarschnitt mit fransiger Textur am Oberkopf und sauber definierten
-                        Konturen an Schläfen und Nacken.</p>
+                    <div class="style-card-divider"></div>
+                    <div class="style-card-content">
+                        <h3 class="style-card-title">Texturierter Crop & Caesar Cut</h3>
+                        <p class="style-card-desc">Moderner, pflegeleichter Kurzhaarschnitt mit fransiger Textur am Oberkopf und sauber definierten Konturen an Schläfen und Nacken.</p>
+                    </div>
                 </div>
+
                 <div class="style-card reveal">
-                    <div class="style-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
+                    <div class="style-corner-tl"></div>
+                    <div class="style-corner-br"></div>
+                    <div class="style-badge-wrap">
+                        <div class="style-card-badge">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="#A27C2C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 13c2-1.5 5-1 7 1 1.5-1.5 3-2 5-2s3.5.5 5 2c2-2 5-2.5 7-1-1.5 4-4 5.5-7 5.5-2 0-3-1-4-1.5-1 .5-2 1.5-4 1.5-3 0-5.5-1.5-7-5.5z"/>
+                                <path d="M9 17.5c1.5 6 4.5 8.5 9 8.5s7.5-2.5 9-8.5"/>
+                                <path d="M18 10v3"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3>Taper Cut & Individuelle Längen</h3>
-                    <div class="divider"></div>
-                    <p>Sanfte Verläufe an Koteletten und Halsansatz, während die Kontur über den Ohren natürlich
-                        erhalten bleibt. Ideal für vielseitiges Styling.</p>
+                    <div class="style-card-divider"></div>
+                    <div class="style-card-content">
+                        <h3 class="style-card-title">Taper Cut & Individuelle Längen</h3>
+                        <p class="style-card-desc">Sanfte Verläufe an Koteletten und Halsansatz, während die Kontur über den Ohren natürlich erhalten bleibt. Ideal für vielseitiges Styling.</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-        <!-- ====== PRICING & PROCESS ====== -->
+    <!-- ====== PRICING & PROCESS ====== -->
     <section class="terms-section" id="terms">
         <div class="container">
             <div style="text-align:center" class="reveal">
@@ -1586,7 +1787,8 @@
                 </div>
                 <h2 class="terms-title">Ablauf & transparente Preise</h2>
                 <div class="terms-gold-bar"></div>
-                <p class="terms-lead">Hochwertige Barber-Dienstleistungen zu fairen und ehrlichen Preisen – ohne versteckte Kosten.</p>
+                <p class="terms-lead">Hochwertige Barber-Dienstleistungen zu fairen und ehrlichen Preisen – ohne
+                    versteckte Kosten.</p>
             </div>
             <div class="pricing-grid">
 
@@ -1596,7 +1798,8 @@
                     <div class="corner-accent-br"></div>
                     <div class="pricelist-header-row">
                         <div class="pricelist-badge">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#A27C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#A27C2C" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="6" cy="6" r="3"></circle>
                                 <circle cx="6" cy="18" r="3"></circle>
                                 <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
@@ -1610,8 +1813,13 @@
                         </div>
                         <div class="pricelist-price">15 €</div>
                     </div>
-                    <p class="pricelist-desc">Präziser Maschinenschnitt & Scherenschnitt, Konturenrasur und professionelles Finish.</p>
-                    <a href="tel:+493068053010" class="pricelist-btn">Jetzt anrufen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    <p class="pricelist-desc">Präziser Maschinenschnitt & Scherenschnitt, Konturenrasur und
+                        professionelles Finish.</p>
+                    <a href="tel:+493068053010" class="pricelist-btn">Jetzt anrufen <svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg></a>
                 </div>
 
                 <!-- Card 2 -->
@@ -1620,8 +1828,11 @@
                     <div class="corner-accent-br"></div>
                     <div class="pricelist-header-row">
                         <div class="pricelist-badge">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#A27C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 3a6 6 0 0 0-6 6c0 2.2 1.2 4.1 3 5.1V16c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-1.9c1.8-1 3-2.9 3-5.1a6 6 0 0 0-6-6z"></path>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#A27C2C" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M12 3a6 6 0 0 0-6 6c0 2.2 1.2 4.1 3 5.1V16c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-1.9c1.8-1 3-2.9 3-5.1a6 6 0 0 0-6-6z">
+                                </path>
                                 <path d="M9 9c.6-1.2 1.8-1.8 3-1.8s2.4.6 3 1.8"></path>
                                 <path d="M4 10c-1 0-1.5-.5-1.5-1"></path>
                                 <path d="M20 10c1 0 1.5-.5 1.5-1"></path>
@@ -1634,8 +1845,13 @@
                         </div>
                         <div class="pricelist-price">18 €</div>
                     </div>
-                    <p class="pricelist-desc">Erfrischende Haarwäsche mit Kopfmassage, typgerechter Haarschnitt und Föhn-Styling.</p>
-                    <a href="tel:+493068053010" class="pricelist-btn">Jetzt anrufen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    <p class="pricelist-desc">Erfrischende Haarwäsche mit Kopfmassage, typgerechter Haarschnitt und
+                        Föhn-Styling.</p>
+                    <a href="tel:+493068053010" class="pricelist-btn">Jetzt anrufen <svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg></a>
                 </div>
 
                 <!-- Card 3 -->
@@ -1644,8 +1860,11 @@
                     <div class="corner-accent-br"></div>
                     <div class="pricelist-header-row">
                         <div class="pricelist-badge">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#A27C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 10.5c1.5-1.2 3.5-.8 5 .8 1-1.2 2-1.8 3-1.8s2 .6 3 1.8c1.5-1.6 3.5-2 5-.8-1 2.8-2.8 3.8-5 3.8-1.5 0-2.3-.8-3-1.2-.7.4-1.5 1.2-3 1.2-2.2 0-4-1-5-3.8z"></path>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#A27C2C" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M4 10.5c1.5-1.2 3.5-.8 5 .8 1-1.2 2-1.8 3-1.8s2 .6 3 1.8c1.5-1.6 3.5-2 5-.8-1 2.8-2.8 3.8-5 3.8-1.5 0-2.3-.8-3-1.2-.7.4-1.5 1.2-3 1.2-2.2 0-4-1-5-3.8z">
+                                </path>
                                 <path d="M6 13.5c1 4.5 3 6.5 6 6.5s5-2 6-6.5"></path>
                             </svg>
                         </div>
@@ -1655,8 +1874,13 @@
                         </div>
                         <div class="pricelist-price">27 €</div>
                     </div>
-                    <p class="pricelist-desc">Das volle Verwöhnprogramm: Haarschnitt, Haarwäsche, Barttrimmen und exakte Konturen.</p>
-                    <a href="tel:+493068053010" class="pricelist-btn">Jetzt anrufen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    <p class="pricelist-desc">Das volle Verwöhnprogramm: Haarschnitt, Haarwäsche, Barttrimmen und exakte
+                        Konturen.</p>
+                    <a href="tel:+493068053010" class="pricelist-btn">Jetzt anrufen <svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg></a>
                 </div>
 
             </div>
